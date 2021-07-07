@@ -27,12 +27,14 @@
 
 ## Demo
 ---
+![altamiresponsive](wireframes/readme/am-i-responsive.jpg)
 
-A live demo can be found [here]()
+A live demo can be found [here](https://eva-kuk.github.io/smoothie-lovers/)
 
 
 ## Overview
 ---
+- This is my third Milestone 3 project which is part of the Code Isntitute's FullStack Software Development Diploma Course.
 
 ## User stories
 ---
@@ -64,28 +66,33 @@ A live demo can be found [here]()
 
 4. ## **Skeleton**
 ## Wireframe mockups:
-**HOME PAGE**
+**HOME/RECIPE PAGE**
+![homepage](wireframes/home-page.png)
 
+**COLLECTIONS PAGES:Stay Healthy/Stay Young/Stay Fit/ Stay Happy**
 
+![collections](wireframes/collections-pages.png)
 
- ** HOME PAGE FINAL RESULT**
+**UTENCILS PAGE**
+![utensils](wireframes/utensils-page.png)
 
+**SINGLE RECIPE PAGE**
+![singlerecipe](wireframes/single-recipe-page.png)
 
-**ABOUT PAGE**
+**ADD/EDIT/DELETE EXISTING RECIPE PAGE**
+![addeditdeleterecipe](wireframes/add-edit-delete-recipe-page.png)
 
+**PROFILE PAGE**
+![profile](wireframes/profile-page.png)
 
+**MANAGE CATEGORIES PAGE**
+![managecategories](wireframes/manage-categories-page.png)
 
-
-**ABOUT PAGE FINAL RESULT**
-
-
-
-
-**ATTRACTIONS PAGE**
-
+**REGISTER PAGE**
+![register](wireframes/register-page.png)
 
 **CONTACT PAGE**
-
+![contactpage](wireframes/contact-page.png)
 
 **5. Surface**
 **Colors**
