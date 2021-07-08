@@ -79,19 +79,20 @@ The main goal of this project was to create an online smoothie recipe book that 
 
 1. ## **Strategy plane**
 My goal for this project is to create a website with smoothies recipes where users will be able to store their recipes and share them with other users.
-It is intended to be used as an full-stack
-
+It is intended to be used as an full-stack application with clean and user - friendly site design.
 
 ### Project purpose:
-- To create recipe online book, by 
+- To create an easy-to-use online cocktail recipe book, providing a user-friendly interface with full functionality.
+- Promoting a healthy lifestyle by introducing cocktails into our daily diet.
 
 ### Site owner goals:
-- Provide the contact form, so the users be able to get in touch with their queries
-- Promote
-- Provide
-- Include
+- Present the recipe book and gain lots of great recipes in one place.
+- Provide the contact form, so the users be able to get in touch with their queries. 
+- Promote a brand of kitchen tools.
+
 ### Customer Goals:
-- Easy to find 
+- Easy to register and log in into the account.
+- Easy to find and share recipes on the website.
 - Easy to find links to social media accounts to follow the news about the website.
 - Easy to find contact form for possible enquiries about profile or recipes.
 
@@ -106,7 +107,6 @@ READ — A function we call to retrive the information from database and display
 UPDATE — A function we can call when information about a particular recipe needs to be changed. The user can edit the values for `recipe_name`, `ingredients_list`,`recipe_description `, `recipe_method` and `image_url`. After the function is called, the corresponding entry in the recipes database will contain the new fields provided. This option is only available to the creator of each recipe.The admin only can edit the values for `category_name`.
 
 DELETE — A function we can call to remove a particular recipe from the catalog. This option is only available to the creator of the recipe. THe admin only can remove the values for `category_name`.
-
 
 ### Functional Requirements
 - Mobile-first website that is responsive on all devices.
@@ -170,6 +170,7 @@ Chart of the website to show core relations between the pages
 
 4. ## **Skeleton plane**
 ## Wireframe mockups:
+
 **HOME/RECIPE PAGE**
 ![homepage](wireframes/home-page.png)
 
@@ -203,12 +204,32 @@ Chart of the website to show core relations between the pages
 
 **5. Surface plane**
 **Colors**
-
+- As a first color I have choosen a **Red Pigment (# F72626)** which I used to design a logo brand, for a red strawberry, which not only symbolizes love and resembles a heart in shape, but also is one of the most frequently chosen fruits in the production of smoothies and I thought it will nicely complement the brand name.
+- As a complementary colors for buttons I have chosen **Forrest Green Web** (#008F2B) which symbolizes health, nature and freshness and a different shade of red called **Venetian Red(#C41C1C)**.
+- As a background color I have chosen the color which is being the shade of Forest Green Web called **HoneyDew (#EBFFF1)** because it is very close to white, which will provide a high contrast for darker text, while is.
+- As a text color I have chosen Xicetic(#140101) which is the darkest option of for Red Pigment color.
+- For navigation bar and footer I have chosen a shade of gray called Gainsboro (#E0E0E0) which will 
+give the website a final touch and will not make it overloaded.
+- The appropriate shade and saturation of all colours I have chosen by using the 
+[adobe color generator tool](https://color.adobe.com/create/color-wheel)
+![adobe-color-creator](wireframes/readme/adobe-color-creator.png) and 
+[color generator](https://coolors.co/f72626-c41c1c-008f2b-140101-ebfff1-e0e0e0)
+![color palette](wireframes/readme/color-palette.png) 
 
  **Typography**
-
+- For the main headings and creating a logo for  “Smoothie Lovers”  I have selected the **“Changa”** font with the group of fall-back font of **"sans-serif”**. I have chosen that font because of its originality, which aims to make the brand unique on the one hand, as well as simplicity, clear, easy do read and I feel suits the overall look of the website. 
+- For the content I have chosen **"Open Sans"** with fallback of **"sans-serif"**, which according to 
+[Vistaprint]( https://www.vistaprint.com/hub/design-decoded-top-12-easy-read-fonts?couponAutoload=1&GP=07%2f06%2f2021+14%3a38%3a39&GPS=6008954092&GNF=0 ) 
+article is optimized for print, web, and mobile interfaces and is one of the best fonts easy to read and also one of the most popular font used for the food industry design according to article in 
+[line25]( https://line25.com/fonts/best-fonts-for-food-industry-design).
+- Both fonts match well according to [google fonts ](https://fonts.google.com/specimen/Changa?query=changa#standard-styles)
 
  **Images**
+- Due to the shape of the site, which itself will contain a lot of different images with smoothies recipes, I have decided to choose just one main image which will to be placed on the rest of the pages and its reduced version on the **Single Recipe Page** to maintain consistency and not overload the page in color. The image has been carefully selected and distributed by 
+[pixabay free resource]( https://pixabay.com/photos/smoothies-juice-fruit-colorful-3809517/) and it will allude to the theme of the page
+Most of the recipe images are added by the user .
+
+        The default image if the don’t enter anything has taken from [here]()
 
 ## Features
 ---
@@ -246,10 +267,6 @@ Chart of the website to show core relations between the pages
 
 **1. Languages**
 
-**2. Integrations**
-
-
-  
 **5. Other**
 
 ---
@@ -272,9 +289,7 @@ Overview
 ---
 ## Code validity
 
-
 ## Version Control
-
 
 ## Deployment
 
