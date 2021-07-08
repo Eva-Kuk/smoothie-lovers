@@ -68,7 +68,7 @@ The website is created in a responsive design that is very handy to see recipes 
 ## Site Owner Stories
 15. As a site owner, I want to be able to promote a kitchen tools, so that the users can choose for themself the best option on trhe market.
 
-## UX
+## UX (5 planes)
 ---
 This website design will target people, who are smoothie lovers and would like to have place where they can explore new smoothies recipes, keep and share their own recipes with others.
 The main goal of this project was to create an online smoothie recipe book that will contain a collection of different smothis descriptions added by registered users in four different categories and will allow registered users to register to have their own account, add, edit, delete recipes and share them with other users. The collection consists of the following categories:
@@ -77,7 +77,7 @@ The main goal of this project was to create an online smoothie recipe book that 
 3. **Stay Fit** - This category will include all smoothies that contain ingredients for all weight-watchers who counting their calories and want to loose some weight, to speed up our metabolism, but also smoohites for those who workout at the gym, who want to build up their mussles and are looking for high-protein meals so for all who want to keep in shape.
 4. **Stay Happy** - This category includes all our favorite cocktails, not necessarily containing super healthy ingredients, but we like them because they are delicious.
 
-1. ## **Strategy**
+1. ## **Strategy plane**
 My goal for this project is to create a website with smoothies recipes where users will be able to store their recipes and share them with other users.
 It is intended to be used as an full-stack
 
@@ -94,7 +94,9 @@ It is intended to be used as an full-stack
 - Easy to find 
 - Easy to find links to social media accounts to follow the news about the website.
 - Easy to find contact form for possible enquiries about profile or recipes.
-2. ## **Scope**
+
+
+2. ## **Scope plane**
 To achieve user and owner’s goals, below are the minimum features to be included in this project. Also, CRUD functionality (Create, Read, Update, and Delete) is required for this project so these are implemented as a part of essential features.
 
 CREATE— A function we can call when a new recipe is being added to the database. The user can supply the values for `category_name`, `recipe_name`, `ingredients_list`,`recipe_description `, `recipe_method` and `image_url`. The website admin has the capability to create new recipes category for selection.
@@ -103,35 +105,70 @@ READ — A function we call to retrive the information from database and display
 
 UPDATE — A function we can call when information about a particular recipe needs to be changed. The user can edit the values for `recipe_name`, `ingredients_list`,`recipe_description `, `recipe_method` and `image_url`. After the function is called, the corresponding entry in the recipes database will contain the new fields provided. This option is only available to the creator of each recipe.The admin only can edit the values for `category_name`.
 
-DELETE — A function we can call to remove a particular recipe from the catalog. After this function is called. This option is only available to the creator of the recipe
+DELETE — A function we can call to remove a particular recipe from the catalog. This option is only available to the creator of the recipe. THe admin only can remove the values for `category_name`.
 
 
 ### Functional Requirements
 - Mobile-first website that is responsive on all devices.
-
-- Categories Stay Healthy, Stay Young, Stay Fit, Stay Happy) pages where users can choose recipes by the categories.
-- Utencils page where users can see some kitchen tools halping to prepare and store smoothiea linked to the seller’s website.
-- Login page where users can log in to the website.
-- Logout function that users can log out the website.
-- Profile page where users can see all their recipes and access to create, post, edit and delete recipes.
+- Search by a keyword(s) function that users can search for specific recipes by `recipe_ingredients`
+- 404 page that appears for invalid URL and takes users back to Home page of the website safely
+- Register page where users can create an account to add, edit recipes.
 - Create Recipe page where users can create and post their recipes.
 - Edit Recipe page where users can edit their recipes.
 - Delete Recipe function that users can delete their recipes.
 - Manage Category page and functions that only admin user (owner) can create, edit and delete categories.
-- Search by a keyword(s) function that users can search for specific recipes
-- 404 page that appears for invalid URL and takes users back to Home page of the website safely
-- Register page where users can create an account to add, edit recipes.
+- Login page where users can log in to the website.
+- Logout function that users can log out the website.
+- Profile page where users can see all their recipes and access to create, post, edit and delete recipes.
 - To have a straight forward interface, that allows the user to make choices about the content they wish to display.
-- Provides users with pure UX.
 
 ### Content Requirements
 - Much of the content on this site will be provided by users. 
 - To ensure that the site immediately shows its purpose All the recipes are shown on Home page.
+- Categories (Stay Healthy, Stay Young, Stay Fit, Stay Happy pages) where users can choose recipes by the categories.
+- Utencils page where users can see some kitchen tools halping to prepare and store smoothiea linked to the seller’s website.
+- Provides users with pure UX.
 
-3. ## **Structure**
+3. ## **Structure plane**
+
+### FRONT END
+Chart of the website to show core relations between the pages
+![website-chart](wireframes/readme/website-chart.png)
+
+- **HOME/RECIPE PAGE** (index.html) - The Home/Recipe Page of the website will clearly outline the purpose of the website and contains all available recipes cards for the user to view. There is a sticky navigation at the top which is placed on all pages and contains logo and Recipe link which leads to Home page and a drop down Collection list with all Categories, Utensils Page, Contact Page, Register Page and Login Page. At the bottom of the page there is a footer that is also placed on all other pages, which contains a social media links.
+
+- **COLLECTIONS PAGES:** - (categories<category_name>.html) - The pages where the user can view recipes selected from among all recipes displayed on the home page according to the category selected by him: Stay Healthy, Stay Young, Stay Fit, Stay Happy.
+
+- **SINGLE RECIPE PAGE** (recipe.html) - The Single Recipe Page will be opened when the user wants more information about the recipe and provides a full description with an image.
+
+- **UTENSILS PAGE** (utensils.html) - The Utensils Page will contain the carousel with images and suggestions of tools and kitchen appliances that are needed in the preparation of smoothies and will have links to pages where user can purchase the product.
+
+- **LOG IN PAGE** (login.html) - The Log In Page allows users who already have an account to log in to their profile. Username must be between 5 and 20 characters, password must contain at least 8 characters, include upper and lower case letters and numbers. When user logged in successfully, they are redirected to their unique Proifile page where they can view, edit and delete their recipes. Additional tab Log Out is visible and Register tab is hidden after logging in.
+
+- **REGISTER PAGE** (register.html) - The Register Page allows users to create an account by entering a distinct username and password. Username must be between 5 and 20 characters, password must contain at least 8 characters, include upper and lower case letters and numbers. When user reggistered successfully, they are redirected to their Profile page where they can add, edit, delete and view existing recipes. 
+
+- **PROFILE PAGE** (profile/<username>.html) - The Profile Page is unique to each user and is available after user register successfully where they can add, edit, delete and view theit existing recipes. There is an option to create a new recipe from this page by clicking an "Add Recipe" button and that leads to Create Recipe page
+
+- **CREATE RECIPE PAGE** (add_recipe.html) - The Create Recipe Page allows users to add a new recipe by submitting a form. The user need enter the fields for `recipe_name`, `category_name`,`recipe_description`, `image_url`, `recipe_ingredients`, `recipe_method`. The new recipe is displayed on the home page and the profile page.
+
+- **EDIT RECIPE PAGE** (edit_recipe.html) - The Edit Recipe Page allows user to edit existing recipe by clicking the Edit/Delete Recipe button and changing submitted before recipe form on users Profile Page.
+
+- **MANAGE CATEGORIES PAGE** (manage_categories.html) - The Manage Categories Page allows the website administrator to add, edit and delete existing category. Only admin user can have an access to this page by a navigation link that appears on Profile page for admin.
+
+- **CREATE CATEGORIES PAGE** (add_categories.html) - The Create Categories Page allows the website administrator to add category. Only admin user can have an access to this page by a navigation link that appears on Profile page for admin.
+
+- **EDIT CATEGORIES PAGE** (edit_categories.html) - TheEdit Categories Page allows the website administrator to edit existing category. Only admin user can have an access to this page by a navigation link that appears on Profile page for admin.
+
+- **CONTACT PAGE** (contact.html) - The Contact Page allows user to fill a form request and will contain the name, email and message fields that are required to fill in by the user and will be sent to the owner.
+
+### BACK END
+To create a recipe user must register on the account. Upon registration, an account will be assigned to the user. All user's details like **username**, **password** and unique identification **id** key will be stored in a user collection database. As soon as user creates a new recipe, the **username** in **users collection** which is linked with **username** in **recipes collection** display  **created by: `username`** on the recipe. The `category_name` in **categories collection** is linked with `category_name` in **recipes collection** which will be used to retrieve data by `category_name` when user choose one of the collections four categories. Categories in categories collection are editable by admin so it is created as an independent collection. The data in all the collections are retrievable and can be identified by the key or unique id of the object.
+
+Chart of the website to show core relations between the pages
+![website-database](wireframes/readme/website-database.png)
 
 
-4. ## **Skeleton**
+4. ## **Skeleton plane**
 ## Wireframe mockups:
 **HOME/RECIPE PAGE**
 ![homepage](wireframes/home-page.png)
@@ -164,7 +201,7 @@ DELETE — A function we can call to remove a particular recipe from the catalog
 **CONTACT PAGE**
 ![contactpage](wireframes/contact-page.png)
 
-**5. Surface**
+**5. Surface plane**
 **Colors**
 
 
