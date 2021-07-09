@@ -235,30 +235,29 @@ The default image if the don’t enter anything has taken from [here]()
 ---
 **Existing Features**
 
-#### Navigation bar:
+### Navigation bar:
 
+### Footer:
 
-#### Footer:
+### HOME/RECIPE PAGE:
 
-#### Home Page:
+### COLLECTIONS PAGES:Stay Healthy/Stay Young/Stay Fit/ Stay Happy:
 
-#### About Page:
+### UTENCILS PAGE:
 
-#### Attractions Page:
+### SINGLE RECIPE PAGE
 
-#### Contact Page
+### ADD/EDIT/DELETE EXISTING RECIPE PAGE
 
-### HOME PAGE
+### PROFILE PAGE
 
- 
- ### ABOUT PAGE
+### MANAGE CATEGORIES PAGE
 
+### REGISTER PAGE
 
-### ATTRACTIONS PAGE 
+### LOGIN PAGE
 
-
-### CONTACT PAGE 
-
+### CONTACT PAGE
 
 **Features Left to Implement when skills develop**
 
@@ -336,10 +335,99 @@ Overview
 
 ---
 ## Code validity
+- HTML - [Markup Validation W3C Service](https://validator.w3.org/)
+- CSS - [Jigsaw  Validation W3C Service](https://jigsaw.w3.org/css-validator/)
+- JSHint - [JSHint for detecting errors in JavaScript code](https://jshint.com/)
+- Link checker - [Check links and anchors in Web pages or full Web sites](https://validator.w3.org/checklink)
+- Lighthouse in Google dev tool for testing the performance of the website
 
 ## Version Control
+[Git](https://git-scm.com/) as a local repository and [GitHub(https://github.com/)] as a remote repository are used for the project, and below is how I use them as the version control for the project.
+
+**- - Setting Up New Repository - -**
+1. Create a remote repository in GitHub by clicking "New repository" on the main page
+![new repository](wireframes/readme/new-repository.png)
+2. Use Code Institute Template, put the repository name and click Create Repository **making sure to select public**
+![repository template](wireframes/readme/repository-template.png)
+![public](wireframes/readme/public.png)
+![create-repository](wireframes/readme/create-repository.png)
+3. Open the repository with Gitpod which is my Integrated Development Environment (IDE). 
+![opengitpod](wireframes/readme/open-gitpod.png)
+
+**- - Commitments - -**
+
+When a section or even a group of work is completed, it is committed in git and pushed into GitHub, to make sure to keep the history of the work logged properly and not to lose the work in unexpected situations. Below commands are used for this.
+
+` - git status | we use to check the status of new/modified folders, files, and documents`
+
+`- git add -A | we use to put all new and updated work on the stage in git`
+
+` - git add <specific file name> | we use when different types of work is done but do not want to commit everything on the same commitment`
+
+` - git commit -m "Example commit" | To commit the work on the stage in git before pushing it to GitHub`
+
+` - git push | we use to update the repository in GitHub for main branch`
+
+` - git push origin <branch name> | we use when pushing git into GitHub for sub-branches`
+
+ ** - - Branches - -**
+
+When some testing is needed, create a branch and test is on it instead of using main branch. When the testing is successful, then merge the branch into main, when it is not, leave the branch unmerged and keep working on main branch. Below commands are used for this.
+
+`* git branch <branch name> | To create a new branch`
+
+`* git checkout <branch name> | To switch branch`
+
+`* git branch | To check current branch`
+
+`* git merge <branch name> | To merge sub-branch into main, do this on main branch`
+
+### **To fork the GitHub Repository**
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without
+affecting the original repository by using the following steps:
+1. Log in to GitHub and locate the [Repository](https://github.com/Eva-Kuk/smoothie-lovers).
+2. At the top right of the Repository just above the "Settings" Button on the menu, locate and click the "Fork" Button.
+3. You should have a copy of the original repository in your GitHub account now.
+
+### **To make a Local Clone**
+1. Log in GitHub and locate the [Repository](https://github.com/Eva-Kuk/smoothie-lovers).
+2. At the top of the Repository locate the "Code" dropdown menu.
+3. To clone the repository using HTTPS, under "CLONE", make sure "HTTPS" is selected and copy the link then.
+4. Open Git Bash.
+Change the current working directory to the location where you want the cloned directory to be made.
+5. Type `git clone` and past the URL you copied in Step 3.
+`$ git clone https://github.com/Eva-Kuk/smoothie-lovers`
+6. Press Enter and you local clone will be created.
 
 ## Deployment
+The application project requires back-end technologies such as server, application, and database so it was deployed using [Heroku](https://dashboard.heroku.com/apps) which is a cloud platforn with a service supporting several programming languages including python. GitHub can only host a static website. There are two ways to deploy a website in Heroku. One is to use Heroku Command Line Interface (CLI) and another one is to connect to GitHub repository.This is deploying by Connecting to GitHub repository.
+
+Before deploying the website to Heroku, please follow this very important step to make the app work in Heroku correctly.
+
+1.  Create `requirements.txt` file which contains the names of packages being used in Python. It is important to update the file if other packages or modules are installed during the project.
+2. Create `Procfile` which contains the name of the application file so that Heroku knows what to run. Procfile may have a blank line when it is created so remove it as it may cause problems.
+3. Push both files to GitHub.
+
+Once those steps are done, the website can be deployed and below are the steps of the deployment in Heroku.
+
+1. Create an account in Heroku
+2. Click **New** and choose from dropdown menu **Create new app** to create a new app
+![heroku new app](wireframes/readme/heroku-new-app.png)
+3. Enter an **App name**, which must be unique but the best practice is put the same name as in our github repository project, then choose a region and click **create app**
+![heroku app name](wireframes/readme/heroku-app-name.png)
+4. Go to the Deploy tab and click **Connect to GithHub**
+![deploy connect to github](wireframes/readme/deploy-connect-to-github.png)
+5. Search for the name of the repository and click **Connect**.
+![heroku search repository](wireframes/readme/heroku-search-repository.png)
+6. Before clicking Enable Automatic Deploys, hidden variables such as IP address, PORT, SECRET_KEY, MONGO_URI and MONGO_DATABASE need to be recorded in Heroku. 
+![heroku config vars](wireframes/readme/heroku-config-vars.png)
+7. Go to **Settings**, click **Reveal Config Vars** and fill out necessary keys and values
+8. Once all the hidden variables are recorded, then click **Enable Automatic Deploys** 
+9. Click **Deploy Branch** (Main should be selected unless you want other branches to be deployed)
+![heroku automatic deploys](wireframes/readme/heroku-automatic-deploys.png)
+10. When the app is deployed by Heroku correctly, the message will appear saying 'Your app was successfully deployed.'
+![heroku successfully deployed](wireframes/readme/heroku-successfully-deployed.png)
+11. Click **View**.
 
 ### Database Deployment
 
