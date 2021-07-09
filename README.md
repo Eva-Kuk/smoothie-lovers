@@ -72,10 +72,10 @@ The website is created in a responsive design that is very handy to see recipes 
 ---
 This website design will target people, who are smoothie lovers and would like to have place where they can explore new smoothies recipes, keep and share their own recipes with others.
 The main goal of this project was to create an online smoothie recipe book that will contain a collection of different smothis descriptions added by registered users in four different categories and will allow registered users to register to have their own account, add, edit, delete recipes and share them with other users. The collection consists of the following categories:
-1. **Stay Healthy** - This category will include all smoothies recipes that contain ingredients which support our immune system to strengthen our body to prevent from colds, as well as these one that contain anti-inflammatory ingredients to keep our intestines in good condition, also these turbo charging our bodies with minerals and vitamins called vitamin bombs, so if put it in one word all these recipes that will keep us in a good health.
-2. **Stay Young** - This category will include all smoothies recipes  contain ingredients that are powerful sources of radical-fighting antioxidants, anti-aging, rehydration and detoxifying rich-ingredients to keep our skin looking younger and in good condition at all ages.
-3. **Stay Fit** - This category will include all smoothies that contain ingredients for all weight-watchers who counting their calories and want to loose some weight, to speed up our metabolism, but also smoohites for those who workout at the gym, who want to build up their mussles and are looking for high-protein meals so for all who want to keep in shape.
-4. **Stay Happy** - This category includes all our favorite cocktails, not necessarily containing super healthy ingredients, but we like them because they are delicious.
+- **Stay Healthy** - This category will include all smoothies recipes that contain ingredients which support our immune system to strengthen our body to prevent from colds, as well as these one that contain anti-inflammatory ingredients to keep our intestines in good condition, also these turbo charging our bodies with minerals and vitamins called vitamin bombs, so if put it in one word all these recipes that will keep us in a good health.
+- **Stay Young** - This category will include all smoothies recipes  contain ingredients that are powerful sources of radical-fighting antioxidants, anti-aging, rehydration and detoxifying rich-ingredients to keep our skin looking younger and in good condition at all ages.
+- **Stay Fit** - This category will include all smoothies that contain ingredients for all weight-watchers who counting their calories and want to loose some weight, to speed up our metabolism, but also smoohites for those who workout at the gym, who want to build up their mussles and are looking for high-protein meals so for all who want to keep in shape.
+- **Stay Happy** - This category includes all our favorite cocktails, not necessarily containing super healthy ingredients, but we like them because they are delicious.
 
 1. ## **Strategy plane**
 My goal for this project is to create a website with smoothies recipes where users will be able to store their recipes and share them with other users.
@@ -100,17 +100,17 @@ It is intended to be used as an full-stack application with clean and user - fri
 2. ## **Scope plane**
 To achieve user and owner’s goals, below are the minimum features to be included in this project. Also, CRUD functionality (Create, Read, Update, and Delete) is required for this project so these are implemented as a part of essential features.
 
-CREATE— A function we can call when a new recipe is being added to the database. The user can supply the values for `category_name`, `recipe_name`, `ingredients_list`,`recipe_description `, `recipe_method` and `image_url`. The website admin has the capability to create new recipes category for selection.
+CREATE— A function we can call when a new recipe is being added to the database. The user can supply the values for `category_name`, `name`, `ingredients_list`,`description `, `method` and `image_url`. The website admin has the capability to create new recipes category for selection.
 
 READ — A function we call to retrive the information from database and display the results of all the recipes available currently in our database to read. All visitors to the website can browse all recipes without having to create an account.
 
-UPDATE — A function we can call when information about a particular recipe needs to be changed. The user can edit the values for `recipe_name`, `ingredients_list`,`recipe_description `, `recipe_method` and `image_url`. After the function is called, the corresponding entry in the recipes database will contain the new fields provided. This option is only available to the creator of each recipe.The admin only can edit the values for `category_name`.
+UPDATE — A function we can call when information about a particular recipe needs to be changed. The user can edit the values for `name`, `ingredients_list`,`description `, `method` and `image_url`. After the function is called, the corresponding entry in the recipes database will contain the new fields provided. This option is only available to the creator of each recipe.The admin only can edit the values for `category_name`.
 
 DELETE — A function we can call to remove a particular recipe from the catalog. This option is only available to the creator of the recipe. THe admin only can remove the values for `category_name`.
 
 ### Functional Requirements
 - Mobile-first website that is responsive on all devices.
-- Search by a keyword(s) function that users can search for specific recipes by `recipe_ingredients`
+- Search by a keyword(s) function that users can search for specific recipes by `ingredients`
 - 404 page that appears for invalid URL and takes users back to Home page of the website safely
 - Register page where users can create an account to add, edit recipes.
 - Create Recipe page where users can create and post their recipes.
@@ -149,7 +149,7 @@ Chart of the website to show core relations between the pages
 
 - **PROFILE PAGE** (profile/<username>.html) - The Profile Page is unique to each user and is available after user register successfully where they can add, edit, delete and view theit existing recipes. There is an option to create a new recipe from this page by clicking an "Add Recipe" button and that leads to Create Recipe page
 
-- **CREATE RECIPE PAGE** (add_recipe.html) - The Create Recipe Page allows users to add a new recipe by submitting a form. The user need enter the fields for `recipe_name`, `category_name`,`recipe_description`, `image_url`, `recipe_ingredients`, `recipe_method`. The new recipe is displayed on the home page and the profile page.
+- **CREATE RECIPE PAGE** (add_recipe.html) - The Create Recipe Page allows users to add a new recipe by submitting a form. The user need enter the fields for `name`, `category_name`,`description`, `image_url`, `ingredients_list`, `method`. The new recipe is displayed on the home page and the profile page.
 
 - **EDIT RECIPE PAGE** (edit_recipe.html) - The Edit Recipe Page allows user to edit existing recipe by clicking the Edit/Delete Recipe button and changing submitted before recipe form on users Profile Page.
 
@@ -184,11 +184,11 @@ Chart of the website to show core relations between the pages
 **SINGLE RECIPE PAGE**
 ![singlerecipe](wireframes/single-recipe-page.png)
 
-**ADD/EDIT/DELETE EXISTING RECIPE PAGE**
-![addeditdeleterecipe](wireframes/add-edit-delete-recipe-page.png)
-
 **PROFILE PAGE**
 ![profile](wireframes/profile-page.png)
+
+**ADD/EDIT/DELETE EXISTING RECIPE PAGE**
+![addeditdeleterecipe](wireframes/add-edit-delete-recipe-page.png)
 
 **MANAGE CATEGORIES PAGE**
 ![managecategories](wireframes/manage-categories-page.png)
@@ -406,7 +406,7 @@ Change the current working directory to the location where you want the cloned d
 6. Press Enter and you local clone will be created.
 
 ## Deployment
-The application project requires back-end technologies such as server, application, and database so it was deployed using [Heroku](https://dashboard.heroku.com/apps) which is a cloud platforn with a service supporting several programming languages including python. GitHub can only host a static website. There are two ways to deploy a website in Heroku. One is to use Heroku Command Line Interface (CLI) and another one is to connect to GitHub repository by Heroku.This is deploying by Connecting to GitHub repository.
+The application project requires back-end technologies such as server, application, and database so it was deployed using [Heroku](https://dashboard.heroku.com/apps) which is a cloud platforn with a service supporting several programming languages including python. GitHub can only host a static website. There are two ways to deploy a website in Heroku. One is to use Heroku Command Line Interface (CLI) and another one is to connect to GitHub repository by Heroku.This is deploying by Connecting to GitHub repository. 
 
 Before deploying the website to Heroku, please follow this very important step to make the app work in Heroku correctly.
 
