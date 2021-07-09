@@ -229,7 +229,7 @@ article is optimized for print, web, and mobile interfaces and is one of the bes
 [pixabay free resource]( https://pixabay.com/photos/smoothies-juice-fruit-colorful-3809517/) and it will allude to the theme of the page
 Most of the recipe images are added by the user .
 
-        The default image if the don’t enter anything has taken from [here]()
+The default image if the don’t enter anything has taken from [here]()
 
 ## Features
 ---
@@ -263,15 +263,63 @@ Most of the recipe images are added by the user .
 **Features Left to Implement when skills develop**
 
 ## Technologies Used
-
-
 **1. Languages**
+-	![html5](wireframes/readme/html5.png) – HTML5
+-	![css3](wireframes/readme/css3.png)- CSS3 
+-	![python](wireframes/readme/python.png)- Python
+-	![javascript](wireframes/readme/js.png) – JavaScript for interaction
+
+**2. Integrations**
+-	![flask](wireframes/readme/flask.png) - The project uses the Flask micro-web framework and links with jinja to create the webpages.
+-	![wekzeug](wireframes/readme/werkzeug.png) - The project uses the Werkzeug WSGI library to manage the Web Server Gateway Interface and related tasks.
+-	![jinja](wireframes/readme/jinja.png) -  The project uses the Jinja templating engine.
+-	![materialize](wireframes/readme/materialize.png) – The project uses Materialize to aid in responsive design and conforming to the google material design language.
+-	![fontawesome](wireframes//readme/font-awesome.png) - Font Awesome was the source of all icons.
+-	![googlefonts](wireframes/readme/google-fonts.jpg) - Fonts used on the website courtesy of Google Fonts
+-	![jquery](wireframes/readme/jquery.png) - The project uses JQuery to simplify DOM manipulation.
+
+**3. Database Management System**
+-	![mongodb](wireframes/readme/mongodb.jpg)  - MongoDB was the chosen NoSQL database for this website.
+-	![mongodb](wireframes/readme/mongodb.jpg) - MongoDB Atlas was the cloud database service used to host.the database.
+
+**4.Version Control, storage and hosting**
+-	![gitpod](wireframes/readme/gitpod.png) - Main workspace IDE (Integrated Development Environment)
+-	![gitversioncontrol](wireframes/readme/git-version-control.png) – Distributed Version Control tool to store versions of files and track changes.
+-	 ![github](wireframes/readme/github.png) - Used to store the project repository and deploy the site via github pages.
+- ![heroku](wireframes/readme/heroku.png) - Heroku was used in order to deploy the website
+
+**5.Editors**
+-	[Typora]( https://typora.io/) - Typora was used to simplify creation of the README.md file.
+-	[dbdiagram]( https://dbdiagram.io/home) - Used to create Entity Relationship Diagrams of the database.
+-	[balsamiq]( https://balsamiq.com/) - Wireframing design tool to create wireframes.
+
+**6.IDE Extensions used in GitPod**
+- Auto Close Tag
+- Prettier - Code Formatter
+- Bracket Pair Colorizer
+- Code spell Checker
+- FontAwesome Auto-complete
 
 **5. Other**
 
 ---
-## Resources
 
+## Resources
+- [cloudinary](https://cloudinary.com/) - Cloudinary is being used to access the image through cloud and edited the images as well using it.
+- [Code Institute Course Content](https://courses.codeinstitute.net/login) -Main source of fundamental knowledge.
+- Code Institute SLACK Community - Source of assistance.
+- [Responsinator](http://www.responsinator.com/) - Responsive website mock up image generator.
+- [Am I Responsive?](http://ami.responsivedesign.is/) - used to check how the website will look on different devices.
+- [Autoprefixer](https://autoprefixer.github.io/) - used to add vendor prefixes.
+- [Google chrome developer tools](https://developer.chrome.com/docs/devtools/) - used to check page elements, help debug issues with the site layout and test different CSS styles and console JS.
+- [w3schools](https://www.w3schools.com/) - used as general source of knowledge.
+- [Stack Overflow](https://stackoverflow.com/) - used as general source of knowledge.
+- [Colors](https://coolors.co/) - color schemes generator.
+- [Contrast checker](https://webaim.org/resources/contrastchecker/) -contrast color checker.
+- [TinyPNG](https://tinypng.com/) - Efficient compression of images for site.
+- [RedKetchup](https://redketchup.io/) -  to convert an image into a favicon and edit icons for used technologies.
+- [Grammarly](https://www.grammarly.com/) - used to help with grammar check.
+- [youtube](https://www.youtube.com/) - used for general resourse.
 ---
 ## Testing
 - Click [here](TESTING.md) for the full testing process.
