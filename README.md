@@ -261,6 +261,12 @@ The default image if the don’t enter anything has taken from [here]()
 
 **Features Left to Implement when skills develop**
 
+*	Rate and comment recipes. Users will be able to rate and comment recipes of other users which may improve the recipes.
+*	Print and download recipes that might be useful for users who prefer or would like to keep their recipes in more traditional paper way or make a book for a friends and family.
+*	Forgot Password: The primary design goals were to make the website easy-to-use and intuitive for users. An e-mail address will be required when creating an account for this feature to be implemented. It could be considered in future development.
+*	Uploading Images: The application is currently using full image URLs to display pictures of recipes. This is because databases store image locations as a URL and the file itself is located elsewhere. Uploading images directly could be considered in future development.
+* Image File Upload Ability to upload images from users personal image library as opposed to only using URL's. This would be useful as it's a social media norm rather than using URL's
+
 ## Technologies Used
 **1. Languages**
 -	![html5](wireframes/readme/html5.png) – HTML5
@@ -400,7 +406,7 @@ Change the current working directory to the location where you want the cloned d
 6. Press Enter and you local clone will be created.
 
 ## Deployment
-The application project requires back-end technologies such as server, application, and database so it was deployed using [Heroku](https://dashboard.heroku.com/apps) which is a cloud platforn with a service supporting several programming languages including python. GitHub can only host a static website. There are two ways to deploy a website in Heroku. One is to use Heroku Command Line Interface (CLI) and another one is to connect to GitHub repository.This is deploying by Connecting to GitHub repository.
+The application project requires back-end technologies such as server, application, and database so it was deployed using [Heroku](https://dashboard.heroku.com/apps) which is a cloud platforn with a service supporting several programming languages including python. GitHub can only host a static website. There are two ways to deploy a website in Heroku. One is to use Heroku Command Line Interface (CLI) and another one is to connect to GitHub repository by Heroku.This is deploying by Connecting to GitHub repository.
 
 Before deploying the website to Heroku, please follow this very important step to make the app work in Heroku correctly.
 
@@ -438,9 +444,13 @@ Once those steps are done, the website can be deployed and below are the steps o
 ## Credits
 
 **Media**
-
+- Hero image wad downloaded and customised from[pixaby](https://pixabay.com/photos/smoothies-juice-fruit-colorful-3809517/)
 **Content**
 
 **Code Snippets**
 
 ## Acknowledgments
+I would like to thank:
+- My mentor Aaron Sinnott for his helpful and valuable feedback and guidance.
+- Tutor support at Code Institute, for funtastic support and help with my technical questions.
+- Slack community for their suggestions and support.
