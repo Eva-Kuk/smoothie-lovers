@@ -330,7 +330,7 @@ The default image if the don’t enter anything has taken from [here]()
 - Click [here](TESTING.md) for the full testing process.
 
 Overview
-- [Encountered Issues](TESTING.md#encounteredissues)
+- [Encountered Issues](TESTING.md#encountered-issues)
 - [Code Validation](TESTING.md#code-validation)
 - [Testing User stories](TESTING.md#testing-user-stories)
 - [Testing Functionality](TESTING.md#testing-functionality)
