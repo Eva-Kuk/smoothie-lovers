@@ -444,7 +444,8 @@ Once those steps are done, the website can be deployed and below are the steps o
 ## Credits
 
 **Media**
-- Hero image wad downloaded and customised from[pixaby](https://pixabay.com/photos/smoothies-juice-fruit-colorful-3809517/)
+- Hero image was downloaded and customised from[pixaby](https://pixabay.com/photos/smoothies-juice-fruit-colorful-3809517/)
+- Raspberry mint smoothie was downloaded fromn [pixaby](https://pixabay.com/photos/smoothie-raspberry-food-healthy-1427436/)
 **Content**
 
 **Code Snippets**
