@@ -9,10 +9,15 @@
 <body>
     {% for recipe in recipes %}
         {{ recipe.name }}<br>
+        <img src={{ recipe.image_url }} alt="recipe image">
         {{ recipe.category_name }}<br>
         {{ recipe.description }}<br>
-        {{ recipe.ingredients_list }}<br>
-        {{ recipe.method }}
+            {% for ingredient in recipe.ingredients_list %}
+                {{ ingredient }}<br>
+            {% endfor %}
+            {% for method in recipe.method %}
+                {{ method }}<br>
+            {% endfor %}    
     {% endfor %}
 </body>
 </html>
