@@ -444,9 +444,38 @@ Once those steps are done, the website can be deployed and below are the steps o
 ## Credits
 
 **Media**
+
 - Hero image was downloaded and customised from[pixaby](https://pixabay.com/photos/smoothies-juice-fruit-colorful-3809517/)
 - Raspberry mint smoothie was downloaded fromn [pixaby](https://pixabay.com/photos/smoothie-raspberry-food-healthy-1427436/)
+- Image for "Antiaging coconut turmeric smoothie" recipe  Photo by Douglas Bagg on Unsplash
+- Image for "Strawberry smoothie" recipe from [unsplash](https://unsplash.com/photos/n73TTunlskE) by Denis Tuksar on Unsplash
+- Image for "Wrinkle fighting smoothie] from [unsplash](https://unsplash.com/photos/cjiJUfFCoUs) by Sara Cervera on Unsplash
+- Image for "Hangover cure smoothie" recipe from [pixaby](https://pixabay.com/photos/green-smoothie-drink-healthy-food-682620/) by NatureFriend from Pixabay
+
 **Content**
+
+Images and content for database recipes in MongoDB were taken from source below:
+
+- [fat burning smoothie recipe and image](https://simplegreensmoothies.com/recipes/fat-burning-smoothie)
+- [anti-inflammatory smoothie and image]( https://simplegreensmoothies.com/recipes/anti-inflammatory-smoothie-recipe)
+- [meal replacement smoothie and image]( https://simplegreensmoothies.com/recipes/meal-replacement-smoothies)
+- [pineapple ginger smoothie and image]( https://simplegreensmoothies.com/recipes/pineapple-ginger-smoothie)
+- [apple celery smoothie and image]( https://simplegreensmoothies.com/recipes/apple-celery-smoothie[best )
+- [best green vitamin booster and image](https://simplegreensmoothies.com/recipes/best-green-smoothie)
+- [banana berry smoothie]( https://therealfoodrds.com/anti-aging-banana-berry-smoothie)
+- [antiaging coconut turmeric smoothie]( https://www.foodmatters.com/recipe/the-anti-aging-coconut-turmeric-smoothie)
+- [raspberry Mint Smoothie]( https://insidebrucrewlife.com/skinny-raspberry-mint-smoothie/)
+- [strawberry smoothie]( https://www.bbcgoodfood.com/recipes/strawberry-smoothie)
+- [peanut butter oatmeal smoothie]( https://chefsavvy.com/peanut-butter-oatmeal-smoothie/)
+- [coconut pineapple banana smoothie]( https://simplegreensmoothies.com/recipes/weight-gain-smoothie)
+- [glowing skin smoothie]( https://sallysbakingaddiction.com/glowing-skin-smoothie/)
+- [strawberry ginger smoothie]( https://www.natalieshealth.com/strawberry-ginger-smoothie/)
+- [hangover cure smoothie]( https://www.self.com/story/pharmacist-approved-hangover-cure)
+- [dreamy orange smoothie]( https://wholefully.com/orange-smoothie-recipe-creamsicle/)
+- [chocolate peanut smoothie]( https://wholefully.com/chocolate-peanut-butter-smoothie-recipe/)
+
+
+
 
 **Code Snippets**
 
