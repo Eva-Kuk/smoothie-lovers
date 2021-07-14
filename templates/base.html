@@ -30,33 +30,33 @@
         <!--CREDIT: navbar code customized from materializecss-->
         <!-- Dropdown Structure -->
         <div class="navbar-fixed">
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">Stay Healthy</a></li>
-            <li><a href="#!">Stay Young</a></li>
-            <li><a href="#!">Stay Fit</a></li>
-            <li><a href="#!">Stay Happy</a></li>
-        </ul>
-        <nav class="nav-extend text-shadow nav-color">
-            <!-- top navbar -->
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo center"><img src="../static/images/logo.png"
-                        alt="Smoothie Lovers Logo"></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-                <ul class="left hide-on-med-and-down">
-                    <li><a href="#">Recipes</a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"> Collections <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="#">Utensils</a></li>
-                </ul>
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!">Stay Healthy</a></li>
+                <li><a href="#!">Stay Young</a></li>
+                <li><a href="#!">Stay Fit</a></li>
+                <li><a href="#!">Stay Happy</a></li>
+            </ul>
+            <nav class="nav-extend text-shadow nav-color">
+                <!-- top navbar -->
+                <div class="nav-wrapper">
+                    <a href="{{ url_for('get_recipes') }}" class="brand-logo center"><img src="../static/images/logo.png"
+                            alt="Smoothie Lovers Logo"></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                    <ul class="left hide-on-med-and-down">
+                        <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"> Collections <i class="fas fa-caret-down"></i></a></li>
+                        <li><a href="#">Utensils</a></li>
+                    </ul>
 
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Login</a></li>
-                </ul>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
 
-            </div>
-        </nav>
-    </div>
+                </div>
+            </nav>
+        </div>
         <!-- mobile sidenav-->
         <ul id="dropdown2" class="dropdown-content">
             <li><a href="#!">Stay Healthy</a></li>
@@ -69,10 +69,10 @@
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown2"> Collections <i class="fas fa-caret-down"></i></a></li>
             <li><a href="#">Utensils</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#">Register</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="#">Login</a></li>
         </ul>
-    
+        <!-- End of site navigation-->
     </header>
 
 
