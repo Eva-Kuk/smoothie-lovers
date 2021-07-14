@@ -1,31 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A smoothie recipes website that you can see recipes added by other people as well as to share your own recipes from your profile">
+    <meta name="description"
+        content="A smoothie recipes website that you can see recipes added by other people as well as to share your own recipes from your profile">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
-    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Compiled and minified CSS from materialize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
     <!-- Style css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
 
     {% block styles %}
-    {% endblock %} 
+    {% endblock %}
 
     <title>Smoothie Lovers</title>
 </head>
+
 <body>
+    <header>
+        <!--CREDIT: navbar code customized from materializecss-->
+        <!-- Dropdown Structure -->
+        <div class="navbar-fixed">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Stay Healthy</a></li>
+            <li><a href="#!">Stay Young</a></li>
+            <li><a href="#!">Stay Fit</a></li>
+            <li><a href="#!">Stay Happy</a></li>
+        </ul>
+        <nav class="nav-extend text-shadow nav-color">
+            <!-- top navbar -->
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center"><img src="../static/images/logo.png"
+                        alt="Smoothie Lovers Logo"></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="#">Recipes</a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"> Collections <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Utensils</a></li>
+                </ul>
+
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+        <!-- mobile sidenav-->
+        <ul id="dropdown2" class="dropdown-content">
+            <li><a href="#!">Stay Healthy</a></li>
+            <li><a href="#!">Stay Young</a></li>
+            <li><a href="#!">Stay Fit</a></li>
+            <li><a href="#!">Stay Happy</a></li>
+        </ul>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#">Recipes</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown2"> Collections <i class="fas fa-caret-down"></i></a></li>
+            <li><a href="#">Utensils</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    
+    </header>
+
+
+
+
+
+
+
+
     {% block content %}
     {% endblock %}
     <!-- jquery CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- Compiled and minified JavaScript from materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -35,4 +96,5 @@
     {% block scripts %}
     {% endblock %}
 </body>
+
 </html>
