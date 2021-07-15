@@ -44,7 +44,23 @@ nav ul a,
 }
 .dropdown-content,
 .sidenav {
-    background-color:#e0e0e0e0 ;
+    background-color:#e0e0e0e0;
     text-shadow: 1px 1px 1px;
 }
 
+
+/*----------------REGISTER PAGE------------------*/
+.flashes h4 {
+    line-height: 2;
+    background-color:#989696c9;
+}
+.card-panel {
+    background-color:#fffcfcdb;
+}
+.button-style {
+    background-color:#c41c1c;
+}
+
+.btn-large:hover {
+    background-color: #008f2b;
+}
