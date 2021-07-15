@@ -52,6 +52,7 @@
 
                     <ul class="right hide-on-med-and-down">
                         <li><a href="#">Contact</a></li>
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('register') }}">Register</a></li>
                         <li><a href="{{ url_for('login') }}">Login</a></li>
                     </ul>
@@ -72,6 +73,7 @@
                  Collections <i class="fas fa-caret-down"></i></a></li>
             <li><a href="#">Utensils</a></li>
             <li><a href="#">Contact</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="{{ url_for('login') }}">Login</a></li>
         </ul>
