@@ -16,12 +16,14 @@
             <div class="card-content">
             <!-- Recipe Serves & Callories Per Serving -->   
             <p class="center-align">
-              <i class="fas fa-users"></i> {{ recipe.serves }} |
-              <i class="fas fa-fire"></i> {{ recipe.calories }}</p>
+              <i class="fas fa-users tooltipped" data-position="left" 
+              data-tooltip="Serves"></i> {{ recipe.serves }}   |  
+              <i class="fas fa-fire tooltipped" data-position="right" 
+              data-tooltip="Calories per serve"></i> {{ recipe.calories }}</p>
 
                 <p class="category-font">Category: {{ recipe.category_name }}</p>
                 
-                <p class="right-align added-font">Recipe added by: {{ recipe.added_by }}</p>
+                <p class="right-align added-font">Added by: {{ recipe.added_by }}</p>
             </div>
             <div class="card-action">
               <a href="#" class="see-recipe-font">See Recipe</a>
