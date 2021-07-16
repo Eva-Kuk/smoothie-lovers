@@ -1,12 +1,10 @@
-// Mobile Collapse and toolpit Initialization from materializecss
+// Initialization from materializecss
 $(document).ready(function(){
     $(".sidenav").sidenav();
+    $(".dropdown-trigger").dropdown();
     $('.tooltipped').tooltip();
+    $('select').formSelect();
   });
 
-
-
-// Dropdown menu on click trigger from materializecss
-  $(".dropdown-trigger").dropdown();
-
- 
+  
+  
