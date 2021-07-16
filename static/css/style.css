@@ -63,3 +63,32 @@ nav ul a,
 .btn-large:hover {
     background-color: #008f2b;
 }
+
+/*----------------RECIPE CARDS ------------------*/
+.title-font {
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+}   
+
+
+.category-font  {
+    font-weight:600;
+
+}
+.card .card-content p {
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+.card .card-content {
+    padding: 0.9rem;
+}
+.added-font {
+    font-size: 1rem;
+}
+.see-recipe-font {
+    text-transform: capitalize !important;
+    color:#f72626 !important;
+    font-size: 1.1rem;
+}
