@@ -15,7 +15,7 @@
         <!-- Serves -->
         <div class="row card-panel z-depth-2 card-style">
             <div class="input-field col s12" method="POST" action="">
-                <select id="serves" name="serves" aria-label="Recipe Serves">
+                <select id="serves" name="serves" class="validate" required>
                     <option value="" disabled selected>Serves</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -51,12 +51,11 @@
         <!-- Choose Category -->
         <div class="row card-panel z-depth-2 card-style">
             <div class="input-field col s12" method="POST" action="">
-                <select id="category_name" name="category_name" aria-label="Recipe Categories">
+                <select id="name" name="name" class="validate" required aria-label="Recipe Categories">
                     <option value="" disabled selected>Choose Category</option>
-                    <option value="1">Stay Healthy</option>
-                    <option value="2">Stay Young</option>
-                    <option value="3">Stay Fit</option>
-                    <option value="3">Stay Happy</option>
+                    {% for category in categories %}    
+                        <option value="{{ category.name }}">{{ category.name }}</option>
+                    {% endfor %}
                 </select>
             </div>
         </div>
