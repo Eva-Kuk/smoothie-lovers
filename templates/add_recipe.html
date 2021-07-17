@@ -61,18 +61,21 @@
         </div>
         <!-- Recipe Ingredients -->
         <div class="row card-panel z-depth-2 card-style">
-            <h5 class="col s12">Ingredients</h5>
+            <h4 class="col s12">Ingredients</h4>
             <div class="col s12">
                 <ul id="ingredients" class="collection">
+                    {% for ingredient in ingredients %}
                     <li class="collection-item">
                         <div class="input-field">
-                            <input name="ingredients" type="text" value="" maxlength="65" required>
+                            <input name="ingredients" type="text" value="{{ ingredients }}" maxlength="80" required>
                         </div>
-                        <a class="remove-list-item"><i class="material-icons">clear</i></a>
+                        <a class="btn-floating btn-small remove-list-item">
+                            <i class="fas fa-minus"> </i></a>
                     </li>
+                    {% endfor %}
                     <li class="collection-item">
                         <a class="btn-floating btn-small add-list-item">
-                            <i class="material-icons">+</i>
+                            <i class="fas fa-plus"></i>
                         </a>
                     </li>
                 </ul>
@@ -81,19 +84,23 @@
 
         <!-- Recipe Methods -->
         <div class="row card-panel z-depth-2 card-style">
-            <h5 class="col s12">Method</h5>
+            <h4 class="col s12">Method</h4>
             <div class="col s12">
-                <div class="col s12">
                     <ul id="method" class="collection">
+                        {% for method in methods %}
                         <li class="collection-item">
                             <div class="input-field">
-                                <input name="method" type="text" value="" maxlength="150" required>
+                                <textarea name="method" class="materialize-textarea" required>
+                                    {{ - method -}}
+                                </textarea>    
                             </div>
-                            <a class="remove-list-item"><i class="material-icons">clear</i></a>
+                            <a class="btn-floating btn-small remove-list-item">
+                                <i class="fas fa-minus"> </i></a>
                         </li>
+                        {% endfor %}
                         <li class="collection-item">
                             <a class="btn-floating btn-small add-list-item">
-                                <i class="material-icons">+</i>
+                                <i class="fas fa-plus"></i>
                             </a>
                         </li>
                     </ul>

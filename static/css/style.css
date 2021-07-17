@@ -21,6 +21,9 @@ h2,
 h3 {
     font-family: 'Changa', sans-serif;
 }
+h4 {
+    font-size:1rem;
+}
 /*----------------NAVIGATION------------------*/
 .text-shadow {
     text-shadow: 1px 1px 1px;
@@ -71,7 +74,6 @@ nav ul a,
     margin-bottom: 0.2rem;
 }   
 
-
 .category-font  {
     font-weight:600;
 
@@ -93,9 +95,21 @@ nav ul a,
     font-size: 1.1rem;
 }
 
-
+/*---------------- ADD RECIPE PAGE ------------------*/
 .card-style {
     margin: 1rem;
     padding: 0.5rem;
     background-color:#fffcfcdb ;
+}
+.add-list-item {
+    background-color:#008f2b ;
+}
+.add-list-item:hover {
+    background-color:#00b837;
+}
+.remove-list-item {
+    background-color:#c41c1c;
+}
+.remove-list-item:hover {
+    background-color:#e33b3b;
 }
