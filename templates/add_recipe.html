@@ -53,8 +53,8 @@
         <!-- Category Selection-->
         <div class="row card-panel z-depth-2 card-style">
             <div class="input-field col s12">
-                <select id="category_name" name="category_name" class="validate" 
-                required aria-label="Recipe Categories">
+                <select id="name" name="name" class="validate" 
+                 aria-label="Recipe Categories" required>
                     <option value="" disabled selected>Choose Category</option>
                     {% for category in categories %}
                     <option value="{{ category.name }}">{{ category.name }}</option>
@@ -71,7 +71,7 @@
                     <li class="collection-item">
                         <div class="input-field">
                             <input name="ingredients" type="text" 
-                            value="{{ ingredients }}" maxlength="120" required>
+                            value="{{ ingredients }}" maxlength="120" class="validate" required>
                         </div>
                         <a class="btn-floating btn-small remove-list-item">
                         </i></a>
@@ -95,7 +95,7 @@
                     <li class="collection-item">
                         <div class="input-field">
                             <input name="method" type="text" 
-                            value="{{ method }}" maxlength="120" required>
+                            value="{{ method }}" maxlength="120" class="validate" required>
                         </div>
                         <a class="btn-floating btn-small remove-list-item">
                             <i class="fas fa-minus"> </i></a>
