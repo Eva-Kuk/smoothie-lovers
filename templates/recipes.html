@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col s12 m6 l4 xl3">
         {% for recipe in recipes %}   
-          <div class="card">
+          <div class="card hoverable">
             <div class="card-image recipe-image">
                 <img src={{ recipe.image_url }} alt="recipe image">
             </div>
@@ -25,7 +25,7 @@
             </div>
             <div class="card-action">
               <a href="#" class="see-recipe-font">See Recipe</a>
-              <a href="" class="btn-small add-list-item  right">Edit</a>
+              <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small add-list-item  right">Edit</a>
             </div>
           </div>
         
