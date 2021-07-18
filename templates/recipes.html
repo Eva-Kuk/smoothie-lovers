@@ -1,20 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
- 
+  <h3 class="center-align">All Recipes</h3>
     
     <div class="row">
         <div class="col s12 m6 l4 xl3">
         {% for recipe in recipes %}   
           <div class="card">
-            <div class="card-image">
+            <div class="card-image recipe-image">
                 <img src={{ recipe.image_url }} alt="recipe image">
-              
             </div>
-            
             <span class="card-title center-align"><h3 class="title-font">{{ recipe.name }}</h3></span>
             <div class="card-content">
-            <!-- Recipe Serves & Callories Per Serving -->   
+            <!-- Recipe Serves & Calories Per Serving -->   
             <p class="center-align">
               <i class="fas fa-users tooltipped" data-position="left" 
               data-tooltip="Serves"></i> {{ recipe.serves }}   |  
@@ -23,7 +21,7 @@
 
                 <p class="category-font">Category: {{ recipe.category_name }}</p>
                 
-                <p class="right-align added-font">Added by: {{ recipe.added_by }}</p>
+                <p class="right-align added-font"><em>Added by: {{ recipe.added_by }}</em></p>
             </div>
             <div class="card-action">
               <a href="#" class="see-recipe-font">See Recipe</a>

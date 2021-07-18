@@ -12,7 +12,7 @@ $(document).ready(function(){
 $( "#ingredients .add-list-item" ).click(function(event) {
   let listItem = `<li class='collection-item'>
                     <div class='input-field'>
-                      <input name='ingredients' type='text' maxlength='80' required>
+                      <input name='ingredients' type='text' maxlength='120' required>
                     </div>
                     <a class="btn-floating btn-small remove-list-item">
                     <i class="fas fa-minus"></i></a>
@@ -20,7 +20,7 @@ $( "#ingredients .add-list-item" ).click(function(event) {
   $( this ).parent().before(listItem);
 });
   
-// Removing list item from the  ingredients list and method in add_recipe page
+// Removing list item from the  ingredients list and steps in add_recipe page
 $( "#method, #ingredients").on("click", ".remove-list-item", function(event) {
   $( this ).parent().remove();
 });
@@ -29,7 +29,7 @@ $( "#method, #ingredients").on("click", ".remove-list-item", function(event) {
 $( "#method .add-list-item" ).click(function(event) {
   let listItem =  `<li class='collection-item'>
                     <div class='input-field'>
-                      <textarea name='methods' class='materialize-textarea' required></textarea>
+                    <input name='method' type='text' maxlength='120' required>
                     </div>
                     <a class="btn-floating btn-small remove-list-item">
                     <i class="fas fa-minus"></i></a>
