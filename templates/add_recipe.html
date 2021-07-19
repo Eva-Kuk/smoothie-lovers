@@ -7,9 +7,8 @@
     <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
         <!-- Recipe Name -->
         <div class="row card-panel z-depth-2 card-style">
-            <div class="input-field col s12" >
-                <input id="name" name="name" minlength="1" 
-                maxlength="45" type="text" class="validate" required>
+            <div class="input-field col s12">
+                <input id="name" name="name" minlength="1" maxlength="45" type="text" class="validate" required>
                 <label for="name">Recipe Name</label>
             </div>
         </div>
@@ -30,8 +29,7 @@
         <!-- Calories -->
         <div class="row card-panel z-depth-2 card-style">
             <div class="input-field col s12">
-                <input id="calories" name="calories" type="text" 
-                class="validate" placeholder="250" required>
+                <input id="calories" name="calories" type="text" class="validate" placeholder="250" required>
                 <label for="calories">Calories per serving</label>
             </div>
         </div>
@@ -53,8 +51,7 @@
         <!-- Category Selection-->
         <div class="row card-panel z-depth-2 card-style">
             <div class="input-field col s12">
-                <select id="name" name="name" class="validate" 
-                 aria-label="Recipe Categories" required>
+                <select id="name" name="name" class="validate" aria-label="Recipe Categories" required>
                     <option value="" disabled selected>Choose Category</option>
                     {% for category in categories %}
                     <option value="{{ category.name }}">{{ category.name }}</option>
@@ -70,11 +67,11 @@
                     {% for ingredient in ingredients %}
                     <li class="collection-item">
                         <div class="input-field">
-                            <input name="ingredients" type="text" 
-                            value="{{ ingredients }}" maxlength="120" class="validate" required>
+                            <input name="ingredients" type="text" value="{{ ingredient }}" maxlength="120"
+                                class="validate" required>
                         </div>
                         <a class="btn-floating btn-small remove-list-item">
-                        </i></a>
+                            <i class="fas fa-minus"></i></a>
                     </li>
                     {% endfor %}
                     <li class="collection-item">
@@ -94,8 +91,8 @@
                     {% for method in methods %}
                     <li class="collection-item">
                         <div class="input-field">
-                            <input name="method" type="text" 
-                            value="{{ method }}" maxlength="120" class="validate" required>
+                            <input name="method" type="text" value="{{- method -}}" maxlength="120" class="validate"
+                                required>
                         </div>
                         <a class="btn-floating btn-small remove-list-item">
                             <i class="fas fa-minus"> </i></a>
