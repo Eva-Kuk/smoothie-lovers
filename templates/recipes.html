@@ -21,11 +21,14 @@
 
                 <p class="category-font">Category: {{ recipe.category_name }}</p>
                 
-                <p class="right-align added-font"><em>Added by: {{ recipe.added_by }}</em></p>
+                <p  class="right-align added-font"><em>Added by: {{ recipe.added_by }}</em></p>
             </div>
             <div class="card-action">
-              <a href="#" class="see-recipe-font">See Recipe</a>
-              <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small add-list-item  right">Edit</a>
+      
+                <a href="" class="see-recipe-font">See Recipe</a>
+                {% if session.user|lower == recipe.added_by|lower %}
+                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small add-list-item  right">Edit</a>
+              {% endif %}
             </div>
           </div>
         
