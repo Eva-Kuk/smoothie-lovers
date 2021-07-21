@@ -104,11 +104,19 @@ nav ul a,
 .add-list-item:hover {
     background-color:#00b837;
 }
+.add-list-item:visited {
+    background-color:#008f2b;
+}
 .remove-list-item {
     background-color:#c41c1c;
 }
 .remove-list-item:hover {
     background-color:#e33b3b;
 }
-
-/*---------------- CATEGORIES PAGE ------------------*/
+.remove-list-item {
+    background-color:#c41c1c;
+}
+/*----------------ADD CATEGORY PAGE ------------------*/
+.text-style {
+    font-size: 0.9rem;
+}
