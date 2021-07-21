@@ -28,22 +28,18 @@ h4 {
 .text-shadow {
     text-shadow: 1px 1px 1px;
 }
-
 .nav-color {
     background-color: #e0e0e0e0;
 }
-
 nav a,
 nav ul a,
 .sidenav h3 {
     color: #140101;
     font-size: 1.2rem;
     font-weight: 500;
-    
 }
 .dropdown-content li>a, .dropdown-content li>span {
     color: #140101;
-
 }
 .dropdown-content,
 .sidenav {
@@ -72,22 +68,18 @@ nav ul a,
     height: fit-content;
     width: 100%;
 }
-
 .title-font {
     font-size: 1.7rem;
     margin-top: 1rem;
     margin-bottom: 0.2rem;
 }   
-
 .category-font  {
     font-weight:600;
-
 }
 .card .card-content p {
     margin-top: 8px;
     margin-bottom: 4px;
 }
-
 .card .card-content {
     padding: 0.9rem;
 }
@@ -118,3 +110,5 @@ nav ul a,
 .remove-list-item:hover {
     background-color:#e33b3b;
 }
+
+/*---------------- CATEGORIES PAGE ------------------*/
