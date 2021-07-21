@@ -32,7 +32,7 @@ In app.py wrong variable targeted instead of recipes the tasks was targeded.
 
 3. **ISSUE:**  While binding data to the recipe edit form I encountered a data binding problem with ingredients sections in edit_recipe form.
 The data did not want to display at all or all listed ingredients were displayed in each line depense on how many ingredients were listed in the recipe.
-- SOLUTION: The problem was in looping over `{{ ingredients }}` in `for ingredient in recipe.ingredients` and the value should be `{{ ingredient }}`
+- **SOLUTION:** The problem was in looping over `{{ ingredients }}` in `for ingredient in recipe.ingredients` and the value should be `{{ ingredient }}`
 
 ![ingredient edit recipe](wireframes/testing/ingredient-edit-recipe.jpg)
 
@@ -41,6 +41,10 @@ The data did not want to display or all.
 - **SOLUTION:** The problem was the wrong property in for loop `{% for method in recipe.methods %}` should be `{% for method in recipe.method %}`
 
 ![method edit recipe](wireframes/testing/method-edit-recipe.jpg)
+
+5. **BUG:** When trying to get a new account for the user, the register form stopped working and an error appeared `Incorrect Username and/or Password`
+- **SOLUTION:** The problem was accidentally changed url_for address from `register` to `login`, which was restored to the correct one
+![register wrong value](wireframes/testing/register-wrong-value.jpg)
 
 ## Code Validation
 ---
