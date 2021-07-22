@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="center-align">Edit Category</h3>
+
+<div class="row ">
+    <form class="col s12" method="POST" action="{{ url_for('edit_category', category_id=category._id) }}">
+        <!-- Category Name -->
+        <div class="row card-panel z-depth-2 card-style">
+            <div class="input-field col s12">
+                <input id="name" name="name" minlength="4" maxlength="20" type="text" value="{{ category.name }}" class="validate" required>
+                <p class="text-style">Category should start with the word <b>Stay</b> and be no longer than 20 characters</p>
+                <label for="name">Category Name</label>
+            </div>
+        </div>
+    
+        <!-- Submit Button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('get_categories') }}" class="btn-small remove-list-item">Cancel<i class="fas fa-times-circle right"></i></a>
+                <button type="submit" class="btn-small add-list-item">
+                   Edit Category <i class="fas fa-edit right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

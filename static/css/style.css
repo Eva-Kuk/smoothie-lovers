@@ -113,7 +113,7 @@ nav ul a,
 .remove-list-item:hover {
     background-color:#e33b3b;
 }
-.remove-list-item {
+.remove-list-item:visited {
     background-color:#c41c1c;
 }
 /*----------------ADD CATEGORY PAGE ------------------*/
