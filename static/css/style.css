@@ -120,3 +120,28 @@ nav ul a,
 .text-style {
     font-size: 0.9rem;
 }
+
+/*---------------- FOOTER ------------------*/
+.footer {
+    background-color: #e0e0e0e0;
+    position: relative;
+    font-size: 1.2rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    bottom: 0px;
+    z-index: 1030;
+}
+.social-links-item {
+    color: #140101;
+    font-size: 1.6rem;
+    padding-left: 5px;
+}
+.margin-bottom {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.copyright {
+    padding-right: 0px;
+    font-size:1rem ;
+}

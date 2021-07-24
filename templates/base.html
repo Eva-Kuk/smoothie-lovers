@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="A smoothie recipes website that you can see recipes 
+    <meta name="description" content="A smoothie recipes website that you can see recipes 
         added by other people as well as to share your own recipes from your profile">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Compiled and minified CSS from materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
+
     <!-- Style css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
 
@@ -40,28 +43,28 @@
             <nav class="nav-extend text-shadow nav-color">
                 <!-- top navbar -->
                 <div class="nav-wrapper">
-                    <a href="{{ url_for('get_recipes') }}" class="brand-logo center"><img src="../static/images/logo.png"
-                            alt="Smoothie Lovers Logo"></a>
+                    <a href="{{ url_for('get_recipes') }}" class="brand-logo center"><img
+                            src="../static/images/logo.png" alt="Smoothie Lovers Logo"></a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="left hide-on-med-and-down">
                         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
                         <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">
-                             Collections <i class="fas fa-caret-down"></i></a></li>
+                                Collections <i class="fas fa-caret-down"></i></a></li>
                         <li><a href="#">Utensils</a></li>
                     </ul>
 
                     <ul class="right hide-on-med-and-down">
                         <li><a href="#">Contact</a></li>
                         {% if session.user %}
-                            <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
-                            {% if session.user|lower == "admin"|lower %}
-                                <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                            {% endif %}
-                            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                        <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
+                        {% if session.user|lower == "admin"|lower %}
+                        <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+                        {% endif %}
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                         {% else %}
-                            <li><a href="{{ url_for('login') }}">Login</a></li>
-                            <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
                         {% endif %}
                     </ul>
 
@@ -78,19 +81,19 @@
         <ul class="sidenav" id="mobile-demo">
             <li><a href="#">Recipes</a></li>
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">
-                 Collections <i class="fas fa-caret-down"></i></a></li>
+                    Collections <i class="fas fa-caret-down"></i></a></li>
             <li><a href="#">Utensils</a></li>
             <li><a href="#">Contact</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
-                {% if session.user|lower == "admin"|lower %}
-                    <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                {% endif %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
+            {% if session.user|lower == "admin"|lower %}
+            <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
-                <li><a href="{{ url_for('login') }}">Login</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </ul>
         <!-- End of site navigation-->
@@ -99,21 +102,46 @@
     <section>
         <!-- flash masseges -->
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashes">
-                        <h4 class="center-align">{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %} 
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flashes">
+            <h4 class="center-align">{{ message }}</h4>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
     </section>
 
+    <!-- main content -->
     <main class="container">
         {% block content %}
         {% endblock %}
     </main>
-  
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row margin-bottom ">
+                <div class="col text-shadow s8 push-s4 right-align copyright">
+                   <p classs="copyright-padding">Copyright 2021 &copy; Eva-Kuk</p>
+                </div>
+                <div class="col s4 pull-s8 center-align">
+                    <div class="social-links">
+                        <a href="https://www.instagram.com" class="social-links-item" target="_blank" rel="noopener"
+                        aria-label="Go to our Instagram page(opens in a new tab)">
+                        <i class="fab fa-instagram-square"></i></a>
+                        <a  href="https://www.twitter.com" class="social-links-item" target="_blank" rel="noopener"
+                        aria-label="Go to our Twitter page(opens in a new tab)">
+                        <i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.facebook.com" class="social-links-item" target="_blank" rel="noopener"
+                        aria-label="Go to our Facebook page(opens in a new tab)">
+                        <i class="fab fa-facebook-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -126,5 +154,4 @@
     {% block scripts %}
     {% endblock %}
 </body>
-
 </html>
