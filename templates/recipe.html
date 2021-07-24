@@ -1,13 +1,62 @@
 {% extends "base.html" %}
-
-
 {% block content %}
-<div class="container">
-    <div class="row align-center">
-        <div class="col-10 col-md-6">
-            <img src="{{ recipe.image_url }}" class="recipe-image" alt="{{ recipe.name }}">
-        </div>
-    </div>
-</div>
 
+<h1 class="center-align">{{ recipe.name }}</h1>
+<div class="container-fluid recipe-background">
+<section id="section-recipe">
+        <!-- Recipe Image -->
+        <div class="row">
+            <div class="col s12 m6 single-recipe-image">
+                {% if recipe.image_url %}
+                    <img class="single-recipe-image" src="{{ recipe.image_url }}" alt="{{ recipe.name }}" />
+                {% else %}
+                    <img class="single-recipe-image" src="{{ url_for('static', filename='images/image-replacement.jpg') }}" alt="Replacement image" />
+                {% endif %}
+            </div>
+            <div class="col s12 m6 recipe-name">
+                <!-- Recipe Category & Descriptions -->
+                <div class="center-align">
+                    <h4>Category: {{ recipe.category_name }} </h4>
+                </div>
+                <div class="text-center">
+                    <p class="card-text margin-top-description">{{ recipe.description }}</p>
+                </div>
+                <!-- Recipe Serves & Calories-->
+                <div class="center-align">
+                    <h4 class="margin-top-serves">Serves & Calories</h4>
+                    <p class="margin-bottom-serves">
+                        <i class="fas fa-users"></i> {{ recipe.serves }} people | <i class="fas fa-fire"></i> {{ recipe.calories }} kcal
+                    </p>
+                </div>
+                <!-- Recipe added by -->
+                <div>
+                    <p><em> Added by: {{ recipe.added_by }}</em></p>
+                </div>
+            </div>
+            <!-- Recipe Ingredients -->
+            <div class="col s12 m12 l6">
+                <h3 class="center-align">Ingredients</h3>
+                <ul class="list-group list-group-flush border-radius-025">
+                    {% for ingredients in recipe.ingredients %}
+                    <li class="list-group-item">
+                        &#9679; {{ ingredients }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- Recipe Method -->
+            <div class="col s12 m12 l6">
+                <h3 class="center-align">Method</h3>
+                <ul>
+                    {% for method in recipe.method %}
+                    <li>
+                        <span><b>Step {{ loop.index }}</b></span><br>{{ method }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+       
+</section>
+</div>
 {% endblock %}

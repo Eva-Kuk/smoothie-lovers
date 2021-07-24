@@ -18,11 +18,22 @@ body {
     }
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: 'Changa', sans-serif;
 }
+h1 {
+    font-size:2.5rem;
+}
+h2 {
+    font-size:1.9rem;
+}
+h3 {
+    font-size:1.4rem;
+}
 h4 {
-    font-size:1rem;
+    font-size:1.1rem;
+    font-weight: 700;
 }
 /*----------------NAVIGATION------------------*/
 .text-shadow {
@@ -121,7 +132,7 @@ nav ul a,
     font-size: 0.9rem;
 }
 
-/*---------------- FOOTER ------------------*/
+/*--------------------- FOOTER -----------------------*/
 .footer {
     background-color: #e0e0e0e0;
     position: relative;
@@ -144,4 +155,30 @@ nav ul a,
 .copyright {
     padding-right: 0px;
     font-size:1rem ;
+}
+
+
+/*----------------PROFILE PAGE ------------------*/
+
+.height-size {
+    height: 100vh;
+}
+/*----------------SINGLE RECIPE PAGE ------------------*/
+.single-recipe-image {
+    width: 100%; 
+    border-radius: 3px;
+    border-style: solid;
+}
+.margin-top-description {
+    margin-top: 1.9rem;
+}
+.margin-top-serves {
+    margin-top: 2rem;
+}
+.margin-bottom-serves {
+    margin-bottom: 3.8rem;
+}
+.recipe-background {
+    background-color:#e0e0e080 ;
+    padding: 7px;
 }
