@@ -35,10 +35,11 @@
         <!-- Dropdown Structure -->
         <div class="navbar-fixed">
             <ul id="dropdown1" class="dropdown-content">
-                <li><a href="#!">Stay Healthy</a></li>
-                <li><a href="#!">Stay Young</a></li>
-                <li><a href="#!">Stay Fit</a></li>
-                <li><a href="#!">Stay Happy</a></li>
+                {% for category in categories %}
+                <li>
+                    <a href="{{ url_for('categories', name=category.name) }}">{{ category.name }}"></a>
+                </li>
+                {% endfor %}
             </ul>
             <nav class="nav-extend text-shadow nav-color">
                 <!-- top navbar -->
@@ -54,7 +55,6 @@
                     </ul>
 
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="#">Contact</a></li>
                         {% if session.user %}
                         <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
                         {% if session.user|lower == "admin"|lower %}
@@ -79,11 +79,10 @@
             <li><a href="#!">Stay Happy</a></li>
         </ul>
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="#">Recipes</a></li>
+            <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">
                     Collections <i class="fas fa-caret-down"></i></a></li>
             <li><a href="#">Utensils</a></li>
-            <li><a href="#">Contact</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
             {% if session.user|lower == "admin"|lower %}
@@ -122,20 +121,24 @@
     <footer class="footer">
         <div class="container-fluid">
             <div class="row margin-bottom ">
-                <div class="col text-shadow s8 push-s4 right-align copyright">
-                   <p classs="copyright-padding">Copyright 2021 &copy; Eva-Kuk</p>
+                <div class="col text-shadow s9 push-s3 right-align copyright">
+                    <p classs="copyright-padding">Copyright 2021 &copy; Eva-Kuk</p>
                 </div>
-                <div class="col s4 pull-s8 center-align">
+                <div class="col s3 pull-s9 center-align">
                     <div class="social-links">
+                        <h4>Contact Us</h4>
                         <a href="https://www.instagram.com" class="social-links-item" target="_blank" rel="noopener"
-                        aria-label="Go to our Instagram page(opens in a new tab)">
-                        <i class="fab fa-instagram-square"></i></a>
-                        <a  href="https://www.twitter.com" class="social-links-item" target="_blank" rel="noopener"
-                        aria-label="Go to our Twitter page(opens in a new tab)">
-                        <i class="fab fa-twitter-square"></i></a>
+                            aria-label="Go to our Instagram page(opens in a new tab)">
+                            <i class="fab fa-instagram-square"></i></a>
+                        <a href="https://www.twitter.com" class="social-links-item" target="_blank" rel="noopener"
+                            aria-label="Go to our Twitter page(opens in a new tab)">
+                            <i class="fab fa-twitter-square"></i></a>
                         <a href="https://www.facebook.com" class="social-links-item" target="_blank" rel="noopener"
-                        aria-label="Go to our Facebook page(opens in a new tab)">
-                        <i class="fab fa-facebook-square"></i></a>
+                            aria-label="Go to our Facebook page(opens in a new tab)">
+                            <i class="fab fa-facebook-square"></i></a>
+                        <a href="mailto:smoothielovers@gmail.com" class="social-links-item" aria-label="Go to our Email Address (opens in new tab)">
+                            <i class="far fa-envelope"></i></a>
+
                     </div>
                 </div>
             </div>
@@ -154,4 +157,5 @@
     {% block scripts %}
     {% endblock %}
 </body>
+
 </html>

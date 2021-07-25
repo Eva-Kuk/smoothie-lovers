@@ -137,10 +137,9 @@ nav ul a,
     background-color: #e0e0e0e0;
     position: relative;
     font-size: 1.2rem;
-    padding-top: 10px;
+  
     padding-bottom: 10px;
     bottom: 0px;
-    z-index: 1030;
 }
 .social-links-item {
     color: #140101;
