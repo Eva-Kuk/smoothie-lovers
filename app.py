@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -12,7 +13,7 @@ if os.path.exists("env.py"):
 app = Flask(__name__)
 
 # Set up configurations for MongoDB
-app.config["MONGO_DBASE"] = os.environ.get("MONGO_DBASE")
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBASE")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 # Set up secret key
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -26,7 +27,9 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
+    categories = list(mongo.db.categories.find())
+    return render_template(
+        "recipes.html", recipes=recipes, categories=categories)
 
 
 # Search Recipes
@@ -39,6 +42,20 @@ def regex():
         "$regex": query, "$options": "i"}}))
     print("recipes is ", recipes)
     return render_template("recipes.html", recipes=recipes)
+
+
+# Display Recipes By Categories
+@app.route("/categories/<name>")
+def categories(name):
+    recipes = list(mongo.db.recipes.find(
+        {"category_name": name}).sort("_id", -1))
+    categories = list(mongo.db.categories.find())
+    print(categories)
+    return render_template(
+        "recipes.html",
+        recipes=recipes,
+        name=name,
+        categories=categories)
 
 
 # Register a New User
@@ -62,7 +79,7 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+        flash("Registration Complete!")
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
@@ -87,12 +104,12 @@ def login():
                     "profile", username=session["user"]))
             else:
                 # invalid password match
-                flash("Incorrect Username and/or Password")
+                flash("Username or password is incorrect")
                 return redirect(url_for("login"))
 
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash("Username or password is incorrect")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -149,7 +166,7 @@ def add_recipe():
         flash("Recipe Added Succesfully")
         return redirect(url_for("get_recipes"))
 
-    categories = mongo.db.categories.find().sort("name", 1)
+    categories = list(mongo.db.categories.find().sort("name", 1))
     return render_template("add_recipe.html", categories=categories)
 
 
@@ -174,7 +191,7 @@ def edit_recipe(recipe_id):
         flash("Recipe Updated Succesfully")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    categories = mongo.db.categories.find().sort("name", 1)
+    categories = list(mongo.db.categories.find().sort("name", 1))
     return render_template(
         "edit_recipe.html", recipe=recipe, categories=categories)
 

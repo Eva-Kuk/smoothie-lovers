@@ -1,68 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="center-align">All Recipes</h1>
-<!-- Searching for recipes by ingredient-->
-<div class="row">
-  <form action="{{ url_for('regex') }}" method="post" class="col s12">
-    <div class="row  center-align">
-      <div class="input-field col s12 ">
-        <i class="fas fa-search prefix"></i>
-        <input type="text" name="query" id="query" minlenght="3" class="validate" required>
-        <label for="query">Search for recipes by ingredients</label>
-      </div>
-    </div>
-    <div class="col s12 center-align">
-      <a href="{{ url_for('get_recipes') }}" class="btn-small remove-list-item">Reset</a>
-      <button type="submit" class="btn-small add-list-item">
-        <i class="fas fa-search left"></i> Search
-      </button>
-    </div>
-  </form>
-</div>
-<div class="row">
+  <section>
+  <!-- Searching for recipes by ingredient-->
+  <div class="container">
 
-{% if recipes|length > 0 %}
-<!-- Recipe Image & Recipe Name-->
-  {% for recipe in recipes %}
-  <div class="col s12 m6 l4 xl3">
-    <div class="card hoverable">
-      {% if recipe.image_url %}
-        <img class="single-recipe-image" src="{{ recipe.image_url }}" alt="{{ recipe.name }}" />
-      {% else %}
-        <img class="single-recipe-image" src="{{ url_for('static', filename='images/image-replacement.jpg') }}" alt="Replacement image" />
-      {% endif %}
-      <span class="card-title center-align">
-        <h3 class="title-font">{{ recipe.name }}</h3>
-      </span>
-      <div class="card-content">
-        <!-- Recipe Serves, Calories Per Serving, Category, Added By -->
-        <p class="center-align">
-          <i class="fas fa-users tooltipped" data-position="left" data-tooltip="Serves"></i> {{ recipe.serves }} |
-          <i class="fas fa-fire tooltipped" data-position="right" data-tooltip="Calories per serve"></i>
-          {{ recipe.calories }}
-        </p>
-        <p class="category-font">
-          Category: {{ recipe.category_name }}
-        </p>
-        <p class="right-align added-font">
-          <em>Added by: {{ recipe.added_by }}</em>
-        </p>
+    <h1 class="center-align">All Recipes</h1>
+    <div class="row">
+      {% if recipes|length > 0 %}
+      <!-- Recipe Image & Recipe Name-->
+      {% for recipe in recipes %}
+      <div class="col s12 m6 l4 xl3">
+        <div class="card hoverable">
+          {% if recipe.image_url %}
+          <img class="single-recipe-image" src="{{ recipe.image_url }}" alt="{{ recipe.name }}" />
+          {% else %}
+          <img class="single-recipe-image" src="{{ url_for('static', filename='images/image-replacement.jpg') }}"
+            alt="Replacement image" />
+          {% endif %}
+          <span class="card-title center-align">
+            <h3 class="title-font">{{ recipe.name }}</h3>
+          </span>
+          <div class="card-content">
+            <!-- Recipe Serves, Calories Per Serving, Category, Added By -->
+            <p class="center-align">
+              <i class="fas fa-users tooltipped" data-position="left" data-tooltip="Serves"></i> {{ recipe.serves }} |
+              <i class="fas fa-fire tooltipped" data-position="right" data-tooltip="Calories per serve"></i>
+              {{ recipe.calories }}
+            </p>
+            <p class="category-font">
+              Category: {{ recipe.category_name }}
+            </p>
+            <p class="right-align added-font">
+              <em>Added by: {{ recipe.added_by }}</em>
+            </p>
+          </div>
+          <div class="card-action">
+            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="see-recipe-font">See Recipe</a>
+            {% if session.user|lower == recipe.added_by|lower %}
+            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}"
+              class="btn-small remove-list-item  ">Delete</a>
+            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small add-list-item  ">Edit</a>
+            {% endif %}
+          </div>
+        </div>
       </div>
-      <div class="card-action">
-        <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="see-recipe-font">See Recipe</a>
-        {% if session.user|lower == recipe.added_by|lower %}
-        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn-small remove-list-item  ">Delete</a>
-        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small add-list-item  ">Edit</a>
-        {% endif %}
-      </div>
+      {% endfor %}
     </div>
+    {% else %}
+    <h5 class="center-align red-text">
+      No Recipes Were Found With The Selected Ingredient</h5>
+    {% endif %}
   </div>
-  {% endfor %}
-</div>
-{% else %}
-  <h5 class="center-align red-text">
-  No Recipes Were Found With The Selected Ingredient</h5>
-{% endif %}
-
-{% endblock %}
+</section>
+  {% endblock %}
