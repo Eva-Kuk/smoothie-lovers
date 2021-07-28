@@ -33,24 +33,33 @@
   <section>
   <!-- Searching for recipes by ingredient-->
   <div class="container">
-
+  
     <h1 class="center-align">All Recipes</h1>
+    
     <div class="row">
       {% if recipes|length > 0 %}
       <!-- Recipe Image & Recipe Name-->
       {% for recipe in recipes %}
       <div class="col s12 m6 l4 xl3">
         <div class="card hoverable">
+          <div class="card-image">
           {% if recipe.image_url %}
           <img class="single-recipe-image" src="{{ recipe.image_url }}" alt="{{ recipe.name }}" />
           {% else %}
-          <img class="single-recipe-image" src="{{ url_for('static', filename='images/image-replacement.jpg') }}"
+            <img class="single-recipe-image" src="{{ url_for('static', filename='images/image-replacement.jpg') }}"
             alt="Replacement image" />
           {% endif %}
+          <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" 
+            class="btn-floating tooltipped remove-list-item pulse halfway-fab see-recipe-font" 
+            data-position="top" data-tooltip="See The Recipe">
+            <i class="fas fa-eye"></i>
+          </a>
+        </div>
+        <div class="card-content">
           <span class="card-title center-align">
             <h3 class="title-font">{{ recipe.name }}</h3>
           </span>
-          <div class="card-content">
+         
             <!-- Recipe Serves, Calories Per Serving, Category, Added By -->
             <p class="center-align">
               <i class="fas fa-users tooltipped" data-position="left" data-tooltip="Serves"></i> {{ recipe.serves }} |
@@ -64,11 +73,11 @@
               <em>Added by: {{ recipe.added_by }}</em>
             </p>
           </div>
-          <div class="card-action">
-            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="see-recipe-font">See Recipe</a>
+          <div class="card-action center-align">
+           <!-- <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="see-recipe-font">See Recipe</a>-->
             {% if session.user|lower == recipe.added_by|lower %}
             <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}"
-              class="btn-small remove-list-item  ">Delete</a>
+              class="btn-small remove-list-item ">Delete</a>
             <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small add-list-item  ">Edit</a>
             {% endif %}
           </div>
@@ -80,6 +89,8 @@
     <h5 class="center-align red-text">
       No Recipes Were Found With The Selected Ingredient</h5>
     {% endif %}
+   
+    
   </div>
 </section>
   {% endblock %}
