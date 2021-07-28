@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200;300;400&family=Open+Sans:ital,wght@0,300;0,400;0,800;1,600&display=swap');
 
 
-/*----------------GLOBAL STYLES------------------*/
+/*---------------- GLOBAL STYLES ------------------*/
 *{
     margin: 0;
     padding: 0;
@@ -35,7 +35,7 @@ h4 {
     font-size:1.1rem;
     font-weight: 700;
 }
-/*----------------NAVIGATION------------------*/
+/*---------------- NAVIGATION ------------------*/
 .text-shadow {
     text-shadow: 1px 1px 1px;
 }
@@ -57,8 +57,44 @@ nav ul a,
     background-color:#e0e0e0e0;
     text-shadow: 1px 1px 1px;
 }
+/*---------------- HERO IMAGE & SEARCH FORM ------------------*/
 
-/*----------------REGISTER PAGE------------------*/
+#hero-image {
+     /* ---------- Credit: Image by Silviarita from Pixabay ----------*/
+    background: url("../images/background-image-1.jpg") no-repeat bottom right;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    object-fit: cover;
+    height: 500px;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+  }
+.form-content {
+    background-color:#e0e0e0bd;
+    border-radius: 22px;
+}
+.search-margin-bottom {
+    margin-bottom: 5px;
+}
+.input-field>label {
+    font-size: 0.8rem;
+}
+.hero-image-register {
+    width: 100%;
+    position:absolute
+}
+.search-button-margin {
+    margin-bottom: 20px;
+}
+.input-field.col .prefix ~ label,
+.input-field.col .prefix ~ .validate ~ label {
+    color:#140101;
+}
+/*---------------- REGISTER PAGE ------------------*/
 .flashes h4 {
     line-height: 2;
     background-color:#989696c9;
@@ -74,7 +110,7 @@ nav ul a,
     background-color: #008f2b;
 }
 
-/*----------------RECIPE CARDS ------------------*/
+/*---------------- RECIPE CARDS ------------------*/
 .recipe-image {
     height: fit-content;
     width: 100%;
@@ -127,7 +163,7 @@ nav ul a,
 .remove-list-item:visited {
     background-color:#c41c1c;
 }
-/*----------------ADD CATEGORY PAGE ------------------*/
+/*---------------- ADD CATEGORY PAGE ------------------*/
 .text-style {
     font-size: 0.9rem;
 }

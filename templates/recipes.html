@@ -1,6 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!--
+  
+    <img class="hero-image" src="{{url_for ('static', filename='images/background-image-1.jpg')}}" alt="smoothies collection">
+  -->
+<div class="container-fluid">
+  <!--Hero Image -->
+  <section id="hero-image"> 
+    <div class="row">
+      <!--Search Box-->
+      <div class="col s12 m8 l6  center-align form-content">
+        <form action="{{ url_for('regex') }}" method="post">
+          <div class="row search-margin-bottom ">
+            <div class="col s11 input-field">
+              <i class="fas fa-search prefix"></i>
+              <input type="text" name="query" id="query" minlenght="3" class="validate" required>
+              <label for="query">Search for recipes by ingredients</label>
+            </div>
+          </div>
+          <div class="col s12 search-button-margin">
+            <a href="{{ url_for('get_recipes') }}" class="btn-small remove-list-item">Reset</a>
+            <button type="submit" class="btn-small add-list-item">
+               Search
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
   <section>
   <!-- Searching for recipes by ingredient-->
   <div class="container">
