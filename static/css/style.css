@@ -101,15 +101,40 @@ nav ul a,
 }
 .card-panel {
     background-color:#fffcfcdb;
+    border-radius: 22px;
 }
 .button-style {
     background-color:#c41c1c;
+    border-radius: 5px;
 }
-
 .btn-large:hover {
     background-color: #008f2b;
 }
-
+.user-note-style {
+    margin-top: 20px;
+    font-weight:600;
+}
+.register-form-margin {
+    margin-top: 110px;
+}
+#hero-image-register {
+/* ---------- Credit: Image by Silviarita from Pixabay ----------*/
+    background: url("../images/background-image.jpg") no-repeat bottom right;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    object-fit: cover;
+    height: 100vh;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+.text-margin {
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
 /*---------------- RECIPE CARDS ------------------*/
 .recipe-image {
     height: fit-content;
