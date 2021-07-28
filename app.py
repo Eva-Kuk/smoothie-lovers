@@ -117,13 +117,19 @@ def login():
 # Profile Username
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab the session user's name from database
+    # Get the session user's name from database
     username = mongo.db.users.find_one({
         "username": session["user"]})["username"]
+    categories = list(mongo.db.categories.find())
 
     # Once session['user] cookie is truthy return their profile page
     if session["user"]:
-        return render_template("profile.html", username=username)
+        recipes = list(mongo.db.recipes.find(
+            {"added_by": session["user"]}).sort("_id", -1))
+        print(recipes)
+        return render_template(
+            "profile.html", username=username,
+            recipes=recipes, categories=categories, title="Profile")
 
     return redirect(url_for("login"))
 
@@ -203,7 +209,7 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
-# Manage Categories
+# Manage Categories: only admin has access to this page
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("name", 1))
