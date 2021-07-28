@@ -1,48 +1,47 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align">Log In</h3>
 <!--CREDIT: Card panel code customized from materializecss-->
 <!--CREDIT: Mini Project Task Manager and customized-->
-<div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
-        <div class="card-panel">
-            <!--username-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-user-cog prefix"></i>
-                    <input id="username" name="username" type="text" minlength="5" 
-                        maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$"class="validate" required>
-                    <label for="username">Username</label>
-                  
-                </div>
-            </div>
-            <!--password-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-user-lock prefix"></i>
-                    <input id="password" name="password" type="password" minlength="8" 
-                        maxlength="20" pattern="^[a-zA-Z0-9]{8,20}$" class="validate" required>
-                    <label for="password">Password</label>
-                </div>
-            </div>
-            <!--login-->
+<section id="hero-image-register"> 
+    <div class="container-fluid">
         <div class="row">
-            <button type="submit" class="col s4 offset-s4 btn-large button-style">
-                Log In <i class="fas fa-sign-in-alt"></i>
-            </button>
+            <form class="col s12 m6 offset-m3 register-form-margin" method="POST" action="{{ url_for('login') }}">
+                <div class="card-panel">
+                    <!--username-->
+                    <div class="row">
+                        <h1 class="center-align text-margin">Log In</h1>
+                        <div class="input-field col s12">
+                            <i class="fas fa-user-cog prefix"></i>
+                            <input id="username" name="username" type="text" minlength="5" 
+                                maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$"class="validate" required>
+                            <label for="username">Username</label>
+                        </div>
+                    </div>
+                    <!--password-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-user-lock prefix"></i>
+                            <input id="password" name="password" type="password" minlength="8" 
+                                maxlength="20" pattern="^[a-zA-Z0-9]{8,20}$" class="validate" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <!--login-->
+                <div class="row">
+                    <button type="submit" class="col s4 offset-s4 btn-large button-style">
+                        Log In <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                    <div class="col s12">
+                        <p class="center-align user-note-style">
+                            Don't have an account? 
+                            <a href="{{ url_for('register') }}">Register here</a>
+                        </p>
+                    </div>
+                </div>
+                </div>
+            </form>
         </div>
-        </div>
-    </form>
-</div>
-
-<div class="row">
-    <div class="col s12">
-        <p class="center-align">
-            Dont have an account? 
-            <a href="{{ url_for('register') }}">Register here</a>
-        </p>
     </div>
-</div>
-
+</section>
 {% endblock %}
