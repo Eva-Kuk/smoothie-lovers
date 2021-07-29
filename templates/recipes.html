@@ -36,11 +36,12 @@
   
     <h1 class="center-align">All Recipes</h1>
     
-    <div class="row">
+    <div class="row ">
       {% if recipes|length > 0 %}
       <!-- Recipe Image & Recipe Name-->
       {% for recipe in recipes %}
-      <div class="col s12 m6 l4 xl3">
+      <div class="col s12 m6 l4 xl3 ">
+        <div class="cards ">
         <div class="card hoverable">
           <div class="card-image">
           {% if recipe.image_url %}
@@ -83,14 +84,17 @@
           </div>
         </div>
       </div>
+    </div>
       {% endfor %}
     </div>
     {% else %}
-    <h5 class="center-align red-text">
-      No Recipes Were Found With The Selected Ingredient</h5>
+    <h5 class="center-align no-ingredient-found"> No Recipes Found With The Selected Ingredient</h5>
+      <p class="center-align no-recipe-found">Feel free to register for one here
+        <strong><a href="{{ url_for('register') }}" class="color-text">register for one here!</a></strong>
+      </p>
+      <p  class="center-align no-recipe-found"> or if you have an account 
+        <strong><a href="{{ url_for('login') }}" class="color-text">log in in here</a></strong> and add to the database!</p>
     {% endif %}
-   
-    
   </div>
 </section>
   {% endblock %}
