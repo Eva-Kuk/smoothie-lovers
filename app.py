@@ -215,7 +215,7 @@ def get_categories():
     return render_template("categories.html", categories=categories)
 
 
-# Add Category
+# Add Category allow admin to add new category to db
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -230,7 +230,7 @@ def add_category():
     return render_template("add_category.html")
 
 
-# Edit Category
+# Edit Category allows admin to edit category
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -247,12 +247,31 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
-# Delete Category
+# Delete Category allows admin to delete category
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Deleted Successfully")
     return redirect(url_for("get_categories"))
+
+
+# Errors Handlers
+@app.errorhandler(403)
+# To handle not found page
+def forbidden(e):
+    return render_template('403.html'), 403
+
+
+@app.errorhandler(404)
+# To handle not found page
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+# To handle not found page
+def internal_server_error(e):
+    return render_template('500.html'), 500
 
 
 # Set how & where to run the app

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    
+<!-- 500 error handling -->
+ <section id="hero-image-full-screen"> 
+    <div class="container-fluid valign-wrapper">
+        <div class="row">
+           <div class="col s12 m6 offset-m3 register-form-margin valign">
+                 <div class="card-panel">
+                    <div class="return-card center">
+                        <h1>500 Internal Server Error</h1>
+                       <h2>Sorry, server encountered a problem, and couldn’t complete your request.</h2>
+                    </div>
+                    <p class="center-align">Please use the the button below</p>
+                    <a href="{{ url_for('get_recipes') }}" class="btn-small add-list-item">Go back to our to Home</a>
+                 </div>
+              </div>
+           </div>
+        </div>
+</section>
+
+{% endblock %}
