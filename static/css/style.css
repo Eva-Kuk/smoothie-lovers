@@ -204,6 +204,9 @@ nav ul a,
 .text-style {
     font-size: 0.9rem;
 }
+.warning-text {
+    color: #e33b3b;
+}
 
 /*--------------------- FOOTER -----------------------*/
 .footer {

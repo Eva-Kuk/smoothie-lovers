@@ -1,29 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-<h3 class="center-align">Manage Categories</h3> 
-
-<div class="row">
-  <div class="col s12 center-align">
-    <a href="{{ url_for('add_category') }}" class="btn-small add-list-item">
-      Add Category <i class="fas fa-plus-square right"></i>
-    </a>
+  <h3 class="center-align">Manage Categories</h3> 
+  <!-- Categories Card-->
+  <div class="row">
+    <div class="col s12 center-align">
+      <a href="{{ url_for('add_category') }}" class="btn-small add-list-item">
+        Add Category <i class="fas fa-plus-square right"></i>
+      </a>
+    </div>
   </div>
-</div>
-<div class="row">
-  {% for category in categories %}
-    <div class="col s12 m6 is for ">
-      <div class="card center-align">
-        <div class="card-content">
-          <span class="card-title text-shadow">{{ category.name }}</span>
-        </div>
-        <div class="card-action">
-          <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn add-list-item">Edit</a>
-          <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn remove-list-item">Delete</a>
+  <div class="row">
+    {% for category in categories %}
+      <div class="col s12 m6 is for ">
+        <div class="card center-align">
+          <div class="card-content">
+            <span class="card-title text-shadow">{{ category.name }}</span>
+            <p class="card-description">{{ category.description }}</p>
+          </div>
+          <div class="card-action">
+            <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn add-list-item">Edit</a>
+            <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn remove-list-item">Delete</a>
+          </div>
         </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div>
 </div> 
 {% endblock %}
