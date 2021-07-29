@@ -136,6 +136,24 @@ nav ul a,
     margin-bottom: 2px;
 }
 /*---------------- RECIPE CARDS & RECIPE PAGE ------------------*/
+
+.box-style {
+    background-color:#008f2b33;
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 80px;
+    /* CREDIT: https://getcssscan.com/css-box-shadow-examples */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.category-name {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    
+}
+.category-description {
+    padding: 0 25px 20px 25px;
+}
 .no-recipe-found {
     font-size: 1.3rem;
 }

@@ -49,7 +49,6 @@ def categories(name):
     recipes = list(mongo.db.recipes.find(
         {"category_name": name}).sort("_id", -1))
     categories = list(mongo.db.categories.find())
-    print(categories)
     return render_template(
         "recipes.html",
         recipes=recipes,
@@ -123,10 +122,10 @@ def profile(username):
     categories = list(mongo.db.categories.find())
 
     # Once session['user] cookie is truthy return their profile page
+    # Display recipes added by the current user to his profile
     if session["user"]:
         recipes = list(mongo.db.recipes.find(
             {"added_by": session["user"]}).sort("_id", -1))
-        print(recipes)
         return render_template(
             "profile.html", username=username,
             recipes=recipes, categories=categories, title="Profile")
@@ -221,7 +220,8 @@ def get_categories():
 def add_category():
     if request.method == "POST":
         category = {
-            "name": request.form.get("name")
+            "name": request.form.get("name"),
+            "description": request.form.get("description")
         }
         mongo.db.categories.insert_one(category)
         flash("New Category Added")
@@ -235,7 +235,8 @@ def add_category():
 def edit_category(category_id):
     if request.method == "POST":
         submit = {
-            "name": request.form.get("name")
+            "name": request.form.get("name"),
+            "description": request.form.get("description")
         }
         mongo.db.categories.update(
             {"_id": ObjectId(category_id)}, submit)
