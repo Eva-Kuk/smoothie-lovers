@@ -9,10 +9,10 @@
   <section id="hero-image"> 
     <div class="row">
       <!--Search Box-->
-      <div class="col s12 m8 l6  center-align form-content">
+      <div class="col s12 m6 offset-m3 center-align form-content">
         <form action="{{ url_for('regex') }}" method="post">
           <div class="row search-margin-bottom ">
-            <div class="col s11 input-field">
+            <div class="col s11 input-field input-margin-top">
               <i class="fas fa-search prefix"></i>
               <input type="text" name="query" id="query" minlenght="3" class="validate" required>
               <label for="query">Search for recipes by ingredients</label>

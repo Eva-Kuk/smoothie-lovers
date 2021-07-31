@@ -62,6 +62,7 @@ nav ul a,
 #hero-image {
      /* ---------- Credit: Image by Silviarita from Pixabay ----------*/
     background: url("../images/background-image-1.jpg") no-repeat bottom right;
+    background-color: #ebfff1; ;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -73,9 +74,12 @@ nav ul a,
     position: relative;
     align-items: center;
   }
+.input-margin-top {
+      margin-top: 2rem;
+  }
 .form-content {
     background-color:#e0e0e0bd;
-    border-radius: 22px;
+    border-radius: 80px;
 }
 .search-margin-bottom {
     margin-bottom: 5px;
@@ -100,7 +104,7 @@ nav ul a,
     background-color:#989696c9;
 }
 .card-panel {
-    background-color:#fffcfcdb;
+    background-color:#fffcfc7a;
     border-radius: 22px;
 }
 .button-style {
@@ -117,7 +121,7 @@ nav ul a,
 .register-form-margin {
     margin-top: 110px;
 }
-#hero-image-register {
+#hero-image-full-screen {
 /* ---------- Credit: Image by Silviarita from Pixabay ----------*/
     background: url("../images/background-image.jpg") no-repeat bottom right;
     -webkit-background-size: cover;
@@ -136,7 +140,9 @@ nav ul a,
     margin-bottom: 2px;
 }
 /*---------------- RECIPE CARDS & RECIPE PAGE ------------------*/
-
+.form-content {
+    margin-top: 250px;
+}
 .box-style {
     background-color:#008f2b33;
     font-size: 1.1rem;
@@ -149,7 +155,6 @@ nav ul a,
     font-size: 2rem;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
-    
 }
 .category-description {
     padding: 0 25px 20px 25px;
@@ -250,7 +255,6 @@ nav ul a,
     font-size:1rem ;
 }
 
-
 /*----------------PROFILE PAGE ------------------*/
 
 
@@ -273,12 +277,3 @@ nav ul a,
     background-color:#e0e0e080 ;
     padding: 7px;
 }
-/*
-.cards {
-    display: flex;
-    flex:fill;
- }
- 
-.height-size {
-    height: 100%;
-} */
