@@ -77,7 +77,8 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Complete!")
+        flash("Welcome, {}".format(
+            request.form.get("username")), "success")
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
@@ -212,7 +213,11 @@ def delete_recipe(recipe_id):
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("name", 1))
-    return render_template("categories.html", categories=categories)
+    if session['user'] == 'admin':
+        return render_template("categories.html", categories=categories)
+    else:
+        flash("You have to be an Admin to access this page")
+        return render_template("403.html")
 
 
 # Add Category allow admin to add new category to db
