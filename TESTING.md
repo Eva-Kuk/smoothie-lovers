@@ -45,7 +45,18 @@ The data did not want to display or all.
 5. **BUG:** When trying to get a new account for the user, the register form stopped working and an error appeared `Incorrect Username and/or Password`
 - **SOLUTION:** The problem was accidentally changed url_for address from `register` to `login`, which was restored to the correct one
 ![register wrong value](wireframes/testing/register-wrong-value.jpg)
+ 6. **ISSUE** Problem with the same height display of cards with different contents, cards break in the row and move to another making uneven amound in deferent row.
+-**SOLUTION:** It took a good while to find the solution and trying different options, finnaly with a big help og tutor support it has been set using flexbox and some other style in the styles.css. The classes names were oryginaly set polish before commit were changed to english.
 
+![equal card issue css before](wireframes/testing/equal-card-issue-css-before.png)
+
+![equal card issue html](wireframes/testing/equal-card-issue-html.jpg)
+
+![equal card issue css polish](wireframes/testing/equal-card-issue-css-polish.jpg)
+
+![equal card issue css english](wireframes/testing/equal-card-issue-css-english.jpg)
+
+![equal card issue](wireframes/testing/equal-card-issue.jpg)
 ## Code Validation
 ---
 
