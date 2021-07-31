@@ -56,6 +56,14 @@ def categories(name):
         categories=categories)
 
 
+# Utensils page to dysplay kitchen tools for smoothies
+@app.route("/utensils")
+def utensils():
+    categories = mongo.db.categories.find()
+    return render_template(
+        "utensils.html", categories=categories, title="Utensils")
+
+
 # Register a New User
 @app.route("/register", methods=["GET", "POST"])
 def register():

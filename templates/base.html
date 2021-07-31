@@ -52,7 +52,7 @@
                         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
                         <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">
                                 Collections <i class="fas fa-caret-down"></i></a></li>
-                        <li><a href="#">Utensils</a></li>
+                        <li><a href="{{ url_for('utensils') }}">Utensils</a></li>
                     </ul>
 
                     <ul class="right hide-on-med-and-down">
@@ -84,7 +84,7 @@
             <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">
                     Collections <i class="fas fa-caret-down"></i></a></li>
-            <li><a href="#">Utensils</a></li>
+            <li><a href="{{ url_for('utensils') }}">Utensils</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
             {% if session.user|lower == "admin"|lower %}
