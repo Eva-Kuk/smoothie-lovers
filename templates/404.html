@@ -3,20 +3,22 @@
     
 <!-- 404 error handling -->
  <section id="hero-image-full-screen"> 
-    <div class="container-fluid valign-wrapper">
+    <div class="container-fluid">
         <div class="row">
            <div class="col s12 m6 offset-m3 register-form-margin valign">
-                 <div class="card-panel">
-                    <div class="return-card center">
+                 <div class="error-handlers-style">
+                    <div class="center">
                         <h1>404 Not Found</h1>
-                       <h2>Sorry, The Page you were looking for doesn't exists</h2>
+                        <h2>Sorry, The Page you were looking for doesn't exists</h2>
                     </div>
-                    <p class="center-align">Please use the the button below</p>
-                    <a href="{{ url_for('get_recipes') }}" class="btn-small add-list-item">Go back to our to Home</a>
-                 </div>
-              </div>
-           </div>
-        </div>
+                        <p class="center-align">Please use the the button below</p>
+                    <div class="center-align error-button">
+                        <a href="{{ url_for('get_recipes') }}" class="btn-small add-list-item">Go back to our to Home</a>
+                    </div>
+                  </div>
+            </div>
+         </div>
+   </div>
 </section>
 
 {% endblock %}
