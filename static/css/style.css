@@ -108,7 +108,7 @@ nav ul a,
     background-color:#989696c9;
 }
 .card-panel {
-    background-color:#fffcfc7a;
+    background-color:#fffcfc9e;
     border-radius: 22px;
 }
 .button-style {
@@ -144,6 +144,15 @@ nav ul a,
     margin-bottom: 2px;
 }
 /*---------------- RECIPE CARDS & RECIPE PAGE ------------------*/
+.cards-flex {
+    display: flex;
+    flex: 1;
+}
+.cards-row-flex, .card-column-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}   
 .form-content {
     margin-top: 180px;
 }
@@ -282,30 +291,35 @@ nav ul a,
     padding: 7px;
 }
 /*---------------- UTENCILS PAGE ------------------*/
-.card-shop {
-    
+.amazon-buy {
+    font-size: 2rem;
+    color:#c41c1c;
 }
-
-.card-image-utensils {
-    height: 200px;
+.card-image-padding {
+    padding:  5px;
 }
-
-.carousel {
-    max-width: 100vw;
+.font-red {
+    font-size: 2rem;
+    color:#c41c1c;
 }
-
-.carousel-image-size {
-    height: 180px;
-    padding: 10px;
-
+.card .card-content .card-title {
+    font-weight: 600;
+    font-size: 1.3rem;
 }
-
-.cards-flex {
-    display: flex;
-    flex: 1;
+.card .card-reveal .card-title {
+    font-weight: 600;
 }
-.cards-row-flex, .card-column-flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    }   
+.nutribullet-img {
+    width: 94%;
+}
+.equal-img-size {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+}
+@media screen and (max-width:600px) {
+    .equal-img-size {
+        height: 70vw;
+        width: 100%;
+    }
+}
