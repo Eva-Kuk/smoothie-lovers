@@ -2,33 +2,34 @@
 {% block content %}
 
 <section>
-    <!--CREDIT: Card panel code customized from materializecss-->
-    <!--CREDIT: Mini Project Task Manager and customized-->
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m8 offset-m2 height-size">
-                <div class="card-panel transparent">
-                    <h3 class="center-align">
-                        {{ username }}'s Pofile
-                    </h3>
-                <h4 class="center-align">My Recipes</h4>
-                </div>
-            </div>
+  <!--CREDIT: Card panel code customized from materializecss-->
+  <!--CREDIT: Mini Project Task Manager and customized-->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <div class="card-panel box-style">
+          <h1 class="center-align margin-profile-username">
+            {{ username }}'s Pofile
+          </h1>
+          <h3 class="center-align">My Recipes</h3>
         </div>
-        <div class="row">
-        {% for recipe in recipes %}
-        <div class="col s12 m6 l4 xl3">
-            <div class="card hoverable">
-              <div class="card-image">
+      </div>
+    </div>
+    <div class="row cards-row-flex">
+      {% for recipe in recipes %}
+      <div class="col s12 m6 l4 xl3 card-column-flex">
+        <div class="cards cards-flex">
+          <div class="card hoverable">
+            <div class="card-image">
               {% if recipe.image_url %}
               <img class="single-recipe-image" src="{{ recipe.image_url }}" alt="{{ recipe.name }}" />
               {% else %}
-                <img class="single-recipe-image" src="{{ url_for('static', filename='images/image-replacement.jpg') }}"
+              <img class="single-recipe-image" src="{{ url_for('static', filename='images/image-replacement.jpg') }}"
                 alt="Replacement image" />
               {% endif %}
-              <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" 
-                class="btn-floating tooltipped remove-list-item pulse halfway-fab see-recipe-font" 
-                data-position="top" data-tooltip="See The Recipe">
+              <a href="{{ url_for('recipe', recipe_id=recipe._id) }}"
+                class="btn-floating tooltipped remove-list-item pulse halfway-fab see-recipe-font" data-position="top"
+                data-tooltip="See The Recipe">
                 <i class="fas fa-eye"></i>
               </a>
             </div>
@@ -36,32 +37,43 @@
               <span class="card-title center-align">
                 <h3 class="title-font">{{ recipe.name }}</h3>
               </span>
-             
-                <!-- Recipe Serves, Calories Per Serving, Category, Added By -->
-                <p class="center-align">
-                  <i class="fas fa-users tooltipped" data-position="left" data-tooltip="Serves"></i> {{ recipe.serves }} |
-                  <i class="fas fa-fire tooltipped" data-position="right" data-tooltip="Calories per serve"></i>
-                  {{ recipe.calories }}
-                </p>
-                <p class="category-font">
-                  Category: {{ recipe.category_name }}
-                </p>
-                <p class="right-align added-font">
-                  <em>Added by: {{ recipe.added_by }}</em>
-                </p>
-              </div>
-              <div class="card-action center-align">
-               <!-- <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="see-recipe-font">See Recipe</a>-->
-                {% if session.user|lower == recipe.added_by|lower %}
-                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}"
-                  class="btn-small remove-list-item ">Delete</a>
-                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small add-list-item  ">Edit</a>
-                {% endif %}
-              </div>
+              <!-- Recipe Serves, Calories Per Serving, Category, Added By -->
+              <p class="center-align">
+                <i class="fas fa-users tooltipped" data-position="left" data-tooltip="Serves"></i> {{ recipe.serves }} |
+                <i class="fas fa-fire tooltipped" data-position="right" data-tooltip="Calories per serve"></i>
+                {{ recipe.calories }}
+              </p>
+              <p class="category-font">
+                Category: {{ recipe.category_name }}
+              </p>
+              <p class="right-align added-font">
+                <em>Added by: {{ recipe.added_by }}</em>
+              </p>
+            </div>
+            <!-- Edit/delete recipe buttons -->
+            <div class="card-action center-align">
+              {% if session.user|lower == recipe.added_by|lower %}
+              <a href="#delete_recipe{{recipe._id}}" class="btn-small modal-trigger remove-list-item">Delete</a>
+              <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small add-list-item">Edit</a>
+              {% endif %}
             </div>
           </div>
-        {% endfor %}
         </div>
+      </div>
+      <!-- CREDIT: Modal code from materializecss customized -->
+      <!-- Modal Structure Delete confirmation -->
+      <div id="delete_recipe{{ recipe._id }}" class="modal modal-background">
+        <div class="modal-content">
+          <h4>Are you sure you want to delete this recipe?</h4>
+          <p>You are going to permanently delete this recipe, once deleted, it cannot be returned</p>
+        </div>
+        <div class="modal-footer center-align">
+          <button class="btn modal-close add-list-item">Cancel</button>
+          <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn remove-list-item">Delete</a>
+        </div>
+      </div>
+      {% endfor %}
     </div>
+  </div>
 </section>
 {% endblock %}
