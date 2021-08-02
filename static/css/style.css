@@ -79,7 +79,7 @@ nav ul a,
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   }
 .input-margin-top {
-      margin-top: 2rem;
+    margin-top: 2rem;
   }
 .form-content {
     background-color:#e0e0e0bd;
@@ -103,6 +103,9 @@ nav ul a,
     color:#140101;
 }
 /*---------------- REGISTER PAGE ------------------*/
+.helper-text {
+    font-size: 0.7rem;
+}
 .flashes h4 {
     line-height: 2;
     background-color:#989696c9;
@@ -269,6 +272,19 @@ nav ul a,
 }
 
 /*---------------- PROFILE PAGE ------------------*/
+.margin-profile-username {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/*---------------- FLASH MESSAGES ------------------*/
+.flashes h4 {
+    background-color: transparent;
+    font-size: 1.8rem;
+}
+
+
+
 
 
 /*----------------SINGLE RECIPE PAGE ------------------*/
@@ -327,6 +343,21 @@ nav ul a,
 .error-button{
     margin-top: 10px;
     margin-bottom: 20px;
+}
+
+/*---------------- DELETE MODALS ------------------*/
+.modal .modal-content h4 {
+    font-size: 1.6rem;
+}
+.modal .modal-content,
+.modal .modal-footer {
+    background-color:#008f2b33;
+    text-align: center;
+}
+.modal-background {
+    border-radius: 80px;
+    /* CREDIT: https://getcssscan.com/css-box-shadow-examples */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 
