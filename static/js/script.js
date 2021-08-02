@@ -4,6 +4,7 @@ $(document).ready(function(){
     $(".dropdown-trigger").dropdown();
     $('.tooltipped').tooltip();
     $('select').formSelect();
+    $('.modal').modal();
 
 
 // CREDIT: Code taken from Miniproject Materialize Validation
