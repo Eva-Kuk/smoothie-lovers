@@ -33,7 +33,7 @@
                 <input id="calories" name="calories" type="text" class="validate" placeholder="250" required>
                 <label for="calories">Calories per serving</label>
                 <i class="fas fa-info-circle right tooltipped" data-position="left" 
-                data-tooltip="If you are not sure know how many calories is in your smoothie, you can use the online food calculator"></i>
+                data-tooltip="If you are not sure know how many calories is in your smoothie,<br> you can use the online food calculator"></i>
             </div>
         </div>
         <!-- Image URL -->
@@ -41,8 +41,9 @@
             <div class="input-field col s12">
                 <input id="image_url" name="image_url" type="text" class="validate">
                 <label for="image_url">Image URL</label>
-                <i class="fas fa-info-circle right tooltipped" data-position="left" 
-                data-tooltip="Include an URL image in portrait view from your cloud storage or from the web, right mouse click on image, choose the 'Copy image address' option and paste it in this field. Image is not required but it is nice to have one"></i>
+                <i class="fas fa-info-circle right tooltipped" data-position="left" data-tooltip="Include an URL image in portrait view best ratio 2:3<br>
+                    from your cloud storage or from the web, <br>right mouse click on the image, choose the 'Copy image address' option and paste it in this field.<br> 
+                    Image is not required but it is nice to have one."></i>
             </div>
         </div>
         <!-- Recipe Description -->
@@ -58,10 +59,10 @@
         <!-- Category Selection-->
         <div class="row card-panel z-depth-2 card-style">
             <div class="input-field col s12">
-                <select id="name" name="name" class="validate" aria-label="Recipe Categories" required>
+                <select id="name" name="category_name" class="validate" aria-label="Recipe Categories" required>
                     <option value="" disabled selected>Choose Category</option>
                     {% for category in categories %}
-                    <option value="{{ category.name }}">{{ category.name }}</option>
+                        <option value="{{ category.name }}">{{ category.name }}</option>
                     {% endfor %}
                 </select>
             </div>
@@ -88,7 +89,7 @@
                     </li>
                 </ul>
                 <i class="fas fa-info-circle right tooltipped" data-position="left" 
-                data-tooltip="Add as many ingredients as you need to make your smoothie, make sure to include an amount and measurement"></i>
+                data-tooltip="Add as many ingredients as you need to make your smoothie,<br> make sure to include an amount and measurement"></i>
             </div>
         </div>
 
@@ -100,8 +101,7 @@
                     {% for method in methods %}
                     <li class="collection-item">
                         <div class="input-field">
-                            <input name="method" type="text" value="{{- method -}}" maxlength="120" class="validate"
-                                required>
+                            <input name="method" type="text" value="{{- method -}}" maxlength="120" class="validate" required>
                         </div>
                         <a class="btn-floating btn-small remove-list-item">
                             <i class="fas fa-minus"> </i></a>
@@ -113,8 +113,7 @@
                         </a>
                     </li>
                 </ul>
-                <i class="fas fa-info-circle right tooltipped" data-position="left" 
-                data-tooltip="Add as many steps as it take to make your smoothie"></i>
+                <i class="fas fa-info-circle right tooltipped" data-position="left" data-tooltip="Add as many steps as it take to make your smoothie"></i>
             </div>
         </div>
         <!-- Submit Button -->

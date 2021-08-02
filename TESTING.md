@@ -57,6 +57,14 @@ The data did not want to display or all.
 ![equal card issue css english](wireframes/testing/equal-card-issue-css-english.jpg)
 
 ![equal card issue](wireframes/testing/equal-card-issue.jpg)
+ 7. **BUG** When adding a new recipe to a collection, categories are not displayed as selected, but displayed as `none`
+ 
+- **SOLUTION:** Change value `name="name"` to `name="category_name""` to match the `name="category_name"` in request method in python app.route
+
+![category none bug add recipe](wireframes/testing/category-none-bug-add-recipe.jpg)
+
+![category none bug](wireframes/testing/category-none-bug.jpg)
+
 ## Code Validation
 ---
 
