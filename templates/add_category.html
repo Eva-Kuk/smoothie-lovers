@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <h3 class="center-align">Add Category</h3>
+<div class="container container-height-size">
     
-    <div class="row ">
+    <h1 class="center-align">Add Category</h1>
+
+    <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('add_category') }}">
-           
-            <div class="row card-panel z-depth-2 card-style">
+            <div class="row card-panel z-depth-2 box-style">
                  <!-- Category Name -->
                 <div class="input-field col s12">
                     <input id="name" name="name" minlength="5" maxlength="20" type="text" class="validate" required>
@@ -15,16 +15,15 @@
                 </div>
                 <!-- Category Description -->
                 <div class="input-field col s12">
-                    <input id="description" name="description" maxlength="400" type="text" class="validate" required>
+                    <input id="description" name="description" maxlength="350" type="text" class="validate" required>
                     <p class="text-style">A brief description of the category, no longer than <b class="warning-text">350</b> characters</p>
                     <label for="description">Category Description</label>
                 </div>
             </div>
-        
             <!-- Submit Button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-small add-list-item">
+                    <button type="submit" class="btn-small green-btn">
                         Add Category <i class="fas fa-plus-circle right"></i>
                     </button>   
                 </div>
