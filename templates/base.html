@@ -45,8 +45,7 @@
             <nav class="nav-extend text-shadow nav-color">
                 <!-- top navbar -->
                 <div class="nav-wrapper">
-                    <a href="{{ url_for('get_recipes') }}" class="brand-logo center"><img
-                            src="../static/images/logo.png" alt="Smoothie Lovers Logo"></a>
+                    <a href="{{ url_for('get_recipes') }}" class="brand-logo center"><img src="../static/images/logo.png" alt="Smoothie Lovers Logo"></a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="left hide-on-med-and-down">
                         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
@@ -76,7 +75,7 @@
         <ul id="dropdown2" class="dropdown-content">
             {% for category in categories %}
             <li>
-                <a href="{{ url_for('categories', name=category.name) }}">{{ category.name }} ></a>
+                <a href="{{ url_for('categories', name=category.name) }}">{{ category.name }}</a>
             </li>
             {% endfor %}
         </ul>
@@ -103,13 +102,13 @@
     <section>
         <!-- flash masseges -->
         {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
-        <div class="row flashes">
-            <h4 class="center-align">{{ message }}</h4>
-        </div>
-        {% endfor %}
-        {% endif %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 class="center-align">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
         {% endwith %}
     </section>
 
@@ -120,26 +119,22 @@
     </main>
 
     <!-- footer -->
-    <footer class="footer">
-        <div class="container-fluid">
+    <footer class="page-footer footer">
+        <div class="container">
             <div class="row margin-bottom ">
                 <div class="col text-shadow s12 m6 center-align copyright">
-                    <p classs="copyright-padding">2021 &copy; Eva-Kuk</p>
+                    <p>2021 &copy; Eva-Kuk</p>
                 </div>
                 <div class="col s12 m6 center-align">
                     <div class="social-links">
-                        <h4>Contact Us</h4>
-                        <a href="https://www.instagram.com" class="social-links-item" target="_blank" rel="noopener"
-                            aria-label="Go to our Instagram page(opens in a new tab)">
-                            <i class="fab fa-instagram-square"></i></a>
-                        <a href="https://www.twitter.com" class="social-links-item" target="_blank" rel="noopener"
-                            aria-label="Go to our Twitter page(opens in a new tab)">
-                            <i class="fab fa-twitter-square"></i></a>
-                        <a href="https://www.facebook.com" class="social-links-item" target="_blank" rel="noopener"
-                            aria-label="Go to our Facebook page(opens in a new tab)">
-                            <i class="fab fa-facebook-square"></i></a>
-                        <a href="mailto:smoothielovers@gmail.com" class="social-links-item" aria-label="Go to our Email Address (opens in new tab)">
-                            <i class="far fa-envelope"></i></a>
+                        <ul>
+                            <li><a href="https://www.instagram.com" class="social-links-item" target="_blank" rel="noopener" aria-label="Go to our Instagram page(opens in a new tab)">
+                            <i class="fab fa-instagram-square"></i></a></li>
+                            <li><a href="https://www.twitter.com" class="social-links-item" target="_blank" rel="noopener" aria-label="Go to our Twitter page(opens in a new tab)">
+                            <i class="fab fa-twitter-square"></i></a></li>
+                            <li><a href="https://www.facebook.com" class="social-links-item" target="_blank" rel="noopener" aria-label="Go to our Facebook page(opens in a new tab)">
+                            <i class="fab fa-facebook-square"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

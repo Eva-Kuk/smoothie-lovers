@@ -106,10 +106,10 @@ nav ul a,
 .helper-text {
     font-size: 0.7rem;
 }
-.flashes h4 {
+/*.flashes h4 {
     line-height: 2;
     background-color:#989696c9;
-}
+}*/
 .card-panel {
     background-color:#fffcfc9e;
     border-radius: 22px;
@@ -252,15 +252,31 @@ nav ul a,
     background-color: #e0e0e0e0;
     position: relative;
     font-size: 1.2rem;
-  
     padding-bottom: 10px;
     bottom: 0px;
 }
 .social-links-item {
     color: #140101;
     font-size: 1.6rem;
-    padding-left: 5px;
+    padding-left: 15px;
 }
+.social-links ul {
+	display: flex;
+    place-content: flex-end;
+}
+.social-links ul li {
+	list-style: none; 
+}
+.social-links ul li:nth-child(1) a:hover .fab {
+	color: #bc2a8d;
+}
+.social-links ul li:nth-child(2) a:hover .fab {
+	color: #00aced;
+}
+.social-links ul li:nth-child(3) a:hover .fab {
+	color: #016b9c;
+}
+
 .margin-bottom {
     margin: 0;
     display: flex;
@@ -268,7 +284,11 @@ nav ul a,
 }
 .copyright {
     padding-right: 0px;
-    font-size:1rem ;
+    font-size: 1rem ;
+}
+.copyright p {
+    color:#140101;
+    text-align: left;
 }
 
 /*---------------- PROFILE PAGE ------------------*/
@@ -276,16 +296,27 @@ nav ul a,
     margin-top: 15px;
     margin-bottom: 5px;
 }
-
+.box-style-margin-top {
+    margin-top: 2.8rem;
+}
 /*---------------- FLASH MESSAGES ------------------*/
-.flashes h4 {
-    background-color: transparent;
-    font-size: 1.8rem;
+h4.center-align {
+    margin-top: 0;
 }
 
-
-
-
+.flashes h4 {
+    background-color: #c41c1c;
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    z-index: 1;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 30px;
+}
 
 /*----------------SINGLE RECIPE PAGE ------------------*/
 .single-recipe-image {
