@@ -163,6 +163,12 @@ def recipe(recipe_id):
 # Add Recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+
+    # Only logged in user is allowed to add a recipe
+    if "user" not in session:
+        flash("Please Log In")
+        return redirect(url_for("login"))
+
     if request.method == "POST":
         recipe = {
             "category_name": request.form.get("category_name"),
@@ -186,41 +192,73 @@ def add_recipe():
 # Edit Recipe
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    if request.method == "POST":
-        print("CATEGORY NAME: ", request.form.get("category_name"))
-        submit = {
-            "category_name": request.form.get("category_name"),
-            "name": request.form.get("name"),
-            "description": request.form.get("description"),
-            "method": request.form.getlist("method"),
-            "ingredients": request.form.getlist("ingredients"),
-            "added_by": session["user"],
-            "image_url": request.form.get("image_url"),
-            "calories": request.form.get("calories"),
-            "serves": request.form.get("serves")
-        }
-        mongo.db.recipes.update_one(
-            {"_id": ObjectId(recipe_id)}, {"$set": submit})
-        flash("Recipe Updated Succesfully")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = list(mongo.db.categories.find().sort("name", 1))
-    return render_template(
-        "edit_recipe.html", recipe=recipe, categories=categories)
+
+    # Only a logged in user or admin can edit the recipe added by themself
+    if "user" not in session:
+        flash("Please Log In")
+        return redirect(url_for("login"))
+
+    if session["user"] == recipe["added_by"] or session["user"] == "admin":
+
+        if request.method == "POST":
+            print("CATEGORY NAME: ", request.form.get("category_name"))
+            submit = {
+                "category_name": request.form.get("category_name"),
+                "name": request.form.get("name"),
+                "description": request.form.get("description"),
+                "method": request.form.getlist("method"),
+                "ingredients": request.form.getlist("ingredients"),
+                "added_by": session["user"],
+                "image_url": request.form.get("image_url"),
+                "calories": request.form.get("calories"),
+                "serves": request.form.get("serves")
+            }
+            mongo.db.recipes.update_one(
+                {"_id": ObjectId(recipe_id)}, {"$set": submit})
+            flash("Recipe Updated Succesfully")
+
+        return render_template(
+            "edit_recipe.html", recipe=recipe, categories=categories)
+    else:
+        flash("You don't have permission to access this page")
+        return render_template("403.html")
 
 
 # Delete Recipe
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash("Recipe Deleted Successfully")
-    return redirect(url_for("get_recipes"))
+
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    # Only a logged in user or admin can delete added by themself recipe
+    if "user" not in session:
+        flash("Please Log In")
+        return redirect(url_for("login"))
+
+    if session["user"] == recipe["added_by"] or session["user"] == "admin":
+        mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+        flash("Recipe Deleted Successfully")
+        return redirect(url_for("get_recipes"))
+
+    else:
+        flash("You don't have permission to access this page")
+        return render_template("403.html")
 
 
 # Manage Categories: only admin has access to this page
 @app.route("/get_categories")
 def get_categories():
+
     categories = list(mongo.db.categories.find().sort("name", 1))
+
+    # Only a logged in admin can have access  to the category
+    if "user" not in session:
+        flash("Please Log In")
+        return redirect(url_for("login"))
+
     if session['user'] == 'admin':
         return render_template("categories.html", categories=categories)
     else:
@@ -231,46 +269,82 @@ def get_categories():
 # Add Category allow admin to add new category to db
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    if request.method == "POST":
-        category = {
-            "name": request.form.get("name"),
-            "description": request.form.get("description")
-        }
-        mongo.db.categories.insert_one(category)
-        flash("New Category Added")
-        return redirect(url_for("get_categories"))
 
-    return render_template("add_category.html")
+    # Only  logged in admin can add the category
+    if "user" not in session:
+        flash("Please Log In")
+        return redirect(url_for("login"))
+
+    if session['user'] == 'admin':
+
+        if request.method == "POST":
+            category = {
+                "name": request.form.get("name"),
+                "description": request.form.get("description")
+            }
+            mongo.db.categories.insert_one(category)
+            flash("New Category Added")
+            return redirect(url_for("get_categories"))
+
+        return render_template("add_category.html")
+
+    else:
+        flash("You have to be an Admin to access this page")
+        return render_template("403.html")
 
 
 # Edit Category allows admin to edit category
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
-    if request.method == "POST":
-        submit = {
-            "name": request.form.get("name"),
-            "description": request.form.get("description")
-        }
-        mongo.db.categories.update(
-            {"_id": ObjectId(category_id)}, submit)
-        flash("Category Updated Successfully")
-        return redirect(url_for("get_categories"))
 
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("edit_category.html", category=category)
+    # Only a logged in admin can edit the category
+    if "user" not in session:
+        flash("Please Log In")
+        return redirect(url_for("login"))
+
+    if session['user'] == 'admin':
+
+        if request.method == "POST":
+            submit = {
+                "name": request.form.get("name"),
+                "description": request.form.get("description")
+            }
+            mongo.db.categories.update(
+                {"_id": ObjectId(category_id)}, submit)
+            flash("Category Updated Successfully")
+            return redirect(url_for("get_categories"))
+
+        category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+        return render_template("edit_category.html", category=category)
+
+    else:
+        flash("You have to be an Admin to access this page")
+        return render_template("403.html")
 
 
 # Delete Category allows admin to delete category
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
-    mongo.db.categories.remove({"_id": ObjectId(category_id)})
-    flash("Category Deleted Successfully")
-    return redirect(url_for("get_categories"))
+
+    # Only a logged in admin can delete the category
+    if "user" not in session:
+        flash("Please Log In")
+        return redirect(url_for("login"))
+
+    if session["user"] == "admin":
+        mongo.db.categories.remove({"_id": ObjectId(category_id)})
+        flash("Category Deleted Successfully")
+        return redirect(url_for("get_categories"))
+
+    else:
+        flash("You have to be an Admin to access this page")
+        return render_template("403.html")
 
 
 # Errors Handlers
+# https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
 @app.errorhandler(403)
-# To handle not found page
+# To handle Forbidden access control
 def forbidden(e):
     return render_template('403.html'), 403
 
@@ -282,7 +356,7 @@ def page_not_found(e):
 
 
 @app.errorhandler(500)
-# To handle not found page
+# To handle Internal Server Error
 def internal_server_error(e):
     return render_template('500.html'), 500
 
