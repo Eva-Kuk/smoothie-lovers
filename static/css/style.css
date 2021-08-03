@@ -35,6 +35,25 @@ h4 {
     font-size:1.1rem;
     font-weight: 700;
 }
+/*---------------- BUTTONS ------------------*/
+.green-btn {
+    background-color:#008f2b ;
+}
+.green-btn:hover {
+    background-color:#00b837;
+}
+.green-btn:visited {
+    background-color:#008f2b;
+}
+.red-btn {
+    background-color:#c41c1c;
+}
+.red-btn:hover {
+    background-color:#e33b3b;
+}
+.red-btn:visited {
+    background-color:#c41c1c;
+}
 /*---------------- NAVIGATION ------------------*/
 .text-shadow {
     text-shadow: 1px 1px 1px;
@@ -188,8 +207,9 @@ nav ul a,
     font-weight: 600;
 }
 .recipe-image {
-    height: fit-content;
+   /* height: fit-content;*/
     width: 100%;
+    height: auto;
 }
 .title-font {
     font-size: 1.7rem;
@@ -215,36 +235,46 @@ nav ul a,
     font-size: 1.1rem;
 }
 
-/*---------------- ADD RECIPE PAGE ------------------*/
-.card-style {
-    margin: 1rem;
-    padding: 0.5rem;
-    background-color:#fffcfcdb ;
-}
-.add-list-item {
-    background-color:#008f2b ;
-}
-.add-list-item:hover {
-    background-color:#00b837;
-}
-.add-list-item:visited {
-    background-color:#008f2b;
-}
-.remove-list-item {
-    background-color:#c41c1c;
-}
-.remove-list-item:hover {
-    background-color:#e33b3b;
-}
-.remove-list-item:visited {
-    background-color:#c41c1c;
-}
+/*---------------- ADD RECIPE PAGE ------------------*
+
+
+
 /*---------------- ADD CATEGORY PAGE ------------------*/
 .text-style {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    text-align: left;
+    padding-left: 15px;
 }
 .warning-text {
     color: #e33b3b;
+}
+.card-width-categories {
+    height: 370px;
+}
+.card-position-categories {
+    display: flex;
+    flex-flow:wrap;
+}
+.card-flex-categories {
+    display: flex;
+}
+.card-buttons-categories  {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+}
+.card .card-action:last-child {
+    background-color: transparent;
+}
+
+.card .card-buttons-categories {
+    border-top:transparent;
+    margin: 1.25rem;
+    padding: 0.7rem;
+}
+
+.container-height-size {
+    height: 81vh;
 }
 
 /*--------------------- FOOTER -----------------------*/
@@ -252,8 +282,7 @@ nav ul a,
     background-color: #e0e0e0e0;
     position: relative;
     font-size: 1.2rem;
-    padding-bottom: 10px;
-    bottom: 0px;
+    padding-bottom: 1.4rem;
 }
 .social-links-item {
     color: #140101;
@@ -303,7 +332,9 @@ nav ul a,
 h4.center-align {
     margin-top: 0;
 }
-
+.flashes {
+    margin-bottom: 0;
+}
 .flashes h4 {
     background-color: #c41c1c;
     font-size: 1.8rem;
@@ -398,4 +429,36 @@ h4.center-align {
         height: 70vw;
         width: 100%;
     }
+}
+@media screen and (min-width:330px) {
+    .card-width-categories {
+        height: 265px;
+    }
+    
+}
+@media screen and (min-width:510px) {
+    .card-width-categories {
+        height: 192px;
+    }
+    
+}
+@media screen and (min-width:600px) {
+    .card-width-categories {
+        height: 334px;
+    }
+    
+}
+
+
+@media screen and (min-width:700px) {
+    .card-width-categories {
+        height: 310px;
+    }
+    
+}
+@media screen and (min-width:1200px) {
+    .card-width-categories {
+        height: 220px;
+    }
+    
 }
