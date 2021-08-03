@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="col s12 m8 offset-m2">
-        <div class="card-panel box-style">
+        <div class="card-panel box-style box-style-margin-top">
           <h1 class="center-align margin-profile-username">
             {{ username }}'s Pofile
           </h1>
@@ -28,7 +28,7 @@
                 alt="Replacement image" />
               {% endif %}
               <a href="{{ url_for('recipe', recipe_id=recipe._id) }}"
-                class="btn-floating tooltipped remove-list-item pulse halfway-fab see-recipe-font" data-position="top"
+                class="btn-floating tooltipped red-btn pulse halfway-fab see-recipe-font" data-position="top"
                 data-tooltip="See The Recipe">
                 <i class="fas fa-eye"></i>
               </a>
@@ -53,8 +53,8 @@
             <!-- Edit/delete recipe buttons -->
             <div class="card-action center-align">
               {% if session.user|lower == recipe.added_by|lower %}
-              <a href="#delete_recipe{{recipe._id}}" class="btn-small modal-trigger remove-list-item">Delete</a>
-              <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small add-list-item">Edit</a>
+              <a href="#delete_recipe{{recipe._id}}" class="btn-small modal-trigger red-btn">Delete</a>
+              <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small green-btn">Edit</a>
               {% endif %}
             </div>
           </div>
@@ -68,8 +68,8 @@
           <p>You are going to permanently delete this recipe, once deleted, it cannot be returned</p>
         </div>
         <div class="modal-footer center-align">
-          <button class="btn modal-close add-list-item">Cancel</button>
-          <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn remove-list-item">Delete</a>
+          <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn red-btn">Delete</a>
+          <button class="btn modal-close green-btn">Cancel</button>
         </div>
       </div>
       {% endfor %}

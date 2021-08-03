@@ -13,8 +13,7 @@
                         <h1 class="center-align text-margin">Log In</h1>
                         <div class="input-field col s12">
                             <i class="fas fa-user-cog prefix"></i>
-                            <input id="username" name="username" type="text" minlength="5" 
-                                maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" required>
+                            <input id="username" name="username" type="text" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" required>
                             <label for="username">Username</label>
                         </div>
                     </div>
@@ -22,23 +21,20 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-user-lock prefix"></i>
-                            <input id="password" name="password" type="password" minlength="5" 
-                                maxlength="20" pattern="^[a-zA-Z0-9]{8,20}$" class="validate" required>
+                            <input id="password" name="password" type="password" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{8,20}$" class="validate" required>
                             <label for="password">Password</label>
                         </div>
                     </div>
                     <!--login-->
-                <div class="row">
-                    <button type="submit" class="col s4 offset-s4 btn-large button-style">
-                        Log In <i class="fas fa-sign-in-alt"></i>
-                    </button>
-                    <div class="col s12">
-                        <p class="center-align user-note-style">
-                            Don't have an account? 
-                            <a href="{{ url_for('register') }}">Register here</a>
-                        </p>
+                    <div class="row">
+                        <button type="submit" class="col s4 offset-s4 btn-large red-btn button-style"> Log In <i class="fas fa-sign-in-alt hide-on-med-and-down"></i>
+                        </button>
+                        <div class="col s12">
+                            <p class="center-align user-note-style"> Don't have an account? 
+                                <a href="{{ url_for('register') }}">Register here</a>
+                            </p>
+                        </div>
                     </div>
-                </div>
                 </div>
             </form>
         </div>

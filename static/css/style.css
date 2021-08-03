@@ -54,6 +54,26 @@ h4 {
 .red-btn:visited {
     background-color:#c41c1c;
 }
+/*---------------- FLASH MESSAGES ------------------*/
+h4.center-align {
+    margin-top: 0;
+}
+.flashes {
+    margin-bottom: 0;
+}
+.flashes h4 {
+    background-color: #c41c1c;
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    z-index: 1;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 30px;
+}
 /*---------------- NAVIGATION ------------------*/
 .text-shadow {
     text-shadow: 1px 1px 1px;
@@ -125,16 +145,11 @@ nav ul a,
 .helper-text {
     font-size: 0.7rem;
 }
-/*.flashes h4 {
-    line-height: 2;
-    background-color:#989696c9;
-}*/
 .card-panel {
     background-color:#fffcfc9e;
     border-radius: 22px;
 }
 .button-style {
-    background-color:#c41c1c;
     border-radius: 5px;
 }
 .btn-large:hover {
@@ -328,27 +343,6 @@ nav ul a,
 .box-style-margin-top {
     margin-top: 2.8rem;
 }
-/*---------------- FLASH MESSAGES ------------------*/
-h4.center-align {
-    margin-top: 0;
-}
-.flashes {
-    margin-bottom: 0;
-}
-.flashes h4 {
-    background-color: #c41c1c;
-    font-size: 1.8rem;
-    display: flex;
-    flex-direction: column;
-    position:absolute;
-    z-index: 1;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    right: 10px;
-    padding: 10px;
-    border-radius: 30px;
-}
-
 /*----------------SINGLE RECIPE PAGE ------------------*/
 .single-recipe-image {
     width: 100%; 
@@ -401,12 +395,10 @@ h4.center-align {
     border-radius: 22px;
     padding: 15px;
 }
-
 .error-button{
     margin-top: 10px;
     margin-bottom: 20px;
 }
-
 /*---------------- DELETE MODALS ------------------*/
 .modal .modal-content h4 {
     font-size: 1.6rem;
@@ -421,8 +413,6 @@ h4.center-align {
     /* CREDIT: https://getcssscan.com/css-box-shadow-examples */
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-
-
 /*---------------- MEDIA FOR SMALL DEVICES ------------------*/
 @media screen and (max-width:600px) {
     .equal-img-size {
@@ -434,31 +424,25 @@ h4.center-align {
     .card-width-categories {
         height: 265px;
     }
-    
 }
 @media screen and (min-width:510px) {
     .card-width-categories {
         height: 192px;
     }
-    
 }
 @media screen and (min-width:600px) {
     .card-width-categories {
         height: 334px;
     }
-    
 }
-
 
 @media screen and (min-width:700px) {
     .card-width-categories {
         height: 310px;
     }
-    
 }
 @media screen and (min-width:1200px) {
     .card-width-categories {
         height: 220px;
     }
-    
 }
