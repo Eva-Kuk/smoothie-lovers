@@ -7,14 +7,14 @@
 <div class="row ">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_recipe') }}">
         <!-- Recipe Name -->
-        <div class="row card-panel z-depth-2 card-style">
+        <div class="row card-panel z-depth-2 card-style box-style">
             <div class="input-field col s12">
                 <input id="name" name="name" minlength="1" maxlength="45" type="text" class="validate" required>
                 <label for="name">Recipe Name</label>
             </div>
         </div>
         <!-- Serves -->
-        <div class="row card-panel z-depth-2 card-style">
+        <div class="row card-panel z-depth-2 card-style box-style">
             <div class="input-field col s12">
                 <select id="serves" name="serves" class="validate" required>
                     <option value="" disabled selected>Serves</option>
@@ -28,7 +28,7 @@
             </div>
         </div>
         <!-- Calories -->
-        <div class="row card-panel z-depth-2 card-style">
+        <div class="row card-panel z-depth-2 card-style box-style">
             <div class="input-field col s12">
                 <input id="calories" name="calories" type="text" class="validate" placeholder="250" required>
                 <label for="calories">Calories per serving</label>
@@ -37,7 +37,7 @@
             </div>
         </div>
         <!-- Image URL -->
-        <div class="row card-panel card-style">
+        <div class="row card-panel card-style box-style">
             <div class="input-field col s12">
                 <input id="image_url" name="image_url" type="text" class="validate">
                 <label for="image_url">Image URL</label>
@@ -47,7 +47,7 @@
             </div>
         </div>
         <!-- Recipe Description -->
-        <div class="row card-panel z-depth-2 card-style">
+        <div class="row card-panel z-depth-2 card-style box-style">
             <div class="input-field col s12">
                 <textarea id="description" name="description" minlength="5" maxlength="250"
                     class="materialize-textarea validate" required></textarea>
@@ -57,7 +57,7 @@
             </div>
         </div>
         <!-- Category Selection-->
-        <div class="row card-panel z-depth-2 card-style">
+        <div class="row card-panel z-depth-2 card-style box-style">
             <div class="input-field col s12">
                 <select id="name" name="category_name" class="validate" aria-label="Recipe Categories" required>
                     <option value="" disabled selected>Choose Category</option>
@@ -68,7 +68,7 @@
             </div>
         </div>
         <!-- Recipe Ingredients -->
-        <div class="row card-panel z-depth-2 card-style">
+        <div class="row card-panel z-depth-2 card-style box-style">
             <h4 class="col s12">Ingredients</h4>
             <div class="col s12">
                 <ul id="ingredients" class="collection">
@@ -78,12 +78,12 @@
                             <input name="ingredients" type="text" value="{{ ingredient }}" maxlength="120"
                                 class="validate" required>
                         </div>
-                        <a class="btn-floating btn-small remove-list-item">
+                        <a class="btn-floating btn-small red-btn">
                             <i class="fas fa-minus"></i></a>
                     </li>
                     {% endfor %}
                     <li class="collection-item">
-                        <a class="btn-floating btn-small add-list-item">
+                        <a class="btn-floating btn-small green-btn">
                             <i class="fas fa-plus"></i>
                         </a>
                     </li>
@@ -94,7 +94,7 @@
         </div>
 
         <!-- Recipe Methods -->
-        <div class="row card-panel z-depth-2 card-style">
+        <div class="row card-panel z-depth-2 card-style box-style">
             <h4 class="col s12">Method</h4>
             <div class="col s12">
                 <ul id="method" class="collection">
@@ -103,12 +103,12 @@
                         <div class="input-field">
                             <input name="method" type="text" value="{{- method -}}" maxlength="120" class="validate" required>
                         </div>
-                        <a class="btn-floating btn-small remove-list-item">
+                        <a class="btn-floating btn-small red-btn">
                             <i class="fas fa-minus"> </i></a>
                     </li>
                     {% endfor %}
                     <li class="collection-item">
-                        <a class="btn-floating btn-small add-list-item">
+                        <a class="btn-floating btn-small green-btn">
                             <i class="fas fa-plus"></i>
                         </a>
                     </li>
@@ -119,7 +119,7 @@
         <!-- Submit Button -->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="btn-small add-list-item">
+                <button type="submit" class="btn-small green-btn">
                     Add Recipe <i class="fas fa-plus-circle right"></i>
                 </button>
             </div>
