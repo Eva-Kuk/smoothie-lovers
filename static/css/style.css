@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200;300;400&family=Open+Sans:ital,wght@0,300;0,400;0,800;1,600&display=swap');
 
-
+card-style
 /*---------------- GLOBAL STYLES ------------------*/
 *{
     margin: 0;
@@ -88,6 +88,9 @@ nav ul a,
     font-size: 1.2rem;
     font-weight: 500;
 }
+.nav ul a {
+    padding: 0 7px;
+}
 .dropdown-content li>a, .dropdown-content li>span {
     color: #140101;
 }
@@ -121,7 +124,7 @@ nav ul a,
     margin-top: 2rem;
   }
 .form-content {
-    background-color:#e0e0e0bd;
+    background-color:#fffcfc94;
     border-radius: 80px;
 }
 .search-margin-bottom {
@@ -146,7 +149,7 @@ nav ul a,
     font-size: 0.7rem;
 }
 .card-panel {
-    background-color:#fffcfc9e;
+    background-color:#fffcfc94;
     border-radius: 22px;
 }
 .button-style {
@@ -222,18 +225,16 @@ nav ul a,
     font-weight: 600;
 }
 .recipe-image {
-   /* height: fit-content;*/
+   height: fit-content;
     width: 100%;
-    height: auto;
+    /*height: auto;*/
 }
 .title-font {
     font-size: 1.7rem;
     margin-top: 1rem;
     margin-bottom: 0.2rem;
 }   
-.category-font  {
-    font-weight:600;
-}
+
 .card .card-content p {
     margin-top: 8px;
     margin-bottom: 4px;
@@ -250,11 +251,34 @@ nav ul a,
     font-size: 1.1rem;
 }
 
-/*---------------- ADD RECIPE PAGE ------------------*
+/*---------------- ADD/EDIT RECIPE PAGE ------------------*/
+.collection .collection-item {
+    background-color:#008f2b00;
+    text-align: left;
+    border-bottom: 1px solid #9E9E9F;
+    padding: 10px 0px;
+}
+.collection .collection-item:last-child {
+    border-bottom: 1px solid #9E9E9F;
+}
+.collection {
+    border: #4caf5061;
+}
+.input-field>label {
+    color:#140101;
+}
 
+.dropdown-content {
+    background-color: #ebfff1;
+}
+.dropdown-content:hover {
+    background-color: #d7fae1;
+}
 
-
-/*---------------- ADD CATEGORY PAGE ------------------*/
+/*---------------- ADD/EDIT CATEGORY PAGE ------------------*/
+.category-font  {
+    font-weight:600;
+}
 .text-style {
     font-size: 0.8rem;
     text-align: left;
@@ -346,8 +370,8 @@ nav ul a,
 /*----------------SINGLE RECIPE PAGE ------------------*/
 .single-recipe-image {
     width: 100%; 
-    border-radius: 3px;
-    border-style: solid;
+   /* border-radius: 3px;
+    border-style: solid;*/
 }
 .margin-top-description {
     margin-top: 1.9rem;
@@ -435,7 +459,6 @@ nav ul a,
         height: 334px;
     }
 }
-
 @media screen and (min-width:700px) {
     .card-width-categories {
         height: 310px;
