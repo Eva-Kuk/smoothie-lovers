@@ -3,48 +3,60 @@
 
 <!--CREDIT: Card panel code customized from materializecss-->
 <!--CREDIT: Mini Project Task Manager and customized-->
-<section id="hero-image-full-screen"> 
+<section id="hero-image-full-screen">
     <div class="container-fluid">
-<div class="row">
-    <form class="col s12  l8 offset-l2 register-form-margin" method="POST" action="{{ url_for('register') }}">
-        <div class="card-panel">
-            <!--username-->
-            <div class="row">
-                <h1 class="center-align text-margin">Register</h1>
-                <div class="input-field col s12">
-                    <i class="fas fa-user-plus prefix"></i>
-                    <input id="username" name="username" type="text" minlength="5" 
-                    maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" title="5 to 20 upper,lowercase letters and numbers" required>
-                    <label for="username">Username</label>
-                    <p class="helper-text">Username must be  5-20 characters in lenght, containing only numbers and letters</p>
+        <div class="row">
+            <form class="col s12  l8 offset-l2 register-form-margin" method="POST" action="{{ url_for('register') }}">
+                <div class="card-panel">
+                    <!--username-->
+                    <div class="row">
+                        <h1 class="center-align text-margin">Register</h1>
+                        <div class="input-field col s12">
+                            <i class="fas fa-user-plus prefix"></i>
+                            <input id="username" name="username" type="text" minlength="5" maxlength="20"
+                                pattern="^[a-zA-Z0-9]{5,20}$" class="validate"
+                                title="5 to 20 upper,lowercase letters and numbers" required>
+                            <label for="username">Username</label>
+                            <p class="helper-text">Username must be 5-20 characters in lenght, containing only numbers
+                                and letters</p>
+                        </div>
+
+                    </div>
+                    <!--password-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-user-lock prefix"></i>
+                            <input id="password" name="password" type="password" minlength="5" maxlength="20"
+                                pattern="^[a-zA-Z0-9]{5,20}$" class="validate"
+                                title="5 to 20 upper,lowercase letters and numbers" required>
+                            <label for="password">Password</label>
+                            <p class="helper-text">Password must be 5-20 characters in lenght, containing only numbers
+                                and letters</p>
+                        </div>
+                    </div>
+                    <!-- confirm password -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-user-check prefix"></i>
+                            <input type="password" id="confirm_password" name="confirm_password" class="validate">
+                        <label for="confirm_password">Confirm Password</label>
+                        </div>
+                    </div>
+                    <!--register-->
+                    <div class="row">
+                        <button type="submit" class="col s4 offset-s4 btn-large red-btn button-style">
+                            Register <i class="fas fa-sign-in-alt hide-on-med-and-down"></i>
+                        </button>
+                        <div class="col s12 user-note-style">
+                            <p class="center-align">
+                                Already have an account?
+                                <a href="{{ url_for('login') }}">Log In here</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-               
-            </div>
-            <!--password-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-user-lock prefix"></i>
-                    <input id="password" name="password" type="password" minlength="5" 
-                    maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" title="5 to 20 upper,lowercase letters and numbers" required>
-                    <label for="password">Password</label>
-                    <p class="helper-text">Password must be  5-20 characters in lenght, containing only numbers and letters</p>
-                </div>
-            </div>
-            <!--register-->
-            <div class="row">
-                <button type="submit" class="col s4 offset-s4 btn-large red-btn button-style">
-                    Register <i class="fas fa-sign-in-alt hide-on-med-and-down"></i>
-                </button>
-                <div class="col s12 user-note-style">
-                    <p class="center-align">
-                        Already have an account? 
-                        <a href="{{ url_for('login') }}">Log In here</a>
-                    </p>
-                </div>
-            </div>
+            </form>
         </div>
-    </form>
-</div>
-</div>
+    </div>
 </section>
 {% endblock %}
