@@ -199,6 +199,12 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Contact
+@app.route("/contact")
+def contact():
+    return render_template("contact.html", title="Contact")
+
+
 # Display Single recipe
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--CREDIT: Card panel code customized from materializecss-->
+<!--CREDIT: Mini Project Task Manager and customized-->
+<section id="hero-image-full-screen"> 
+    <div class="container-fluid">
+        <div class="row">
+            <form class="col s12 l8 offset-l2 register-form-margin" method="POST" action="{{ url_for('login') }}">
+                <div class="card-panel">
+                    <!--Name-->
+                    <div class="row">
+                        <h1 class="center-align text-margin">Contact</h1>
+                        <div class="input-field col s12">
+                            <input id="user_name" name="user_name" type="text" class="validate" required>
+                            <label for="user_name">Name*</label>
+                        </div>
+                    </div>
+                    <!--Email-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" name="email" type="password" class="validate" required>
+                            <label for="email">Email*</label>
+                        </div>
+                    </div>
+                     <!--Message-->
+                     <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="message" class="materialize-textarea" required></textarea>
+                            <label for="message">Message here ...</label>
+                        </div>
+                    </div>
+                    <!--Sent Message -->
+                    <div class="row">
+                        <button type="submit" class="col s4 offset-s4 btn-large red-btn button-style"> Send <i class="fas fa-sign-in-alt hide-on-med-and-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
