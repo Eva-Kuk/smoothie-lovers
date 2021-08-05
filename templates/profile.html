@@ -13,11 +13,12 @@
           </h1>
           <h3 class="center-align">My Recipes</h3>
           {% if session.user|lower == "admin"|lower %}
-          <a href="{{ url_for('get_categories') }}" class="btn-small green-btn">Manage Categories</a>
+          <a href="{{ url_for('get_categories') }}" class="btn-small green-btn categories-btn">Manage Categories</a>
         {% endif %}
         </div>
       </div>
     </div>
+    {{ pagination.links }}
     <div class="row cards-row-flex">
     
       {% for recipe in recipes %}
@@ -79,5 +80,6 @@
       {% endfor %}
     </div>
   </div>
+  {{ pagination.links }}
 </section>
 {% endblock %}

@@ -179,9 +179,13 @@ def profile(username):
     if session["user"]:
         recipes = list(mongo.db.recipes.find(
             {"added_by": session["user"]}).sort("_id", -1))
+        recipes_paginated = paginated(recipes)
+        pagination = pagination_args(recipes)
         return render_template(
             "profile.html", username=username,
-            recipes=recipes, categories=categories, title="Profile")
+            categories=categories, title="Profile",
+            recipes=recipes_paginated,
+            pagination=pagination, search=True)
 
     return redirect(url_for("login"))
 
