@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from flask_paginate import Pagination, get_page_args
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -20,6 +21,27 @@ app.secret_key = os.environ.get("SECRET_KEY")
 # Create an instance of PyMongo
 mongo = PyMongo(app)
 
+# CREDIT: Edb83 https://github.com/Edb83/self-isolution/blob/master/app.py
+PER_PAGE = 8
+
+
+def paginated(recipes):
+    page, per_page, offset = get_page_args(
+        page_parameter='page',
+        per_page_parameter='per_page')
+    offset = page * PER_PAGE - PER_PAGE
+    return recipes[offset: offset + PER_PAGE]
+
+
+def pagination_args(recipes):
+    page, per_page, offset = get_page_args(
+        page_parameter='page',
+        per_page_parameter='per_page')
+    total = len(recipes)
+
+    return Pagination(page=page, per_page=PER_PAGE, total=total)
+# End of credit
+
 
 # All Recipes
 @app.route("/")
@@ -27,8 +49,13 @@ mongo = PyMongo(app)
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
     categories = list(mongo.db.categories.find())
+    recipes_paginated = paginated(recipes)
+    pagination = pagination_args(recipes)
+    print(f"{recipes_paginated=}")
+    print(f"{pagination=}")
     return render_template(
-        "recipes.html", recipes=recipes, categories=categories)
+        "recipes.html", categories=categories, recipes=recipes_paginated,
+        pagination=pagination, search=True)
 
 
 # Search Recipes
@@ -40,20 +67,27 @@ def regex():
     recipes = list(mongo.db.recipes.find({"ingredients": {
         "$regex": query, "$options": "i"}}))
     print("recipes is ", recipes)
-    return render_template("recipes.html", recipes=recipes)
+    recipes_paginated = paginated(recipes)
+    pagination = pagination_args(recipes)
+    return render_template(
+        "recipes.html", recipes=recipes_paginated,
+        pagination=pagination, title="Search Results", search=True)
 
 
-# Display Recipes By Categories
+# Display Recipes By Category
 @app.route("/categories/<name>")
 def categories(name):
     recipes = list(mongo.db.recipes.find(
         {"category_name": name}).sort("_id", -1))
     categories = list(mongo.db.categories.find())
+    recipes_paginated = paginated(recipes)
+    pagination = pagination_args(recipes)
     return render_template(
         "recipes.html",
-        recipes=recipes,
         name=name,
-        categories=categories)
+        categories=categories, title=name,
+        recipes=recipes_paginated,
+        pagination=pagination, search=True)
 
 
 # Utensils page to dysplay kitchen tools for smoothies
@@ -233,7 +267,7 @@ def edit_recipe(recipe_id):
         return render_template(
             "edit_recipe.html", recipe=recipe, categories=categories)
     else:
-        flash("You don't have permission to access this page")
+        flash("Access denied. You don't have permission")
         return render_template("403.html")
 
 
@@ -254,7 +288,7 @@ def delete_recipe(recipe_id):
         return redirect(url_for("get_recipes"))
 
     else:
-        flash("You don't have permission to access this page")
+        flash("Access denied. You don't have permission")
         return render_template("403.html")
 
 

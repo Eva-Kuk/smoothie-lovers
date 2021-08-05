@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<!--
-  
-    <img class="hero-image" src="{{url_for ('static', filename='images/background-image-1.jpg')}}" alt="smoothies collection">
-  -->
+
 <div class="container-fluid">
   <!--Hero Image -->
   <section id="hero-image">
     <div class="row">
+      <div class="col s12 center-align">
+        <h2 class="welcome-test">Store, Find and Share your favourite Smoothies recipes</h2>
+      </div>
       <!--Search Box-->
       <div class="col s12 m8 offset-m2 l6 offset-l3 center-align form-content">
         <form action="{{ url_for('regex') }}" method="post">
-          <div class="row search-margin-bottom ">
+          <div class="row search-margin-bottom search-header">
+            <!--<h2>Keep, Find and Share your favourite Smoothie recipes</h2>-->
             <div class="col s11 input-field input-margin-top">
               <i class="fas fa-search prefix"></i>
               <input type="text" name="query" id="query" minlenght="3" class="validate" required>
@@ -19,8 +20,8 @@
             </div>
           </div>
           <div class="col s12 search-button-margin">
-            <a href="{{ url_for('get_recipes') }}" class="btn-small remove-list-item">Reset</a>
-            <button type="submit" class="btn-small add-list-item">
+            <a href="{{ url_for('get_recipes') }}" class="btn-small red-btn">Reset</a>
+            <button type="submit" class="btn-small green-btn">
               Search
             </button>
           </div>
@@ -30,10 +31,9 @@
 </div>
 </section>
 
-
-
 <section>
   <h1 class="center-align">Smootihe Recipes</h1>
+
   <!-- Displaying Category Name & Description -->
   <div class="row">
     {% for category in categories %}
@@ -45,15 +45,13 @@
   </div>
   {% endif %}
   {% endfor %}
+  
 </section>
-
-
-
 
 <section>
   <!-- Searching for recipes by ingredient-->
   <div class="container">
-
+    {{ pagination.links }}
     <!-- Recipe cards -->
     <div class="row cards-row-flex">
       {% if recipes|length > 0 %}
@@ -70,7 +68,7 @@
                 alt="Replacement image" />
               {% endif %}
               <a href="{{ url_for('recipe', recipe_id=recipe._id) }}"
-                class="btn-floating tooltipped remove-list-item pulse halfway-fab see-recipe-font" data-position="top"
+                class="btn-floating tooltipped red-btn pulse halfway-fab see-recipe-font" data-position="top"
                 data-tooltip="See The Recipe">
                 <i class="fas fa-eye"></i>
               </a>
@@ -79,7 +77,6 @@
               <span class="card-title center-align">
                 <h3 class="title-font">{{ recipe.name }}</h3>
               </span>
-
               <!-- Recipe Serves, Calories Per Serving, Category, Added By -->
               <p class="center-align">
                 <i class="fas fa-users tooltipped" data-position="left" data-tooltip="Serves"></i> {{ recipe.serves }} |
@@ -95,8 +92,8 @@
             </div>
             <div class="card-action center-align">
               {% if session.user|lower == recipe.added_by|lower %}
-              <a href="#delete_recipe{{recipe._id}}" class="btn-small modal-trigger remove-list-item ">Delete</a>
-              <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small add-list-item  ">Edit</a>
+              <a href="#delete_recipe{{recipe._id}}" class="btn-small modal-trigger red-btn">Delete</a>
+              <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small green-btn">Edit</a>
               {% endif %}
             </div>
           </div>
@@ -110,8 +107,8 @@
           <p>You are going to permanently delete this recipe, once deleted, it cannot be returned</p>
         </div>
         <div class="modal-footer center-align">
+          <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn red-btn">Delete</a>
           <button class="btn modal-close add-list-item">Cancel</button>
-          <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn remove-list-item">Delete</a>
         </div>
       </div>
       {% endfor %}
@@ -128,5 +125,6 @@
       {% endif %}
     </div>
   </div>
+  {{ pagination.links }}
 </section>
 {% endblock %}
