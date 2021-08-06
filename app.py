@@ -2,6 +2,7 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
+from flask_mail import Mail, Message
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_paginate import Pagination, get_page_args
@@ -11,6 +12,19 @@ if os.path.exists("env.py"):
 
 # Create instance of Flask
 app = Flask(__name__)
+
+# Create an instance of the Mail class
+mail = Mail(app)
+
+# Configure server parameters
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'webdeveloperevakukla@gmail.com'
+app.config['MAIL_PASSWORD'] = os.environ.get("MY_EMAIL_PASSWORD")
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
+
 
 # Set up configurations for MongoDB
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBASE")
@@ -200,9 +214,21 @@ def logout():
 
 
 # Contact
-@app.route("/contact")
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
-    return render_template("contact.html", title="Contact")
+    if request.method == "POST":
+        email = request.form.get("email")
+        message = request.form.get("message")
+
+        msg = Message('Hello', sender=email,
+                      recipients=['webdeveloperevakukla@gmail.com'])
+
+        msg.body = message
+        mail.send(msg)
+        flash("Email sent Successfully")
+        return redirect(url_for("contact"))
+
+    return render_template("contact.html")
 
 
 # Display Single recipe
