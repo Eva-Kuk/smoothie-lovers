@@ -6,6 +6,10 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.modal').modal();
 
+// jQuerry Initialization from materializecss
+    $('#textarea1').val('New Text');
+    M.textareaAutoResize($('#textarea1'));
+
 
 // CREDIT: Code taken from Miniproject Materialize Validation
   validateMaterializeSelect();
@@ -37,6 +41,7 @@ $(document).ready(function(){
   }
 });
 
+//CREDIT: from seanyoung247 https://github.com/seanyoung247/Plum
 // Adding list item to the ingredients list in add_recipe page
 $( "#ingredients .green-btn" ).click(function(e) {
   let listItem = `<li class='collection-item'>
