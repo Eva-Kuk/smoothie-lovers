@@ -1,6 +1,12 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200;300;400&family=Open+Sans:ital,wght@0,300;0,400;0,800;1,600&display=swap');
 
-card-style
 /*---------------- GLOBAL STYLES ------------------*/
 *{
     margin: 0;
@@ -23,7 +29,7 @@ h4 {
     font-family: 'Changa', sans-serif;
 }
 h1 {
-    font-size:2.5rem;
+    font-size:2.2rem;
 }
 h2 {
     font-size:1.9rem;
@@ -54,6 +60,12 @@ h4 {
 .red-btn:visited {
     background-color:#c41c1c;
 }
+.categories-btn {
+    height:30.4px;
+    font-size:0.75rem;
+    line-height: 14.4px;
+    padding: 7px;
+}
 /*---------------- FLASH MESSAGES ------------------*/
 h4.center-align {
     margin-top: 0;
@@ -63,17 +75,56 @@ h4.center-align {
 }
 .flashes h4 {
     background-color: #c41c1c;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position:absolute;
     z-index: 1;
-    margin-top: 25px;
+    margin-top: 4px;
     margin-bottom: 20px;
     right: 10px;
     padding: 10px;
     border-radius: 30px;
 }
+/*---------------- PAGINATION ------------------*/
+.pagination {
+    font-size: 2rem;
+    color:#4caf5061;
+}
+.pagination ul {
+    margin: 0 auto;
+    padding-bottom: 1.9rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.pagination ul li a {
+    border-radius: 5px;
+    color:#140101;
+    padding: 0.3rem 0.7rem;
+}
+.pagination ul li a:hover {
+    background-color: #4caf4f7e;
+}
+.pagination li.active a {
+    color: #000;
+    font-weight: 600;
+}
+.pagination li.active {
+    background-color:transparent;    
+}
+.pagination ul {
+    padding-left: 0;
+}
+
 /*---------------- NAVIGATION ------------------*/
 .text-shadow {
     text-shadow: 1px 1px 1px;
@@ -100,33 +151,40 @@ nav ul a,
     text-shadow: 1px 1px 1px;
 }
 /*---------------- HERO IMAGE & SEARCH FORM ------------------*/
-
+.welcome-text {
+    color: #fff;
+    font-size: 2.1rem;
+    text-shadow: rgb(0 0 0 / 59%) 3px 4px 2px, rgb(0 0 0 / 23%) 1px 6px 6px;
+    margin-top: 3rem;
+}
 #hero-image {
      /* ---------- Credit: Image by Silviarita from Pixabay ----------*/
     background: url("../images/background-image-1.jpg") no-repeat bottom right;
-    background-color: #ebfff1; ;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background-color: #ebfff1;
     background-size: cover;
     width: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     height: 500px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: relative;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 .form-content {
     /* CREDIT: https://getcssscan.com/css-box-shadow-examples */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color:#fffcfc94;
+    border-radius: 80px;
+    margin-top: 5rem;
   }
 .input-margin-top {
     margin-top: 2rem;
   }
-.form-content {
-    background-color:#fffcfc94;
-    border-radius: 80px;
-}
 .search-margin-bottom {
     margin-bottom: 5px;
 }
@@ -138,13 +196,13 @@ nav ul a,
     position:absolute
 }
 .search-button-margin {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 .input-field.col .prefix ~ label,
 .input-field.col .prefix ~ .validate ~ label {
     color:#140101;
 }
-/*---------------- REGISTER PAGE ------------------*/
+/*---------------- REGISTER/LOGIN/CONTACT PAGE ------------------*/
 .helper-text {
     font-size: 0.7rem;
 }
@@ -159,50 +217,79 @@ nav ul a,
     background-color: #008f2b;
 }
 .user-note-style {
-    margin-top: 20px;
+    margin-top: 1.25rem;
     font-weight:600;
 }
 .register-form-margin {
-    margin-top: 110px;
+    margin-top: 7rem;
+}
+.login-form-margin {
+    margin-top: 10rem;
+}
+.contact-form-margin {
+    margin-top: 14rem;
 }
 #hero-image-full-screen {
 /* ---------- Credit: Image by Silviarita from Pixabay ----------*/
     background: url("../images/background-image.jpg") no-repeat bottom right;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     width: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     height: 100vh;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: relative;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .text-margin {
     margin-top: 5px;
     margin-bottom: 2px;
 }
-/*---------------- RECIPE CARDS & RECIPE PAGE ------------------*/
+
+/*---------------- PROFILE PAGE ------------------*/
+.margin-profile-username {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.box-style-margin-top {
+    margin-top: 3.8rem;
+}
+/*---------------- RECIPE CARDS/RECIPES PAGE ------------------*/
 .cards-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 .cards-row-flex, .card-column-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }   
-.form-content {
-    margin-top: 180px;
-}
 .box-style {
     background-color:#008f2b33;
     font-size: 1.1rem;
     text-align: center;
-    border-radius: 80px;
+    border-radius: 108px;
     /* CREDIT: https://getcssscan.com/css-box-shadow-examples */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .category-name {
     font-size: 2rem;
@@ -225,19 +312,21 @@ nav ul a,
     font-weight: 600;
 }
 .recipe-image {
+   height: -webkit-fit-content;
+   height: -moz-fit-content;
    height: fit-content;
     width: 100%;
     /*height: auto;*/
 }
-.title-font {
+.title-font h3 {
     font-size: 1.7rem;
     margin-top: 1rem;
     margin-bottom: 0.2rem;
 }   
 
 .card .card-content p {
-    margin-top: 8px;
-    margin-bottom: 4px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 .card .card-content {
     padding: 0.9rem;
@@ -249,8 +338,10 @@ nav ul a,
     text-transform: capitalize !important;
     color:#f72626 !important;
     font-size: 1.1rem;
-}
-
+}/*
+.recipe-name {
+    background-color: red;
+}*/
 /*---------------- ADD/EDIT RECIPE PAGE ------------------*/
 .collection .collection-item {
     background-color:#008f2b00;
@@ -274,7 +365,11 @@ nav ul a,
 .dropdown-content:hover {
     background-color: #d7fae1;
 }
-
+.ingred-info,
+.methods-info
+ {
+    padding: 1.2rem;
+}
 /*---------------- ADD/EDIT CATEGORY PAGE ------------------*/
 .category-font  {
     font-weight:600;
@@ -286,86 +381,47 @@ nav ul a,
 }
 .warning-text {
     color: #e33b3b;
-}
-.card-width-categories {
-    height: 370px;
-}
+}/*
+.card-height-categories {
+    height: 26rem;
+}*/
+.padding-desc {
+    padding: 0.5rem;
+}/*
 .card-position-categories {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow:wrap;
-}
+    -ms-flex-flow:wrap;
+        flex-flow:wrap;
+}*/
 .card-flex-categories {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .card-buttons-categories  {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    flex-direction: row-reverse;
-}
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+}*/
 .card .card-action:last-child {
     background-color: transparent;
 }
-
 .card .card-buttons-categories {
     border-top:transparent;
-    margin: 1.25rem;
-    padding: 0.7rem;
+    margin: 0.5rem;
+    padding:7px 18px 37px;
+    background-color: transparent;
 }
-
 .container-height-size {
     height: 81vh;
-}
-
-/*--------------------- FOOTER -----------------------*/
-.footer {
-    background-color: #e0e0e0e0;
-    position: relative;
-    font-size: 1.2rem;
-    padding-bottom: 1.4rem;
-}
-.social-links-item {
-    color: #140101;
-    font-size: 1.6rem;
-    padding-left: 15px;
-}
-.social-links ul {
-	display: flex;
-    place-content: flex-end;
-}
-.social-links ul li {
-	list-style: none; 
-}
-.social-links ul li:nth-child(1) a:hover .fab {
-	color: #bc2a8d;
-}
-.social-links ul li:nth-child(2) a:hover .fab {
-	color: #00aced;
-}
-.social-links ul li:nth-child(3) a:hover .fab {
-	color: #016b9c;
-}
-
-.margin-bottom {
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-.copyright {
-    padding-right: 0px;
-    font-size: 1rem ;
-}
-.copyright p {
-    color:#140101;
-    text-align: left;
-}
-
-/*---------------- PROFILE PAGE ------------------*/
-.margin-profile-username {
-    margin-top: 15px;
-    margin-bottom: 5px;
-}
-.box-style-margin-top {
-    margin-top: 2.8rem;
 }
 /*----------------SINGLE RECIPE PAGE ------------------*/
 .single-recipe-image {
@@ -380,7 +436,7 @@ nav ul a,
     margin-top: 2rem;
 }
 .margin-bottom-serves {
-    margin-bottom: 3.8rem;
+    margin-bottom: 3.9rem;
 }
 .recipe-background {
     background-color:#e0e0e080 ;
@@ -411,7 +467,8 @@ nav ul a,
 .equal-img-size {
     width: 100%;
     height: 30vw;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 /*---------------- ERROR HANDLERS ------------------*/
 .error-handlers-style{
@@ -435,7 +492,57 @@ nav ul a,
 .modal-background {
     border-radius: 80px;
     /* CREDIT: https://getcssscan.com/css-box-shadow-examples */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/*--------------------- FOOTER -----------------------*/
+.footer {
+    background-color: #e0e0e0e0;
+    position: relative;
+    font-size: 1.2rem;
+    padding-bottom: 1.4rem;
+}
+.social-links-item {
+    color: #140101;
+    font-size: 1.6rem;
+    padding-left: 15px;
+}
+.social-links ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    place-content: flex-end;
+}
+.social-links ul li {
+	list-style: none; 
+}
+.social-links ul li:nth-child(1) a:hover .fab {
+	color: #bc2a8d;
+}
+.social-links ul li:nth-child(2) a:hover .fab {
+	color: #00aced;
+}
+.social-links ul li:nth-child(3) a:hover .fab {
+	color: #016b9c;
+}
+
+.margin-bottom {
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.copyright {
+    padding-right: 0px;
+    font-size: 1rem ;
+}
+.copyright p {
+    color:#140101;
+    text-align: left;
 }
 /*---------------- MEDIA FOR SMALL DEVICES ------------------*/
 @media screen and (max-width:600px) {
@@ -448,7 +555,17 @@ nav ul a,
     .card-width-categories {
         height: 265px;
     }
-}
+    .categories-btn {
+        height:32.4px;
+        font-size:1rem;
+        line-height: 32.4px;
+        padding: 0 6px;
+    }/*
+    .card-height-categories {
+        height: 24rem;
+    }
+}*/
+
 @media screen and (min-width:510px) {
     .card-width-categories {
         height: 192px;
@@ -457,6 +574,21 @@ nav ul a,
 @media screen and (min-width:600px) {
     .card-width-categories {
         height: 334px;
+    }
+    .welcome-text {
+        font-size: 2.9rem;
+    }
+    .form-content {
+        margin-top: 10rem;
+    }
+    h1 {
+        font-size:2.5rem;
+    }
+    .box-style-margin-top {
+        margin-top: 2.8rem;
+    }
+    .flashes h4 {
+        margin-top: 25px;
     }
 }
 @media screen and (min-width:700px) {

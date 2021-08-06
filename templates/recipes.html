@@ -6,16 +6,15 @@
   <section id="hero-image">
     <div class="row">
       <div class="col s12 center-align">
-        <h2 class="welcome-test">Store, Find and Share your favourite Smoothies recipes</h2>
+        <h1 class="welcome-text">Store, Find and Share your favourite Smoothies recipes</h1>
       </div>
       <!--Search Box-->
       <div class="col s12 m8 offset-m2 l6 offset-l3 center-align form-content">
         <form action="{{ url_for('regex') }}" method="post">
           <div class="row search-margin-bottom search-header">
-            <!--<h2>Keep, Find and Share your favourite Smoothie recipes</h2>-->
             <div class="col s11 input-field input-margin-top">
               <i class="fas fa-search prefix"></i>
-              <input type="text" name="query" id="query" minlenght="3" class="validate" required>
+              <input type="text" name="query" id="query" class="validate" required>
               <label for="query">Search for recipes by ingredients</label>
             </div>
           </div>
@@ -28,12 +27,11 @@
         </form>
       </div>
     </div>
-</div>
 </section>
+</div>
 
 <section>
   <h1 class="center-align">Smootihe Recipes</h1>
-
   <!-- Displaying Category Name & Description -->
   <div class="row">
     {% for category in categories %}
@@ -43,19 +41,18 @@
       <p class="category-description">{{ category.description }}</p>
     </div>
   </div>
-  {% endif %}
-  {% endfor %}
-  
+    {% endif %}
+    {% endfor %}
 </section>
 
 <section>
-  <!-- Searching for recipes by ingredient-->
+  <!-- Searching for recipes by ingredient -->
   <div class="container">
     {{ pagination.links }}
     <!-- Recipe cards -->
     <div class="row cards-row-flex">
       {% if recipes|length > 0 %}
-      <!-- Recipe Image & Recipe Name-->
+      <!-- Recipe Image & Recipe Name -->
       {% for recipe in recipes %}
       <div class="col s12 m6 l4 xl3 card-column-flex">
         <div class="cards cards-flex">
@@ -74,8 +71,8 @@
               </a>
             </div>
             <div class="card-content">
-              <span class="card-title center-align">
-                <h3 class="title-font">{{ recipe.name }}</h3>
+              <span class="card-title center-align title-font">
+                <h3>{{ recipe.name }}</h3>
               </span>
               <!-- Recipe Serves, Calories Per Serving, Category, Added By -->
               <p class="center-align">
@@ -108,7 +105,7 @@
         </div>
         <div class="modal-footer center-align">
           <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn red-btn">Delete</a>
-          <button class="btn modal-close add-list-item">Cancel</button>
+          <button class="btn modal-close green-btn">Cancel</button>
         </div>
       </div>
       {% endfor %}
@@ -117,12 +114,11 @@
     <!-- No ingredient found -->
     <div class="no-result-info">
       <h5 class="no-ingredient-found">No Result Found</h5>
-      <p class="no-recipe-found">Feel free to register for one here <i class="fas fa-hand-point-right"></i> <strong><a
-            href="{{ url_for('register') }}" class="color-text">REGISTER</a>
+      <p class="no-recipe-found">Feel free to register for one here <i class="fas fa-hand-point-right"></i> <strong><a href="{{ url_for('register') }}" class="color-text">REGISTER</a>
         </strong> or if you have an account log in in here <i class="fas fa-hand-point-right"></i>
-        <strong><a href="{{ url_for('login') }}" class="color-text">LOG IN</a></strong> and add new recipe to the
-        database!</p>
-      {% endif %}
+        <strong><a href="{{ url_for('login') }}" class="color-text">LOG IN</a></strong> and add new recipe to the database!
+      </p>
+    {% endif %}
     </div>
   </div>
   {{ pagination.links }}
