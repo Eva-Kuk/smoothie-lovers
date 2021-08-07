@@ -432,10 +432,11 @@ nav ul a,
 .helper-text {
     font-size: 0.7rem;
 }
-.card-panel {
+.form-card {
     background-color:#fffcfc94;
     border-radius: 50px;
 }
+
 .button-style {
     border-radius: 5px;
 }
@@ -598,7 +599,7 @@ nav ul a,
         line-height: 32.4px;
         padding: 0 6px;
     }  
- 
+}
     /*
     .card-height-categories {
         height: 24rem;
@@ -609,7 +610,6 @@ nav ul a,
     .card-width-categories {
         height: 192px;
     }
-   
 }
 @media screen and (min-width:600px) {
     .card-width-categories {
