@@ -4,27 +4,28 @@
 <!--CREDIT: Card panel code customized from materializecss-->
 <!--CREDIT: Mini Project Task Manager and customized-->
 <section id="hero-image-full-screen"> 
-    <div class="container-fluid">
-        <div class="row">
-            <form id="contact-form" class="col s12 l8 offset-l2 register-form-margin" method="POST" action="{{ url_for('contact')}}">
-                <div class="card-panel">
+    <div class="container-fluid display-container">
+        <div class="row display-row">
+            <form id="contact-form" class="col s12 l8 offset-l2 " method="POST" action="{{ url_for('contact')}}">
+                <div class="card-panel padding-landscape">
                     <!--Email-->
                     <div class="row">
-                        <div class="input-field col s12">
+                        <h1 class="center-align text-margin">Contact</h1>
+                        <div class="input-field input-margin col s12">
                             <input id="email" name="email" type="email" class="validate" required>
                             <label for="email">Email</label>
                         </div>
                     </div>
                      <!--Message-->
                      <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field input-margin col s12">
                             <textarea id="message" name="message" class="materialize-textarea" required></textarea>
                             <label for="message">Message here ...</label>
                         </div>
                     </div>
                     <!--Sent Message -->
                     <div class="row">
-                        <button type="submit" class="col s4 offset-s4 btn-large red-btn button-style" value="Send"> Send <i class="fas fa-sign-in-alt hide-on-med-and-down"></i>
+                        <button type="submit" class="col s4 offset-s4 btn-small btn-forms-hover red-btn button-style" value="Send"> Send <i class="fas fa-sign-in-alt hide-on-med-and-down"></i>
                         </button>
                     </div>
                 </div>
