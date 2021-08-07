@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+/* CREDIT from w3school.com and customised for slide down a footer on scroll*/
 // jQuerry Initialization from materializecss
 $(document).ready(function(){
     $(".sidenav").sidenav();
@@ -9,7 +11,6 @@ $(document).ready(function(){
 // jQuerry Initialization from materializecss
     $('#textarea1').val('New Text');
     M.textareaAutoResize($('#textarea1'));
-
 
 // CREDIT: Code taken from Miniproject Materialize Validation
   validateMaterializeSelect();
@@ -70,3 +71,8 @@ $( "#method .green-btn" ).click(function(e) {
                   </li>`;
   $( this ).parent().before(listItem);
 });
+
+//CREDIT: history back method from https://www.w3schools.com/jsref/met_his_back.asp
+function goBack() {
+    window.history.back();
+  }

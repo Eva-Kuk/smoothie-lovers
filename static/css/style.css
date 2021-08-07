@@ -294,6 +294,8 @@ nav ul a,
 
 .recipe-home-btn {
     margin-top: 2rem;
+    text-transform: none;
+    font-weight: 600;
 }
 
 /*---------------- ADD/EDIT RECIPE PAGE ------------------*/
@@ -447,17 +449,15 @@ nav ul a,
 .register-form-margin {
     margin-top: 7rem;
 }
-.login-form-margin {
-    margin-top: 10rem;
-}
 .input-margin {
     margin-top: 0;
     margin-bottom: 0;
 }
 .display-container {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     align-items: center;
+    position: relative;
 }
 .display-row {
     width: 100%;
@@ -528,17 +528,19 @@ nav ul a,
 /*--------------------- FOOTER -----------------------*/
 .footer {
     background-color: #fffcfc94;
-    position: absolute;
+   /* position: absolute;*/
+   position: relative;
     font-size: 1.2rem;
     padding-bottom: 0.6rem;
-    bottom: 0;
+  /*  bottom: 0;*/
     width: 100%;
     padding-top: 0.6rem;
 }
+
 .social-links-item {
     color: #140101;
     font-size: 1.6rem;
-    padding-left: 15px;
+    padding-left: 8px;
 }
 .social-links ul {
 	display: -webkit-box;
