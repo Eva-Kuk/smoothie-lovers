@@ -36,6 +36,7 @@ h2 {
 }
 h3 {
     font-size:1.4rem;
+    font-weight: 600;
 }
 h4 {
     font-size:1.1rem;
@@ -176,15 +177,20 @@ nav ul a,
   }
 .form-content {
     /* CREDIT: https://getcssscan.com/css-box-shadow-examples */
-    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    -webkit-box-shadow: 
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+                rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+                rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     background-color:#fffcfc94;
     border-radius: 80px;
     margin-top: 5rem;
   }
 .input-margin-top {
     margin-top: 2rem;
-  }
+}
 .search-margin-bottom {
     margin-bottom: 5px;
 }
@@ -249,14 +255,16 @@ nav ul a,
     margin-top: 5px;
     margin-bottom: 2px;
 }
-
-/*---------------- PROFILE PAGE ------------------*/
+/*----------------------- PROFILE PAGE ------------------------*/
 .margin-profile-username {
     margin-top: 15px;
     margin-bottom: 5px;
 }
 .box-style-margin-top {
     margin-top: 3.8rem;
+}
+.added-font {
+    font-size: 1rem;
 }
 /*---------------- RECIPE CARDS/RECIPES PAGE ------------------*/
 .cards-flex {
@@ -284,12 +292,13 @@ nav ul a,
     text-align: center;
     border-radius: 108px;
     /* CREDIT: https://getcssscan.com/css-box-shadow-examples */
-    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+    -webkit-box-shadow: 
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+                rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+                rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .category-name {
     font-size: 2rem;
@@ -323,7 +332,6 @@ nav ul a,
     margin-top: 1rem;
     margin-bottom: 0.2rem;
 }   
-
 .card .card-content p {
     margin-top: 0.5rem;
     margin-bottom: 0.25rem;
@@ -331,17 +339,14 @@ nav ul a,
 .card .card-content {
     padding: 0.9rem;
 }
-.added-font {
-    font-size: 1rem;
+.list-style {
+    list-style: square;
 }
-.see-recipe-font {
-    text-transform: capitalize !important;
-    color:#f72626 !important;
-    font-size: 1.1rem;
-}/*
-.recipe-name {
-    background-color: red;
-}*/
+
+.recipe-home-btn {
+    margin-top: 2rem;
+}
+
 /*---------------- ADD/EDIT RECIPE PAGE ------------------*/
 .collection .collection-item {
     background-color:#008f2b00;
@@ -426,8 +431,7 @@ nav ul a,
 /*----------------SINGLE RECIPE PAGE ------------------*/
 .single-recipe-image {
     width: 100%; 
-   /* border-radius: 3px;
-    border-style: solid;*/
+    border-radius: 3px;
 }
 .margin-top-description {
     margin-top: 1.9rem;
@@ -436,7 +440,7 @@ nav ul a,
     margin-top: 2rem;
 }
 .margin-bottom-serves {
-    margin-bottom: 3.9rem;
+    margin-bottom: 2.4rem;
 }
 .recipe-background {
     background-color:#e0e0e080 ;
@@ -492,8 +496,13 @@ nav ul a,
 .modal-background {
     border-radius: 80px;
     /* CREDIT: https://getcssscan.com/css-box-shadow-examples */
-    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    -webkit-box-shadow: 
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+                rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+                rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 /*--------------------- FOOTER -----------------------*/
@@ -527,7 +536,7 @@ nav ul a,
 	color: #016b9c;
 }
 
-.margin-bottom {
+.footer-margin-bottom {
     margin: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -539,10 +548,13 @@ nav ul a,
 .copyright {
     padding-right: 0px;
     font-size: 1rem ;
+  
 }
 .copyright p {
     color:#140101;
     text-align: left;
+    display: flex;
+    justify-self: start;
 }
 /*---------------- MEDIA FOR SMALL DEVICES ------------------*/
 @media screen and (max-width:600px) {
