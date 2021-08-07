@@ -1,198 +1,252 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container-fluid">
+
   <!--Hero Image -->
-  <section id="hero-image">
+<section id="hero-image">
+  <div class="container-fluid">
     <div class="row">
-      <!--Search Box-->
-      <div class="col s12 m8 offset-m2 l6 offset-l3 center-align form-content">
-        <form action="{{ url_for('regex') }}" method="post">
-          <div class="row search-margin-bottom ">
-            <div class="col s11 input-field input-margin-top">
-              <i class="fas fa-search prefix"></i>
-              <input type="text" name="query" id="query" minlenght="3" class="validate" required>
-              <label for="query">Search for recipes by ingredients</label>
+      <div class="row">
+        <div class="col s12 center-align">
+          <h2 class="welcome-text">Store, Find and Share your favourite Smoothies recipes</h2>
+        </div>
+        <!--Search Box-->
+        <div class="col s12 m8 offset-m2 l6 offset-l3 center-align form-content">
+          <form action="{{ url_for('regex') }}" method="post">
+            <div class="row search-margin-bottom ">
+              <div class="col s11 input-field input-margin-top">
+                <i class="fas fa-search prefix"></i>
+                <input type="text" name="query" id="query" class="validate" required>
+                <label for="query">Search for recipes by ingredients</label>
+              </div>
+            </div>
+            <div class="col s12 search-button-margin">
+              <a href="{{ url_for('get_recipes') }}" class="btn-small red-btn">Reset</a>
+              <button type="submit" class="btn-small green-btn">
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h1 class="center-align">Utensils</h1>
+  <div class="row">
+    <div class="col s12 m8 offset-m2 box-style">
+      <h2 class="utensils-heading-style">Are you looking for a new blender?</h2>
+      <p class="utensils-category-description">
+        <b>Do you want to replace your old one?</b><br>
+        Find in here the most frequently recommended kitchen utensils and tools recommended by many happy Amazon
+        users, which are useful in the production and serving of smoothies.
+      </p>
+    </div>
+  </div>
+    <!--CREDIT: Card Reveal code customized from materializecss-->
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6">
+          <!-- card 1-->
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator card-image-padding equal-img-size"
+                src="https://m.media-amazon.com/images/I/71hObPPkbzL._AC_SL1500_.jpg" alt="Ninja Nutri Slim Blender">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator">Ninja Nutri Slim Blender
+                <i class="fas fa-eye font-red right tooltipped " data-position="top"
+                  data-tooltip="About item"></i></span>
+              <p><a
+                  href="https://www.amazon.co.uk/Ninja-QB3001UKS-Blender-Smoothie-Silver/dp/B07Q6GT98V/ref=sr_1_9?dchild=1&keywords=smoothie+blender&qid=1627694386&s=kitchen&sr=1-9"
+                  target="_blank" rel="noopener">
+                  <i class="fab fa-amazon amazon-buy tooltipped " data-position="top"
+                    data-tooltip="Buy in here"></i></a>
+              </p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title">Ninja Nutri Slim Blender<i class="far fa-times-circle font-red right"></i></span>
+              <h4>About this item:</h4>
+              <p><b>SLIM</b>, compact nutri Ninja personal blender, Blends delicious, super-smooth, nutritious smoothies
+                in
+                seconds.
+                <b>POWERFULL</b> 700 W motor drives specially-designed Ninja blades.
+                <b>PULSE</b> action blends whole fruits, vegetables, nuts.
+                seeds and crushes ice, Includes two dishwasher-safe, <b>BPA-free</b> tritan cups, two sip and seal lids,
+                recipe
+                guide. </p>
             </div>
           </div>
-          <div class="col s12 search-button-margin">
-            <a href="{{ url_for('get_recipes') }}" class="btn-small red-btn">Reset</a>
-            <button type="submit" class="btn-small green-btn">
-              Search
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-</div>
-</section>
-<h1 class="center-align">Utensils</h1>
-<div class="row">
-  <div class="col s12 m8 offset-m2 box-style">
-    <h2 class="center-align category-name">Always good price for the high quality</h2>
-    <p class="category-description">Are you looking for a new blender?<br>
-     Do you want to replace your old man?<br>
-     Check it out here ....<br>
-    We share with you the most frequently recommended cooking utensils and kitchen tools recommended by many happy users, which are useful in the production and serving of smoothies.</p>
-  </div>
-</div>
-<section>
-  <!--CREDIT: Card Reveal code customized from materializecss-->
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m6">
-        <!-- card 1-->
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator card-image-padding equal-img-size"
-              src="https://m.media-amazon.com/images/I/71hObPPkbzL._AC_SL1500_.jpg" alt="Ninja Nutri Slim Blender">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator title-font-weight">Ninja Nutri Slim Blender
-              <i class="fas fa-eye font-red right tooltipped " data-position="top" data-tooltip="About item"></i></span>
-            <p><a href="https://www.amazon.co.uk/Ninja-QB3001UKS-Blender-Smoothie-Silver/dp/B07Q6GT98V/ref=sr_1_9?dchild=1&keywords=smoothie+blender&qid=1627694386&s=kitchen&sr=1-9" target="_blank" rel="noopener">
-              <i class="fab fa-amazon amazon-buy tooltipped " data-position="top" data-tooltip="Buy in here"></i></a>
-            </p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title">Ninja Nutri Slim Blender<i class="far fa-times-circle font-red right"></i></span>
-            <h4>About this item:</h4>
-            <p><b>SLIM</b>, compact nutri Ninja personal blender, Blends delicious, super-smooth, nutritious smoothies in
-              seconds.
-              <b>POWERFULL</b> 700 W motor drives specially-designed Ninja blades.
-              <b>PULSE</b> action blends whole fruits, vegetables, nuts.
-              seeds and crushes ice, Includes two dishwasher-safe, <b>BPA-free</b> tritan cups, two sip and seal lids, recipe
-              guide. </p>
-          </div>
         </div>
-      </div>
- <!-- card 2-->
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator card-image-padding equal-img-size"
-              src="https://m.media-amazon.com/images/I/81OBFjbdFWL._AC_SL1500_.jpg" alt="Nutribullet blender">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator title-font-weight">NutriBullet 900W Blender
-              <i class="fas fa-eye font-red right tooltipped " data-position="top" data-tooltip="About item"></i></span>
-            <p><a href="https://www.amazon.co.uk/NutriBullet-900W-Blender-Champagne-Multi-Function/dp/B01N39HGLD/ref=bmx_dp_ulbolyoo_1/260-4143937-7260128?pd_rd_w=rO3BW&pf_rd_p=eb113e0f-8c39-4b39-8cfa-62247fe4355e&pf_rd_r=A166XXR5H0AM5TWKX5R0&pd_rd_r=d8c663a0-e2be-4cf3-a010-41b1bfe681e3&pd_rd_wg=p0YgX&pd_rd_i=B01N39HGLD&psc=1"
-              target="_blank" rel="noopener">
-              <i class="fab fa-amazon amazon-buy tooltipped " data-position="top" data-tooltip="Buy in here"></i></a>
-            </p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title">NutriBullet 900W Blender<i class="far fa-times-circle font-red right"></i></span>
-            <h4>About this item:</h4>
-            <p><b>NUTRIBULLET ACTIVE LIFESTYLE BLENDER</b> - the original and best-selling NUTRiBULLET.
-              <b>POWERFUL NUTRIENT EXTRACTOR</b> - 900-watt motor generates 50% more power than previous models.
-              The extractor blades and cyclonic action bursts open seeds, cracks through stems, and shreds tough skins to get the most out of your fruit and vegetables.
-              <b>GOODNESS ON-THE-GO</b> - whether you're on the school run or heading to the gym fitting vegetables and fruits into your daily routine is made even easier with 2 sizes of travel cups.
-              <b>QUICK & EASY</b>- quick and easy Clean - Simply rinse under warm tap water.
-              <b>ESSENTIAL NUTRITION - PRO 900</b> Series completely breaks down your food, liquefying and mixing together all the essential nutrition. Perfect for making cool beverages, smoothies, juices, protein shakes or sports drinks.</p>
-          </div>
-        </div>
-      </div>
- <!-- card 3-->
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator card-image-padding equal-img-size"
-              src="https://m.media-amazon.com/images/I/716dcTASziS._AC_SL1500_.jpg" alt="Portable Smoothie Blender">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator title-font-weight">Portable Smoothie Blender
-              <i class="fas fa-eye font-red right tooltipped " data-position="top" data-tooltip="About item"></i></span>
-            <p><a href="https://www.amazon.co.uk/Ninja-QB3001UKS-Blender-Smoothie-Silver/dp/B07Q6GT98V/ref=sr_1_9?dchild=1&keywords=smoothie+blender&qid=1627694386&s=kitchen&sr=1-9" target="_blank" rel="noopener">
-              <i class="fab fa-amazon amazon-buy tooltipped " data-position="top" data-tooltip="Buy in here"></i></a>
-            </p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title">Portable Smoothie Blender<i class="far fa-times-circle font-red right"></i></span>
-            <h4>About this item:</h4>
-            <p><b>PORTABLE Smoothie Blender</b>, Milk Shake Smoothie Maker Mini Size with Six Blades.
-               400ML USB. Rechargeable Juicer Machine Cup, Hand Held Personal Blender for Home, Outdoor, Travel,
-               Portable, Durable & Convenient - The blender have built-in <b>2000mAh</b> rechargeable battery, and the charging time is about 2 hours.
-              it can be used for 10-15 times after it is full charged. 
-              <b>>SAFETY & HEALTHY</b> - This smoothie maker was made of<b>eco-friendly</b>, food-grade non-toxic PCTG material, <b>BPA free</b>.
+        <!-- card 2-->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator card-image-padding equal-img-size"
+                src="https://m.media-amazon.com/images/I/81OBFjbdFWL._AC_SL1500_.jpg" alt="Nutribullet blender">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator">NutriBullet 900W Blender
+                <i class="fas fa-eye font-red right tooltipped " data-position="top"
+                  data-tooltip="About item"></i></span>
+              <p><a
+                  href="https://www.amazon.co.uk/NutriBullet-900W-Blender-Champagne-Multi-Function/dp/B01N39HGLD/ref=bmx_dp_ulbolyoo_1/260-4143937-7260128?pd_rd_w=rO3BW&pf_rd_p=eb113e0f-8c39-4b39-8cfa-62247fe4355e&pf_rd_r=A166XXR5H0AM5TWKX5R0&pd_rd_r=d8c663a0-e2be-4cf3-a010-41b1bfe681e3&pd_rd_wg=p0YgX&pd_rd_i=B01N39HGLD&psc=1"
+                  target="_blank" rel="noopener">
+                  <i class="fab fa-amazon amazon-buy tooltipped " data-position="top"
+                    data-tooltip="Buy in here"></i></a>
               </p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title">NutriBullet 900W Blender<i class="far fa-times-circle font-red right"></i></span>
+              <h4>About this item:</h4>
+              <p><b>NUTRIBULLET ACTIVE LIFESTYLE BLENDER</b> - the original and best-selling NUTRiBULLET.
+                <b>POWERFUL NUTRIENT EXTRACTOR</b> - 900-watt motor generates 50% more power than previous models.
+                The extractor blades and cyclonic action bursts open seeds, cracks through stems, and shreds tough skins
+                to get the most out of your fruit and vegetables.
+                <b>GOODNESS ON-THE-GO</b> - whether you're on the school run or heading to the gym fitting vegetables
+                and fruits into your daily routine is made even easier with 2 sizes of travel cups.
+                <b>QUICK & EASY</b>- quick and easy Clean - Simply rinse under warm tap water.
+                <b>ESSENTIAL NUTRITION - PRO 900</b> Series completely breaks down your food, liquefying and mixing
+                together all the essential nutrition. Perfect for making cool beverages, smoothies, juices, protein
+                shakes or sports drinks.</p>
+            </div>
           </div>
         </div>
-      </div>
-       <!-- card 4-->
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator card-image-padding equal-img-size" src="https://m.media-amazon.com/images/I/71bEG4nG8aL._AC_SL1300_.jpg" alt="Paper Smoothie Straws">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator title-font-weight">Paper Smoothie Straws
-              <i class="fas fa-eye font-red right tooltipped " data-position="top" data-tooltip="About item"></i></span>
-            <p><a href="https://www.amazon.co.uk/Smoothie-Straws-Biodegradable-Assorted-Colors/dp/B07QPQB2YD/ref=bmx_dp_ve42fu6o_1/260-4143937-7260128?pd_rd_w=Z8VBF&pf_rd_p=eb113e0f-8c39-4b39-8cfa-62247fe4355e&pf_rd_r=X9AMDT0KP1SGE7JRKKJM&pd_rd_r=1e189026-8fd7-443f-b74d-a6b3fe62396f&pd_rd_wg=nYnx9&pd_rd_i=B07QPQB2YD&psc=1" target="_blank" rel="noopener">
-              <i class="fab fa-amazon amazon-buy tooltipped " data-position="top" data-tooltip="Buy in here"></i></a>
-            </p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title">Paper Smoothie Straws<i class="far fa-times-circle font-red right"></i></span>
-            <h4>About this item:</h4>
-            <p>Comfy Package <b>JUMBO PAPER 100% Biodegradable</b> Smoothie Straws' jumbo 10 mm diameter and 9" height is perfect for enjoying thicker drinks such as smoothies,
-              <b>ECO-FRIENDLY</b> disposable paper smoothie straws made with 100% biodegradable environmental friendly materials.
-              With <b>BPA-FREE</b> paper and food-safe ink that doesn't bleed it's the ideal paper smoothie straws to pop into your cup of water or juice.
-              Made with multiple layers of thick paper and will not fall apart, melt or get soggy in liquid for an extended period of time.
-              Assorted bright colored paper.</p>
-          </div>
-        </div>
-      </div>
-       <!-- card 5-->
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator card-image-padding equal-img-size"
-              src="https://m.media-amazon.com/images/I/61D1kX6h5wL._AC_SL1500_.jpg" alt="Smoothie reusable Tumbler">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator title-font-weight">Reusable Smoothie Tumbler
-              <i class="fas fa-eye font-red right tooltipped " data-position="top" data-tooltip="About item"></i></span>
-            <p><a href="https://www.amazon.co.uk/Leakproof-Dodoko-Resealable-Dishwasher-Shatterproof/dp/B08DMC4HTK/ref=sr_1_50?dchild=1&keywords=smoothie&qid=1627760969&s=kitchen&sr=1-50" target="_blank" rel="noopener">
-              <i class="fab fa-amazon amazon-buy tooltipped " data-position="top" data-tooltip="Buy in here"></i></a>
-            </p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title">Reusable Smoothie Tumbler <i class="far fa-times-circle font-red right"></i></span>
-            <h4>About this item:</h4>
-            <p><b>UNIQUE WIDE RESEALABLE LID WITH BIG STRAW</b>: We understand the frustration when the mouth is too small for the drink.
-              <b>EASY TO CLEAN</b>: This shatterproof 24 ounce tritan cup is completely dishwasher safe making cleaning via hand wash an optional preference. 
-              <b>PORTABLE AND SLEEK</b>: It doesn't matter if you are drinking iced coffee or boiling tea, our cork band sleeve will save the temperature of the drink only for your tongue.
-              <b>HIGH QUALITY AND ECO-FRIENDLY</b>: Throw away less bubble tea cup with this reusable tumbler. Completely BPA free. </p>
+        <!-- card 3-->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator card-image-padding equal-img-size"
+                src="https://m.media-amazon.com/images/I/716dcTASziS._AC_SL1500_.jpg" alt="Portable Smoothie Blender">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator">Portable Smoothie Blender
+                <i class="fas fa-eye font-red right tooltipped " data-position="top"
+                  data-tooltip="About item"></i></span>
+              <p><a
+                  href="https://www.amazon.co.uk/Ninja-QB3001UKS-Blender-Smoothie-Silver/dp/B07Q6GT98V/ref=sr_1_9?dchild=1&keywords=smoothie+blender&qid=1627694386&s=kitchen&sr=1-9"
+                  target="_blank" rel="noopener">
+                  <i class="fab fa-amazon amazon-buy tooltipped " data-position="top"
+                    data-tooltip="Buy in here"></i></a>
+              </p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title">Portable Smoothie Blender<i
+                  class="far fa-times-circle font-red right"></i></span>
+              <h4>About this item:</h4>
+              <p><b>PORTABLE Smoothie Blender</b>, Milk Shake Smoothie Maker Mini Size with Six Blades.
+                400ML USB. Rechargeable Juicer Machine Cup, Hand Held Personal Blender for Home, Outdoor, Travel,
+                Portable, Durable & Convenient - The blender have built-in <b>2000mAh</b> rechargeable battery, and the
+                charging time is about 2 hours.
+                it can be used for 10-15 times after it is full charged.
+                <b>>SAFETY & HEALTHY</b> - This smoothie maker was made of<b>eco-friendly</b>, food-grade non-toxic PCTG
+                material, <b>BPA free</b>.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+        <!-- card 4-->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator card-image-padding equal-img-size"
+                src="https://m.media-amazon.com/images/I/71bEG4nG8aL._AC_SL1300_.jpg" alt="Paper Smoothie Straws">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator">Paper Smoothie Straws
+                <i class="fas fa-eye font-red right tooltipped " data-position="top"
+                  data-tooltip="About item"></i></span>
+              <p><a
+                  href="https://www.amazon.co.uk/Smoothie-Straws-Biodegradable-Assorted-Colors/dp/B07QPQB2YD/ref=bmx_dp_ve42fu6o_1/260-4143937-7260128?pd_rd_w=Z8VBF&pf_rd_p=eb113e0f-8c39-4b39-8cfa-62247fe4355e&pf_rd_r=X9AMDT0KP1SGE7JRKKJM&pd_rd_r=1e189026-8fd7-443f-b74d-a6b3fe62396f&pd_rd_wg=nYnx9&pd_rd_i=B07QPQB2YD&psc=1"
+                  target="_blank" rel="noopener">
+                  <i class="fab fa-amazon amazon-buy tooltipped " data-position="top"
+                    data-tooltip="Buy in here"></i></a>
+              </p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title">Paper Smoothie Straws<i class="far fa-times-circle font-red right"></i></span>
+              <h4>About this item:</h4>
+              <p>Comfy Package <b>JUMBO PAPER 100% Biodegradable</b> Smoothie Straws' jumbo 10 mm diameter and 9" height
+                is perfect for enjoying thicker drinks such as smoothies,
+                <b>ECO-FRIENDLY</b> disposable paper smoothie straws made with 100% biodegradable environmental friendly
+                materials.
+                With <b>BPA-FREE</b> paper and food-safe ink that doesn't bleed it's the ideal paper smoothie straws to
+                pop into your cup of water or juice.
+                Made with multiple layers of thick paper and will not fall apart, melt or get soggy in liquid for an
+                extended period of time.
+                Assorted bright colored paper.</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 5-->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator card-image-padding equal-img-size"
+                src="https://m.media-amazon.com/images/I/61D1kX6h5wL._AC_SL1500_.jpg" alt="Smoothie reusable Tumbler">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator">Smoothie Tumbler
+                <i class="fas fa-eye font-red right tooltipped " data-position="top"
+                  data-tooltip="About item"></i></span>
+              <p><a
+                  href="https://www.amazon.co.uk/Leakproof-Dodoko-Resealable-Dishwasher-Shatterproof/dp/B08DMC4HTK/ref=sr_1_50?dchild=1&keywords=smoothie&qid=1627760969&s=kitchen&sr=1-50"
+                  target="_blank" rel="noopener">
+                  <i class="fab fa-amazon amazon-buy tooltipped " data-position="top"
+                    data-tooltip="Buy in here"></i></a>
+              </p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title">Reusable Smoothie Tumbler <i
+                  class="far fa-times-circle font-red right"></i></span>
+              <h4>About this item:</h4>
+              <p><b>UNIQUE WIDE RESEALABLE LID WITH BIG STRAW</b>: We understand the frustration when the mouth is too
+                small for the drink.
+                <b>EASY TO CLEAN</b>: This shatterproof 24 ounce tritan cup is completely dishwasher safe making
+                cleaning via hand wash an optional preference.
+                <b>PORTABLE AND SLEEK</b>: It doesn't matter if you are drinking iced coffee or boiling tea, our cork
+                band sleeve will save the temperature of the drink only for your tongue.
+                <b>HIGH QUALITY AND ECO-FRIENDLY</b>: Throw away less bubble tea cup with this reusable tumbler.
+                Completely BPA free. </p>
+            </div>
+          </div>
+        </div>
 
-       <!-- card 6-->
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator card-image-padding equal-img-size" src="https://m.media-amazon.com/images/I/8190o334SsL._AC_SL1500_.jpg" alt="Blender Smoothie Maker">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator title-font-weight">Blender Smoothie Maker
-              <i class="fas fa-eye font-red right tooltipped " data-position="top" data-tooltip="About item"></i></span>
-            <p><a href="https://www.amazon.co.uk/Professional-Icebreaker-Stainless-Countertop-Container/dp/B09875LP5L/ref=sr_1_65?dchild=1&keywords=smoothie&qid=1627761578&s=kitchen&sr=1-65" target="_blank" rel="noopener">
-              <i class="fab fa-amazon amazon-buy tooltipped " data-position="top" data-tooltip="Buy in here"></i></a>
-            </p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title">Blender Smoothie Maker<i class="far fa-times-circle font-red right"></i></span>
-            <h4>About this item:</h4>
-            <p><b>ULTRA HIGH SPEED Blenders</b>The smoothie maker blender working faster and smoother for the <b>2000W power</b>.
-              The <b>6 blades in stainless steel</b> break cell walls of food easily, releasing more nutrition in seconds.
-              This one blender acts as a juicer, nuts and coffee grinder, and ice smoothies machine for multiple using.
-              <b>VARIABLE SPEED</b> Control & Pre-programmed Setting.The motor based with an easily adjust 6-speed control 
-              and 3 pre-programmed settings to achieve a variety of textures.</p>
+        <!-- card 6-->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator card-image-padding equal-img-size"
+                src="https://m.media-amazon.com/images/I/8190o334SsL._AC_SL1500_.jpg" alt="Blender Smoothie Maker">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator">Blender Smoothie Maker
+                <i class="fas fa-eye font-red right tooltipped " data-position="top"
+                  data-tooltip="About item"></i></span>
+              <p><a
+                  href="https://www.amazon.co.uk/Professional-Icebreaker-Stainless-Countertop-Container/dp/B09875LP5L/ref=sr_1_65?dchild=1&keywords=smoothie&qid=1627761578&s=kitchen&sr=1-65"
+                  target="_blank" rel="noopener">
+                  <i class="fab fa-amazon amazon-buy tooltipped " data-position="top"
+                    data-tooltip="Buy in here"></i></a>
+              </p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title">Blender Smoothie Maker<i class="far fa-times-circle font-red right"></i></span>
+              <h4>About this item:</h4>
+              <p><b>ULTRA HIGH SPEED Blenders</b>The smoothie maker blender working faster and smoother for the <b>2000W
+                  power</b>.
+                The <b>6 blades in stainless steel</b> break cell walls of food easily, releasing more nutrition in
+                seconds.
+                This one blender acts as a juicer, nuts and coffee grinder, and ice smoothies machine for multiple
+                using.
+                <b>VARIABLE SPEED</b> Control & Pre-programmed Setting.The motor based with an easily adjust 6-speed
+                control
+                and 3 pre-programmed settings to achieve a variety of textures.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
   </div>
 </section>
 

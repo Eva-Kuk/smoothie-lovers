@@ -218,14 +218,16 @@ def logout():
 def contact():
     if request.method == "POST":
         email = request.form.get("email")
+        print(f"Email: {email}")
         message = request.form.get("message")
 
-        msg = Message('Hello', sender=email,
+        msg = Message('Hello',
+                      sender=("Smoothie Lovers", email),
                       recipients=['webdeveloperevakukla@gmail.com'])
 
         msg.body = message
         mail.send(msg)
-        flash("Email sent Successfully")
+        flash("Email Sent Successfully")
         return redirect(url_for("contact"))
 
     return render_template("contact.html")
