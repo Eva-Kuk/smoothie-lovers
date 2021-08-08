@@ -102,9 +102,8 @@ Because the code is made up of Jinja templates, had to checked on the siteby rig
     ![recipes html validator error 4](wireframes/testing/recipes-html-validator-error-4.png)
     ![recipes html validator error 4 solution](wireframes/testing/recipes-html-validator-error-4-solution.jpg)
 
-    
 
-     **Recipe Page** (`recipe.html')
+     **Recipe Page** (`recipe.html`)
      - WARNING: Section lacks heading
         - FIXED - `<span>` for flash massages in base.html replaced by `<div>`
       ![recipe html validator warning](wireframes/testing/recipe-html-validator-warning.png)
@@ -122,9 +121,9 @@ Because the code is made up of Jinja templates, had to checked on the siteby rig
         - FIX ERRORS 4,5 Duplicate ID and the first occurence of ID for two the same `name` id's for categories and recipes collection, changed in to `category_name`
     ![add recipe html validator errors-4-5](wireframes/testing/add-recipe-html-validator-errors-4-5.jpg)
 
-    **Edit Recipe Page** additional error
+    **Edit Recipe Page** (`edit_recipe.html`)  additional error
     - ERROR option element must have either an empty value attribute or no text content
-    - FIXED ....................
+    - FIXED by adding to `<select>` element attribute `size="6"`
      ![edit recipe html validator error](wireframes/testing/edit-recipe-html-validator-error.png)
 
     **Profile Page** (`profile.html`)
@@ -166,8 +165,6 @@ Because the code is made up of Jinja templates, had to checked on the siteby rig
 
     - CSS code was passed through Auto Prefixer to add vendor prefixes [Auto Prefixer](https://autoprefixer.github.io/)
 
-
-
 ### script.js testing
 3. used [jshint](https://jshint.com/) to validate javascript code for script.js
 In the file script.js static analysis tool: jshint did not show any errors except:
@@ -188,6 +185,11 @@ The entire cod was placed in the PEP8 tool and passed the test successfully
 
 ## Testing User stories
 ---
+## New User Stories
+1. As a  new visitor, I want to navigate the site easily, so that I can find what I need effectively.
+User is able to browse through allthe recipe car
+
+
 
 ## Testing Functionality
 
@@ -219,6 +221,55 @@ The entire cod was placed in the PEP8 tool and passed the test successfully
 
 
 - **Accessibility for mobile devices on LightHouse**
+**Recipes Page** (`recipes.html`) - HOME PAGE
+    - DESKTOP
+    - MOBILE
+
+**Recipe Page** (`recipe.html`)
+    - DESKTOP
+    - MOBILE
+  
+**Register Page** (`register.html`)
+    - DESKTOP
+    - MOBILE
+
+**Add Recipe Page** (`add_recipe.html`)#
+    - DESKTOP
+    - MOBILE
+
+**Edit Recipe** (`edit_recipe.html`)
+    - DESKTOP
+    - MOBILE
+
+**Profile Page** (`profile.html`)
+    - DESKTOP
+    - MOBILE
+
+**Login Page** (`login.html`)
+    - DESKTOP
+    - MOBILE
+
+**Page Manage Categories** (`categories.html`)
+- DESKTOP
+    - MOBILE
+
+**Contact Page**
+    - DESKTOP
+    - MOBILE 
+
+ **Utensils Page**
+    - DESKTOP
+    - MOBILE
+
+ **Add Category Page** 
+    - DESKTOP
+    - MOBILE
+
+**Edit Category Page** 
+    - DESKTOP
+    - MOBILE
+
+
 
 
 ## Further Testing
