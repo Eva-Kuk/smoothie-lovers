@@ -24,7 +24,7 @@ body {
     background-color: #ebfff1;
     color: #140101;
     font-family: 'Open Sans', sans-serif;
-    }
+}
 main {
     flex-grow: 1;
 }
@@ -300,10 +300,11 @@ nav ul a,
 
 .recipe-home-btn {
     margin-top: 2rem;
-    text-transform: none;
     font-weight: 600;
 }
-
+.card .card-action {
+ border-top: none;
+}
 /*---------------- ADD/EDIT RECIPE PAGE ------------------*/
 .collection .collection-item {
     background-color:#008f2b00;
@@ -453,9 +454,9 @@ nav ul a,
     margin-top: 1.25rem;
     font-weight:600;
 }
-.register-form-margin {
+/*.register-form-margin {
     margin-top: 7rem;
-}
+}*/
 .input-margin {
     margin-top: 0;
     margin-bottom: 0;
@@ -540,7 +541,7 @@ nav ul a,
     font-size: 1.2rem;
     padding-bottom: 0.6rem;
   /*  bottom: 0;*/
-    width: 100%;
+ z-index: 1;
     padding-top: 0.6rem;
 }
 
@@ -650,9 +651,15 @@ nav ul a,
 
 /*---------Media for landscape orientation----------*/
 @media (max-width: 768px) and (orientation: landscape){
- .padding-landscape {
-     padding-top: 0.5rem;
-     padding-bottom: 0.5rem;
-     margin-top: 3.3rem;
- }
+    .padding-landscape {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        margin-top: 3.3rem;
+    }
+    html, body {
+        min-height: 175vh;
+    }
+    #hero-image-full-screen {
+        height: 175vh;
+    }
 }
