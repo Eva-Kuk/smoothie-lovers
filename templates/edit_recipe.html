@@ -2,12 +2,10 @@
 {% block content %}
 <div class="container">
 <h1 class="center-align">Edit Recipe</h1>
-<!-- Home button-->
+<!-- Go Back button-->
 <div class="row">
     <div class="col s12 m8 offset-m2 center-align">
-        <a href="{{ url_for('get_recipes') }}" class="href btn-small green-btn">
-           Home <i class="fas fa-home left"></i>
-        </a>
+       <button class="btn-small  recipe-home-btn green-btn"  onclick="goBack()"><i class="fas fa-angle-double-left"></i> Go Back</button>
     </div>
 </div>
 <!--CREDIT: Form select, Text inputs code from materializecss customized-->
@@ -31,8 +29,8 @@
                     <option value="3">3</option>
                     <option value="3">4</option>
                     <option value="3">5</option>
-                    <label for="serves">Select Serves</label>
                 </select>
+                <label for="serves">Select Serves</label>
             </div>
         </div>
         <!-- Calories -->
@@ -63,7 +61,7 @@
         <!-- Category Selection-->
         <div class="row card-panel z-depth-2 card-style box-style">
             <div class="input-field col s12">
-                <select id="name" name="category_name" class="validate" 
+                <select id="category_name" name="category_name" class="validate" 
                  aria-label="Recipe Categories" required>
                     <option value="" disabled>Choose Category</option>
                     {% for category in categories %}
@@ -127,10 +125,10 @@
             <div class="col s12 center-align">
                 <!-- Cancel Button -->
                 <a href="{{ url_for('get_recipes') }}" class="btn-small red-btn">
-                    Cancel <i class="fas fa-times-circle right"></i>
+                    Cancel <i class="fas fa-times-circle right hide-on-med-and-down"></i>
                 </a>
                 <button type="submit" class="btn-small green-btn">
-                    Edit Recipe <i class="fas fa-edit right"></i>
+                    Edit Recipe <i class="fas fa-edit right hide-on-med-and-down"></i>
                 </button>
             </div>
         </div>

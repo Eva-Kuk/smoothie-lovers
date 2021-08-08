@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<section>
 <div class="container">
   <h1 class="center-align">Manage Categories</h1> 
   <!-- Categories Card-->
@@ -12,11 +13,11 @@
   </div>
   <div class="row card-position-categories">
     {% for category in categories %}
-      <div class="col s12 m6 card-flex-categories">
+      <div class="col s12 card-flex-categories">
         <div class="card center-align box-style">
-          <div class="card-content card-width-categories">
+          <div class="card-content card-height-categories">
             <span class="card-title text-shadow">{{ category.name }}</span>
-            <p class="card-description">{{ category.description }}</p>
+            <p class="card-description padding-desc">{{ category.description }}</p>
           </div>
           <div class="card-action card-buttons-categories">
             <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn green-btn">Edit</a>
@@ -36,7 +37,9 @@
         <button class="btn modal-close green-btn">Cancel</button>
       </div>
     </div>
+    <!--end of credit-->
     {% endfor %}
   </div>
 </div> 
+</section>
 {% endblock %}
