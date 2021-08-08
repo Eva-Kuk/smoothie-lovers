@@ -20,7 +20,6 @@
     </div>
     {{ pagination.links }}
     <div class="row cards-row-flex">
-    
       {% for recipe in recipes %}
       <div class="col s12 m6 l4 xl3 card-column-flex">
         <div class="cards cards-flex">
@@ -39,9 +38,9 @@
               </a>
             </div>
             <div class="card-content">
-              <span class="card-title center-align">
-                <h3 class="title-font">{{ recipe.name }}</h3>
-              </span>
+              <div class="card-title center-align title-font">
+                <h3>{{ recipe.name }}</h3>
+              </div>
               <!-- Recipe Serves, Calories Per Serving, Category, Added By -->
               <p class="center-align">
                 <i class="fas fa-users tooltipped" data-position="left" data-tooltip="Serves"></i> {{ recipe.serves }} |
