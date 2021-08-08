@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+<section>
     <div class="container height-size">
+        <!-- Go Back button-->
         <div class="row">
             <div class="col s12 m8 offset-m2 center-align">
-                <!--CREDIT: history back method from https://www.w3schools.com/jsref/met_his_back.asp-->
-               <button class="btn-small  recipe-home-btn green-btn"  onclick="goBack()"><i class="fas fa-angle-double-left"></i> Go Back</button> </a>
+               <button class="btn-small  recipe-home-btn green-btn"  onclick="goBack()"><i class="fas fa-angle-double-left"></i> Go Back</button>
             </div>
         </div>
         <h1 class="center-align">{{ recipe.name }}</h1>
@@ -82,4 +83,5 @@
             <button class="btn modal-close green-btn">Cancel</button>
         </div>
     </div>
+</section>
 {% endblock %}

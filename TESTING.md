@@ -15,7 +15,8 @@
 
 **Project Bugs And solutions**
 ---
-While working on this project I encountered the following problems which I tried to solve in the following way:
+While working on this project, I encountered a lot of problems, issues and bugs. Unfortunatelly I'm it is not possible to enumerate all of them. One was related to the loss of the entire initial README file and the project on the gitpod at the very beginning of the project , which made me decide to do my commits very often.
+Here are the problems which were solved in the following way:
 1. **BUG:** Problem with connecting Flask to MongoDB Atlas, data didnt display in browser as expected but the GET 200 was received. 
 In app.py wrong variable targeted instead of recipes the tasks was targeded.
 - **SOLUTION:** Change the name from tasks to recipes
@@ -58,15 +59,132 @@ The data did not want to display or all.
 
 ![equal card issue](wireframes/testing/equal-card-issue.jpg)
  7. **BUG** When adding a new recipe to a collection, categories are not displayed as selected, but displayed as `none`
- 
+
 - **SOLUTION:** Change value `name="name"` to `name="category_name""` to match the `name="category_name"` in request method in python app.route
 
 ![category none bug add recipe](wireframes/testing/category-none-bug-add-recipe.jpg)
 
 ![category none bug](wireframes/testing/category-none-bug.jpg)
 
+8. **ISSUE** When implementing pagination on the home page the recipes didn't split between the displayed pages. Wrong data was passed from the route function to the page, 
+the recipes were iterating through the recipes, not the paginated recipes.
+
+- **SOLUTION:** Replace the wrong data in the `@app.route("/get_recipes")` render_templates `recipes=recipes`and `paginated_recipes=paginated_recipes` to: `recipes=recipes_paginated`
+
+![pagination wrong variable](wireframes/testing/pagination-wrong-variable.jpg)
+
 ## Code Validation
 ---
+
+### HTML Validator
+1. used [W3C Markup Validation Service HTML](https://validator.w3.org/) to validate my HTML code for all pages.
+Because the code is made up of Jinja templates, had to checked on the siteby right clicking each page, selecting View Page Source and running that generated code through the validator.
+
+    **Recipes Page** (`recipes.html`) - home page
+    - ERROR 1: Element `<h3>` not allowed as child of element span in this contest for all recipes
+        - FIXED - class="title-font" removed from `<h3>` and moved to `<span>`
+    ![recipes html validator error 1](wireframes/testing/recipes-html-validator-error-1.png)
+     
+
+    - ERROR 2: Attribute `minlenght` not allowed on element input at this point
+        - FIXED - Attribute `minlenght` removed
+        ![recipes html validator error 2](wireframes/testing/recipes-html-validator-error-2.png)
+    
+
+    - ERROR 3: Element `<h3>` not allowed as child of span in this context
+        - FIXED - the solution found on the 
+        [stack overflow](https://stackoverflow.com/questions/18960581/element-h5-not-allowed-as-child-of-element-span-in-this-context) `<span>` replaced by `<div>`
+      ![recipes html validator error 3](wireframes/testing/recipes-html-validator-error-3.png)
+    
+
+    - ERROR 4: End tag `<section>` seen, but were open elements and Unclosed element `<div>`
+        - FIXED - Move `</div>` just before `</section>`
+    ![recipes html validator error 4](wireframes/testing/recipes-html-validator-error-4.png)
+    ![recipes html validator error 4 solution](wireframes/testing/recipes-html-validator-error-4-solution.jpg)
+
+    
+
+     **Recipe Page** (`recipe.html')
+     - WARNING: Section lacks heading
+        - FIXED - `<span>` for flash massages in base.html replaced by `<div>`
+      ![recipe html validator warning](wireframes/testing/recipe-html-validator-warning.png)
+   
+    **Register Page** (`register.html`)
+    - WARNING: Section lacks heading
+        - FIXED - `<span>` for flash massages in base.html replaced by `<div>`
+
+
+    **Add Recipe Page** (`add_recipe.html`) and **Edit Recipe** (`edit_recipe.html`) the same errors and warning
+
+    - ![add recipe html validator errors](wireframes/testing/add-recipe-html-validator-errors.png)
+        - FIX ERRORS 1,2,3 move `<label>` element outside the `<select>` element 
+     ![add recipe html validator errors1 2 3](wireframes/testing/add-recipe-html-validator-errors-1-2-3.jpg)
+        - FIX ERRORS 4,5 Duplicate ID and the first occurence of ID for two the same `name` id's for categories and recipes collection, changed in to `category_name`
+    ![add recipe html validator errors-4-5](wireframes/testing/add-recipe-html-validator-errors-4-5.jpg)
+
+    **Edit Recipe Page** additional error
+    - ERROR option element must have either an empty value attribute or no text content
+    - FIXED ....................
+     ![edit recipe html validator error](wireframes/testing/edit-recipe-html-validator-error.png)
+
+    **Profile Page** (`profile.html`)
+
+    - ERRORS: Element `<h3>` not allowed as child of element `<span>` in this context
+        - FIXED - `<class="title-font>` removed from heading and 
+
+      ![profile html validator error 1](wireframes/testing/profile-html-validator-error-1.png)
+    - WARNINGS: Element `<h3>` not allowed as child of element '<span>` in this context
+     - FIXED - '<span>` replaced by '<div>`
+     ![profile html validator error 2](wireframes/testing/profile-html-validator-error-2.png)
+
+
+    **Login Page** (`login.html`) 0 Errors & 0 Warnings
+
+    **Page Manage Categories** (`categories.html`):  0 Errors & 0 Warnings
+
+    **403 Page** (`403.html`) : 0 Errors & 0 Warnings
+
+    **404 Page** (`404.htlm`) 0 Errors & 0 Warnings
+
+    **500 Page** (`500.html`) 0 Errors & 0 Warnings
+
+    **Contact Page** (`contact.html`) 0 Errors & 0 Warnings
+
+    **Utensils Page** (`utensils.html`) 0 Errors & 0 Warnings
+
+    **Add Category Page** (`add_category.html`) 0 Errors & 0 Warnings
+
+    **Edit Category Page** (`edit_category.html`) 0 Errors & 0 Warnings
+
+### CSS Jigsaw Validator
+2. used [jigsaw W3C CSS Validation Service](https://jigsaw.w3.org/css-validator//) to validate my CSS code, came out clean with no errors with 53 warnings about vendor extension
+
+    - **WARNINGS** 53 warnings related to unknown vendor extension i found that is also non-issue after reading about it on different sources [Stack Overflow](https://stackoverflow.com/questions/52490004/what-are-all-of-these-w3c-css-validation-warnings-about)
+
+
+ ![css validator](wireframes/testing/css-validator.png)
+
+    - CSS code was passed through Auto Prefixer to add vendor prefixes [Auto Prefixer](https://autoprefixer.github.io/)
+
+
+
+### script.js testing
+3. used [jshint](https://jshint.com/) to validate javascript code for script.js
+In the file script.js static analysis tool: jshint did not show any errors except:
+- 6 warnings, and
+- 2 undefined variables: "$" and "M" in line 13 and 
+- one unused variable `goBack`
+
+        - **WARNINGS** >> let is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz). 
+        - **SOLUTION** >> I found the solution on the [stackoverflow](https://stackoverflow.com/questions/27441803/why-does-jshint-throw-a-warning-if-i-am-using-const)
+        that a comment `/*jshint esversion: 6 */` should be added at the beginning of each java script file which worked.
+
+    ![jshint test](wireframes/testing/jshint-test.png)
+
+### Python PEPP
+4. used online [PEP8](http://pep8online.com/) 
+The entire cod was placed in the PEP8 tool and passed the test successfully
+
 
 ## Testing User stories
 ---
@@ -88,7 +206,7 @@ The data did not want to display or all.
 
 
 
-## Testing Compatibility
+## Testing CompatibilityFix
 ---
 
 ---
