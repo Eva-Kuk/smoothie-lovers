@@ -15,8 +15,8 @@
 
 **Project Bugs And solutions**
 ---
-While working on this project, I encountered a lot of problems, issues and bugs. Unfortunatelly I'm it is not possible to enumerate all of them. One was related to the loss of the entire initial README file and the project on the gitpod at the very beginning of the project , which made me decide to do my commits very often.
-Here are the problems which were solved in the following way:
+While working on this project, I encountered a lot of problems, issues and bugs. One was related to the loss of the entire initial README file ready for my first mentor session. I also had troubles few times with my workspace crashed, which brought me, to that I had to open my project again from github, which made me decide to do my commits more often.
+Here are some of the problems which were solved in the following way:
 1. **BUG:** Problem with connecting Flask to MongoDB Atlas, data didnt display in browser as expected but the GET 200 was received. 
 In app.py wrong variable targeted instead of recipes the tasks was targeded.
 - **SOLUTION:** Change the name from tasks to recipes
@@ -73,6 +73,11 @@ the recipes were iterating through the recipes, not the paginated recipes.
 
 ![pagination wrong variable](wireframes/testing/pagination-wrong-variable.jpg)
 
+9.**ISSUE** Footer doesn't display correctly on Contact, Login and Register and landscape
+**SOLUTION** Set  for section body: `min-height: 100vh` `display:flex;` `flex-direcion:smooth;` , for section main: `flex-grow: 1;`
+for landscape `min-height: 175vh;` and `height: 175vh;`
+![display footer issue](wireframes/testing/display-footer-issue-landscape.jpg)
+![display footer issue landscape](wireframes/testing/display-footer-issue.jpg)
 ## Code Validation
 ---
 
@@ -178,16 +183,113 @@ In the file script.js static analysis tool: jshint did not show any errors excep
 
     ![jshint test](wireframes/testing/jshint-test.png)
 
-### Python PEPP
+### Python PEP8
 4. used online [PEP8](http://pep8online.com/) 
 The entire cod was placed in the PEP8 tool and passed the test successfully
-
+![pep8](wireframes/testing/pep8.png)
 
 ## Testing User stories
 ---
 ## New User Stories
 1. As a  new visitor, I want to navigate the site easily, so that I can find what I need effectively.
-User is able to browse through allthe recipe car
+    - No matter what page the user lands on, they can easily find and use navigation bar which also is set fixed, being available all times.
+    - New user have access to Recipes, Collection of 4 categories, Contact, Login and Register links on the navigation bar.
+    - The logo always leads back to the home page.
+    ![new user access nav bar](wireframes/testing/new-user-access-navbar.png)
+
+2. As a new visitor, I want to be able to access the website on a desktop and also mobile devices, so that I won't be restricted from which device I can access the site. 
+    - The website is responsive and tested on various devices as well as operating systems.
+    - The footer is placed relative on the end of website , so teh users will be able to see website expecially on small devices.
+    ![responsinator mobile landscape view](wireframes/testing/responsinator-mobile-landscape-view.png)
+    ![responsinator mobile view](wireframes/testing/responsinator-mobile-view.png)
+
+3. As a new visitor, I want to be able to follow or connect with the owner of the website on social media, so that I can see what else they are doing.
+    - On the footer there are placed social media links, so that the user can have easy access to ther social media.
+    ![login social media links](wireframes/testing/login-social-links-view.png)
+
+4. As a new visitor, I want to be able to contact the website owner, so thatI will be able to share my feedback regarding the website, ask any questions or recommendations that I may have.
+    - Website contain Contact page with Contact form connected using Flask and Gmail account where the user is able to send message to the owner of the website. When the user fills in the fields corectly the flash message will display the success mesage: `Email Sent Successfully` 
+    ![contact form](wireframes/testing/contact-form.png)
+
+5. As a new visitor, I want to browse other users recipes on the website without register, so that I can decide if I want to have account on that website.
+    - When the user lands on the website without being logged in is able to browse through all the recipe cards available on the website, choose interested ones and by using a red pulse eye button is able to view the full recipe descriprion. On the recipe description there is a `GO BACK ` button which loads to the previously URL opened in history list 
+    ![recipe access user stories](wireframes/testing/recipe-access-user-stories.png)
+    ![single recipe page view](wireframes/testing/single-recipe-page-view.png)
+
+6. As a new visitor, I want to have Register/Log In functions, so that I can have my own profile where I can keep track on my own recipes.
+    - From the navigation bar a new user can go to the Register page where the user can register by putting a username and password. A confirm password field is set to make sure that the user have choosen their password corectly. If password doesn't match there will be an information displayed `Password doesn't match, try again`
+    There is an information displayed what type of characters and lenght is required for username and password.
+    ![register form password](wireframes/testing/register-form-password.png)
+    - If the chosen username has been already taken, after the form is submitter the information message will display `Username already exists, please choose another, and they will be able to choose another name.
+    ![register form username](wireframes/testing/register-form-username.png)
+    
+    - After register the user receive and are redirect to their own profile page and have the ability to add, edit and delete their own recipes.
+    ![user profile](wireframes/testing/user-profile.png)
+    - As the user went through the registration process, they are able to Log In their profile usinf the Log In form from the navigation bar to access their profile. when user is logged out the message display "You have been logged out"
+    ![login form](wireframes/testing/login-form.png)
+    If the user put the wrong username or password, they will be informed and can try again.
+    ![login form password](wireframes/testing/login-form-password.png)
+7. As a new visitor, I want to be able to filter recipes by ingredient, so that I can find recipes using ingredients I like.
+    - on the top of the website on the hero image there is placed search box where the user is able to search recipes by ingredients 
+    ![search box ingredient](wireframes/testing/search-box-ingredient.png)
+    ![search box ingredient found](wireframes/testing/search-box-ingredient-found.png)
+    - if there is no recipe with chosen ingredient the message "No Result Found" and links to `REGISTER` or `LOGIN` appear on the site.
+    ![searchbox no recipe found](wireframes/testing/search-box-no-recipe-found.png)
+
+8. As a new / existing user, I want to be able to search recipes by category, so that I can find a recipe according to the category they belong to.
+    - on the navigation bar there is a dropdown `Collection` link with initialy 4 different categories `Stay Healty`, `Stay Fit`, `Stay Happy`, `Stay Young` with a little description what kind of smoothies user can expect to find there
+    ![category search](wireframes/testing/category-search.png)
+
+9. As a new visitor, I want to see if there is any good kitchen tools recomendations, so that I can get some ideas what I might need to make smoothies.
+- on the navigation bar there is a `Utensils` link where user can find some owner recomendations of kitchen tools. User is able to see the image of the tool, read a little descriprion by clicking on the eye icon. When hover on the eye icon the tooltip message `About item` appear. There is a link Amazon icon when hovered the tooltip message `Buy in here` appear which redirect user to the shop website open in the new window where the user can purchase the tool.
+![utensils](wireframes/testing/utensils.png)
+
+10. As a user, I want to easily understand the purpose of this site.
+- When the user lands on the website the welcome sign describes the website purpose.
+- The hero image, placed on the home page gives a first glimpse on the website content and purpose.
+- The logo and name of the website indicates what is the website' putpose. 
+![home-page](wireframes/testing/home-page.png)
+
+## Registered User Stories
+11. As a registered user, I want to add my own recipes for safe keeping I can easily find them and share it with others users from the website.
+- Once user registered need to Log In to their profile to be able to add new recipes using link `New Recipe` on the navbar or a button under users's profile sign. Follow the instructions user is able to fill in the form.
+ ![add recipe](wireframes/testing/add-recipe.png)
+
+12. As a registered user, I want to edit my recipes, so that I can change them as I want.
+- Once user Registered and Logged In has access to all of their recipes. From there, the user can edit their recipe and use the buttons Edit Recipe or Cancel if they don,t want to do any changes. When `Edit recipe` button is chosen the recipe will be updated and user will stay on the same site in case if wants to do more changes or use `Go Back` button to come back to the previous website. If user chose `Cancel` button will be redirected to home page. User can edit recipes directly from the home page.
+
+![users loggedin home page](wireframes/testing/users-loggedin-home-page.png)
+
+13. As a registered user, I want to be able to remove my own recipes, so that I can maintain what recipes I have in my profile.
+- Once user Registered and Logged In has access to all of their recipes from their profile or home page where users will will be able to remove their recipe. On each recipe beside the edit button there is delete red button.
+ ![add delete recipe](wireframes/testing/add-delete-buttons.png)
+
+14. As a registered user, I want to get a confirmation message before deleting the recipe, so I won't delete recipe by mistake.
+- There is a congirmation message presented with the modal confirm or cancel buttons inform the user before deleting the recipe.
+![delete-confirmation-message](wireframes/testing/delete-confirmation-message.png)
+
+
+## Admin/Owner User Stories
+15. As an admin user, I want to be able to add/edit/remove categories, so that I can adapt to the changing needs of the website users.
+- The Admin is able to Log In to their account and add/edit/delete recipes like every other user does.
+- Only Admin is able to add/edit/delete categories. 
+- The Manage Categories button is placed on the the admin's Profile site
+ ![admin manage categories button](wireframes/testing/admin-manage-categories-button.png)
+## Site Owner Stories
+16. As a site owner, I want to be able to promote a kitchen tools, so that the users can choose for themself the best option on trhe market.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -276,3 +378,6 @@ User is able to browse through allthe recipe car
 
 
 ### Overflow
+
+
+- The image is not required and default image is loaded but user can choose
