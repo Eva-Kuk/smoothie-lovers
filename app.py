@@ -65,8 +65,6 @@ def get_recipes():
     categories = list(mongo.db.categories.find())
     recipes_paginated = paginated(recipes)
     pagination = pagination_args(recipes)
-    print(f"{recipes_paginated=}")
-    print(f"{pagination=}")
     return render_template(
         "recipes.html", categories=categories, recipes=recipes_paginated,
         pagination=pagination, search=True)
@@ -76,11 +74,9 @@ def get_recipes():
 @app.route("/regex", methods=["GET", "POST"])
 def regex():
     query = request.form.get("query")
-    print("query is ", query)
     # recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     recipes = list(mongo.db.recipes.find({"ingredients": {
         "$regex": query, "$options": "i"}}))
-    print("recipes is ", recipes)
     recipes_paginated = paginated(recipes)
     pagination = pagination_args(recipes)
     return render_template(
@@ -107,7 +103,7 @@ def categories(name):
 # Utensils page to dysplay kitchen tools for smoothies
 @app.route("/utensils")
 def utensils():
-    categories = mongo.db.categories.find()
+    categories = list(mongo.db.categories.find())
     return render_template(
         "utensils.html", categories=categories, title="Utensils")
 
@@ -115,6 +111,7 @@ def utensils():
 # Register a New User
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    categories = list(mongo.db.categories.find())
     if request.method == "POST":
         # check if username already exists in database
         existing_user = mongo.db.users.find_one(
@@ -147,12 +144,13 @@ def register():
             flash(("Password doesn't match, try again"))
             return redirect(url_for("register"))
 
-    return render_template("register.html")
+    return render_template("register.html", categories=categories)
 
 
 # Log In Existing User
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    categories = list(mongo.db.categories.find())
     if request.method == "POST":
         # check if username exists in database
         existing_user = mongo.db.users.find_one(
@@ -177,7 +175,7 @@ def login():
             flash("Username or password is incorrect")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("login.html", categories=categories)
 
 
 # Profile Username
@@ -216,9 +214,9 @@ def logout():
 # Contact
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
+    categories = list(mongo.db.categories.find())
     if request.method == "POST":
         email = request.form.get("email")
-        print(f"Email: {email}")
         message = request.form.get("message")
 
         msg = Message('Hello',
@@ -230,7 +228,7 @@ def contact():
         flash("Email Sent Successfully")
         return redirect(url_for("contact"))
 
-    return render_template("contact.html")
+    return render_template("contact.html", categories=categories)
 
 
 # Display Single recipe
