@@ -27,10 +27,10 @@
 
 ## Demo
 ---
-![altamiresponsive](wireframes/readme/am-i-responsive.jpg)
+![altamiresponsive](wireframes/readme/am-i-responsive.png)
 
-- A live demo can be found [here](https://eva-kuk.github.io/smoothie-lovers/)
-- A github repository can be found [here]()
+- A live demo can be found >>>[here](http://smoothie-lovers.herokuapp.com/get_recipes)
+- A github repository can be found >>> [here](https://github.com/Eva-Kuk/smoothie-lovers)
 
 
 ## Overview
@@ -52,21 +52,21 @@ The website is created in a responsive design that is very handy to see recipes 
 5. As a new visitor, I want to browse other users recipes on the website without register, so that I can decide if I want to have account on that website.
 6. As a new visitor, I want to have Register/Log In functions, so that I can have my own profile where I can keep track on my own recipes.
 7. As a new visitor, I want to be able to filter recipes by ingredient, so that I can find recipes using ingredients I like.
-8. As a new visitor, I want to see if there is any good kitchen tools recomendations, so that I can get some ideas what I might need to make smoothies.
-7. As a user, I want to easily understand the purpose of this site.
+8. As a new / existing user, I want to be able to search recipes by category, so that I can find a recipe according to the category they belong to
+9. As a new visitor, I want to see if there is any good kitchen tools recomendations, so that I can get some ideas what I might need to make smoothies.
+10. As a user, I want to easily understand the purpose of this site.
 
 ## Registered User Stories
-9. As a registered user, I want to add my own recipes for safe keeping I can easily find them and share it with others users from the website.
-10. As a registered user, I want to edit my recipes, so that I can change them as I want.
-11. As a registered user, I want to be able to remove my own recipes, so that I can maintain what recipes I have in my profile.
-12. As a registered user, I want to get a confirmation message before deleting the recipe, so I won't delete recipe by mistake.
+11. As a registered user, I want to add my own recipes for safe keeping I can easily find them and share it with others users from the website.
+12. As a registered user, I want to edit my recipes, so that I can change them as I want.
+13. As a registered user, I want to be able to remove my own recipes, so that I can maintain what recipes I have in my profile.
+14. As a registered user, I want to get a confirmation message before deleting the recipe, so I won't delete recipe by mistake.
 
-## Admin User Stories
-13. As an admin user, I want to be able to edit/remove any recipes, so that I can maintain a the website well at a high level.
-14. As an admin user, I want to be able to add/edit/remove categories, so that I can adapt to the changing needs of the website users.
-
+## Admin/Owner User Stories
+15. As an admin user, I want to be able to add/edit/remove categories, so that I can adapt to the changing needs of the website users.
+- 
 ## Site Owner Stories
-15. As a site owner, I want to be able to promote a kitchen tools, so that the users can choose for themself the best option on trhe market.
+16. As a site owner, I want to be able to promote a kitchen tools, so that the users can choose for themself the best option on trhe market.
 
 ## UX (5 planes)
 ---
@@ -74,8 +74,8 @@ This website design will target people, who are smoothie lovers and would like t
 The main goal of this project was to create an online smoothie recipe book that will contain a collection of different smothis descriptions added by registered users in four different categories and will allow registered users to register to have their own account, add, edit, delete recipes and share them with other users. The collection consists of the following categories:
 - **Stay Healthy** - This category will include all smoothies recipes that contain ingredients which support our immune system to strengthen our body to prevent from colds, as well as these one that contain anti-inflammatory ingredients to keep our intestines in good condition, also these turbo charging our bodies with minerals and vitamins called vitamin bombs, so if put it in one word all these recipes that will keep us in a good health.
 - **Stay Young** - This category will include all smoothies recipes  contain ingredients that are powerful sources of radical-fighting antioxidants, anti-aging, rehydration and detoxifying rich-ingredients to keep our skin looking younger and in good condition at all ages.
-- **Stay Fit** - This category will include all smoothies that contain ingredients for all weight-watchers who counting their calories and want to loose some weight, to speed up our metabolism, but also smoohites for those who workout at the gym, who want to build up their mussles and are looking for high-protein meals so for all who want to keep in shape.
-- **Stay Happy** - This category includes all our favorite cocktails, not necessarily containing super healthy ingredients, but we like them because they are delicious.
+- **Stay Fit** - This category will include all smoothies that contain ingredients for all weight-watchers who counting their calories and want to lose some weight, to speed up our metabolism, but also smoothies for those who workout at the gym, who want to build up their mussles and are looking for high-protein meals so for all who want to keep in shape.
+- **Stay Happy** - This category includes all our favourite smoothies, not necessarily containing super healthy ingredients, but we like them because they are delicious.
 
 1. ## **Strategy plane**
 My goal for this project is to create a website with smoothies recipes where users will be able to store their recipes and share them with other users.
@@ -172,35 +172,35 @@ Chart of the website to show core relations between the pages
 ## Wireframe mockups:
 
 **HOME/RECIPE PAGE**
-![homepage](wireframes/home-page.png)
+![homepage](wireframes/home-recipes-page-new.png)
 
 **COLLECTIONS PAGES:Stay Healthy/Stay Young/Stay Fit/ Stay Happy**
 
-![collections](wireframes/collections-pages.png)
+![collections](wireframes/collections-pages-new.png)
 
 **UTENCILS PAGE**
-![utensils](wireframes/utensils-page.png)
+![utensils](wireframes/utensils-page-new.png)
 
 **SINGLE RECIPE PAGE**
-![singlerecipe](wireframes/single-recipe-page.png)
+![singlerecipe](wireframes/single-recipe-page-new.png)
 
 **PROFILE PAGE**
-![profile](wireframes/profile-page.png)
+![profile](wireframes/profile-page-new.png)
 
 **ADD/EDIT/DELETE EXISTING RECIPE PAGE**
-![addeditdeleterecipe](wireframes/add-edit-delete-recipe-page.png)
+![addeditdeleterecipe](wireframes/add-edit-recipe-page-new.png)
 
 **MANAGE CATEGORIES PAGE**
-![managecategories](wireframes/manage-categories-page.png)
+![managecategories](wireframes/manage-categories-page-new.png)
 
 **REGISTER PAGE**
-![register](wireframes/register-page.png)
+![register](wireframes/register-page-new.png)
 
 **LOGIN PAGE**
-![singlerecipe](wireframes/login-page.png)
+![singlerecipe](wireframes/login-page-new.png)
 
 **CONTACT PAGE**
-![contactpage](wireframes/contact-page.png)
+![contactpage](wireframes/contact-page-new.png)
 
 **5. Surface plane**
 **Colors**
@@ -325,6 +325,7 @@ The default image if the don’t enter anything has taken from [here]()
 - [RedKetchup](https://redketchup.io/) -  to convert an image into a favicon and edit icons for used technologies.
 - [Grammarly](https://www.grammarly.com/) - used to help with grammar check.
 - [youtube](https://www.youtube.com/) - used for general resourse.
+-[codepen](https://codepen.io/j_holtslander/pen/qBOPJYP) - looking for solution for cards size
 ---
 ## Testing
 - Click [here](TESTING.md) for the full testing process.
@@ -448,9 +449,10 @@ Once those steps are done, the website can be deployed and below are the steps o
 - Hero image was downloaded and customised from[pixaby](https://pixabay.com/photos/smoothies-juice-fruit-colorful-3809517/)
 - Raspberry mint smoothie was downloaded fromn [pixaby](https://pixabay.com/photos/smoothie-raspberry-food-healthy-1427436/)
 - Image for "Antiaging coconut turmeric smoothie" recipe  Photo by Douglas Bagg on Unsplash
-- Image for "Strawberry smoothie" recipe from [unsplash](https://unsplash.com/photos/n73TTunlskE) by Denis Tuksar on Unsplash
-- Image for "Wrinkle fighting smoothie] from [unsplash](https://unsplash.com/photos/cjiJUfFCoUs) by Sara Cervera on Unsplash
-- Image for "Hangover cure smoothie" recipe from [pixaby](https://pixabay.com/photos/green-smoothie-drink-healthy-food-682620/) by NatureFriend from Pixabay
+- Image for "Strawberry smoothie" recipe from [unsplash](https://unsplash.com/photos/n73TTunlskE) by Denis Tuksar
+- Image for "Wrinkle fighting smoothie] from [unsplash](https://unsplash.com/photos/cjiJUfFCoUs) by Sara Cervera
+- Image for "Hangover cure smoothie" recipe from [pixaby](https://pixabay.com/photos/green-smoothie-drink-healthy-food-682620/) by NatureFriend
+- Image for replacement in case user dont provide an image customised from [unsplash](https://unsplash.com/photos/xnRg3xDcNnE) by Allec Gomes
 
 **Content**
 
@@ -473,6 +475,7 @@ Images and content for database recipes in MongoDB were taken from source below:
 - [hangover cure smoothie]( https://www.self.com/story/pharmacist-approved-hangover-cure)
 - [dreamy orange smoothie]( https://wholefully.com/orange-smoothie-recipe-creamsicle/)
 - [chocolate peanut smoothie]( https://wholefully.com/chocolate-peanut-butter-smoothie-recipe/)
+
 
 
 
