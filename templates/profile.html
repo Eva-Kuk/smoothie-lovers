@@ -11,6 +11,9 @@
           <h1 class="center-align margin-profile-username">
             {{ username }}'s Pofile
           </h1>
+          {% if session.user %}
+          <a href="{{ url_for('add_recipe') }}" class="btn-small green-btn categories-btn">New Recipe</a>
+          {% endif %}
           <h3 class="center-align">My Recipes</h3>
           {% if session.user|lower == "admin"|lower %}
           <a href="{{ url_for('get_categories') }}" class="btn-small green-btn categories-btn">Manage Categories</a>
