@@ -877,7 +877,7 @@ Performance has been tested using Lighthouse tool of Google Chrome. The results 
 
 ## Testing Accessibility
 ----
-The website's accessibility was also tested using Lighthouse this time on the heroku. The test result was satysfying.
+The website's accessibility was also tested using Lighthouse this time on the heroku. The test result were satysfying.
 
 **Recipes Page** (`recipes.html`) - HOME PAGE
 
