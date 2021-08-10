@@ -263,7 +263,7 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Added Succesfully")
-        return redirect(url_for("get_recipes"))
+        return redirect(url_for("profile", username=session["user"]))
 
     categories = list(mongo.db.categories.find().sort("name", 1))
     return render_template("add_recipe.html", categories=categories)
@@ -299,6 +299,7 @@ def edit_recipe(recipe_id):
             mongo.db.recipes.update_one(
                 {"_id": ObjectId(recipe_id)}, {"$set": submit})
             flash("Recipe Updated Succesfully")
+            return redirect(url_for("profile", username=session["user"]))
 
         return render_template(
             "edit_recipe.html", recipe=recipe, categories=categories)
@@ -321,7 +322,7 @@ def delete_recipe(recipe_id):
     if session["user"] == recipe["added_by"] or session["user"] == "admin":
         mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
         flash("Recipe Deleted Successfully")
-        return redirect(url_for("get_recipes"))
+        return redirect(url_for("profile", username=session["user"]))
 
     else:
         flash("Access denied. You don't have permission")
