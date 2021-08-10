@@ -235,7 +235,7 @@ def contact():
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    categories = mongo.db.categories.find()
+    categories = list(mongo.db.categories.find())
     return render_template(
         "recipe.html", recipe=recipe, categories=categories, name=recipe)
 

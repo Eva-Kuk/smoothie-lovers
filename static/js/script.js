@@ -6,11 +6,7 @@ $(document).ready(function(){
     $(".dropdown-trigger").dropdown();
     $('.tooltipped').tooltip();
     $('select').formSelect();
-    $('.modal').modal();
-
-// jQuerry Initialization from materializecss
-    $('#textarea1').val('New Text');
-    M.textareaAutoResize($('#textarea1'));
+    $('.modal').modal({});
 
 // CREDIT: Code taken from Miniproject Materialize Validation
   validateMaterializeSelect();

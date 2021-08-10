@@ -655,90 +655,139 @@ Manually Testing Functionality
 ----
 ----
 
-
-
-### Checking for broken links
----
-
-
 ### Responsive Design
 ---
-
+- The website has been tested by using [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) 
+  and also on [Am I Responsive](http://ami.responsivedesign.is/) and [Responsinator](http://www.responsinator.com/) 
+  on a number of devices with varying screen dimensions, for both portraits and landscape including iPhone 5/SE,
+  iPhone 6/7/8, iPhone 6/7/8 plus, iPhone 11, iPad, iPad Pro, Moto G4, Galaxy S5, Surface Duo,
+  Galaxy Fold, Widescreen Laptop and Desktop PC, iPad landscape · width: 1024px,  iPhone 6-8 Plump landscape 
+· width: 736px ,iPhone 6-8 landscape · width: 667px, Android (Pixel 2) landscape · width: 684px, iPhone expensive landscape · width: 734px
+      
+- The website was also tested on real devices both portrait and landscape. The result on the other browsers was satisfying:
+    - Samung Galaxy S6/S7/S8/S10/S20.
+    - Samsung Galaxy Tablet.
 
  **Encountered problems while testing the site on different devices**
- 
-
-
-
+ Issue with displaying the Contact, Login and Register forms on Landscape Devices
+![landscape issue](wireframes/testing/landscape-issue.jpg)
+![landscape issue fix](wireframes/testing/landscape-issue-fix.png)
+![landscape issue fix style](wireframes/testing/landscape-issue-fix-style.png)
 ## Testing Compatibility Fix
 ---
+The website was tested on the following browsers and operating systems:
 
+- Google Chrome (Windows 10, Android 11).    
+- Microsoft Edge (Windows 10).
+- Firefox (Windows 10, Linux).
+- Opera (Windows 10, Linux).
+
+    - Test for Opera browser
+    ![altopera](wireframes/testing/opera.png)
+
+    - Test for Firefox browser
+    ![altfirefox](wireframes/testing/firefox.png)
+
+    - Test for Microsoft Edge browser
+    ![altedge](wireframes/testing/edge.png)
 ---
 ## Testing Performance
 ---
 
+Performance has been tested using Lighthouse tool of Google Chrome. The results were a little different every time due to device performance and value estimation . The results on the end were satisfying for desktop devices bit performance of mobile devices need to be reviewed and tested again. There were some issues which caused the results like:
 
-## Testing Accessibility
-----
-
-
-- **Accessibility for mobile devices on LightHouse**
+    - Links do not have a discernible name
+        Solved by adding aria label to "See recipe buttons"
+    - Properly size images Serve images that are appropriately-sized to save cellular data and improve load time.
+        Solved by: All images have been resized and rescaled in Adobe Photoshop and compressed int a tiny png tool
+    - Background and foreground colors do not have a sufficient contrast ratio.
+        Solved by adding to buttons style font-weight: 600;
+    - Links do not have a discernible name, Link text (and alternate text for images, when used as links)
+        Solved by adding aria-label=”Open the menu” to hamburger menu 
+        aria-label="remove ingredient" to minus ingredient button on edit recipe page
+    - Heading elements are not in a sequentially-descending order   
+        Solved by changing headings in recipe names from `<h3>` to `<h2>`
 
 **Recipes Page** (`recipes.html`) - HOME PAGE
     - DESKTOP
+     ![recipes-desktop-lighthouse](wireframes/testing/recipes-desktop-lighthouse.png)
     - MOBILE
+    ![recipes-mobile-lighthouse](wireframes/testing/recipes-mobile-lighthouse.png)
 
 **Recipes Page** (`recipe.html`)
     - DESKTOP
+    ![recipe-desktop-lighthouse](wireframes/testing/recipe-desktop-lighthouse.png)
     - MOBILE
-  
+    ![recipe-recipe-mobile-lighthouse](wireframes/testing/recipe-mobile-lighthouse.png)
+
 **Register Page** (`register.html`)
     - DESKTOP
+    ![register-desktop-lighthouse](wireframes/testing/register-desktop-lighthouse.png)
     - MOBILE
+    ![register-mobile-lighthouse](wireframes/testing/register-mobile-lighthouse.png)
 
-**Add Recipe Page** (`add_recipe.html`)#
+**Add Recipe Page** (`add_recipe.html`)
     - DESKTOP
+    ![add-recipe-desktop-lighthouse](wireframes/testing/add-recipe-desktop-lighthouse.png)
     - MOBILE
+    ![add-recipe-mobile-lighthouse](wireframes/testing/add-recipe-mobile-lighthouse.png)
 
 **Edit Recipe** (`edit_recipe.html`)
     - DESKTOP
+    ![edit-recipe-desktop-lighthouse](wireframes/testing/edit-recipe-desktop-lighthouse.png)
     - MOBILE
+    ![edit-recipe-mobile-lighthouse](wireframes/testing/edit-recipe-mobile-lighthouse.png)
 
 **Profile Page** (`profile.html`)
     - DESKTOP
+     ![profile-desktop-lighthouse](wireframes/testing/profile-desktop-lighthouse.png)
     - MOBILE
+    ![profile-mobile-lighthouse](wireframes/testing/profile-mobile-lighthouse.png)
 
 **Login Page** (`login.html`)
     - DESKTOP
+     ![login-desktop-lighthouse](wireframes/testing/login-desktop-lighthouse.png)
     - MOBILE
+    ![login-mobile-lighthouse](wireframes/testing/login-mobile-lighthouse.png)
 
 **Page Manage Categories** (`categories.html`)
-- DESKTOP
+    - DESKTOP
+    ![manage-categories-desktop-lighthouse](wireframes/testing/login-desktop-lighthouse.png)
     - MOBILE
+    ![manage-categories-mobile-lighthouse](wireframes/testing/login-mobile-lighthouse.png)
 
 **Contact Page**
     - DESKTOP
+     ![contact-desktop-lighthouse](wireframes/testing/contact-desktop-lighthouse.png)
     - MOBILE 
+     ![contact-mobile-lighthouse](wireframes/testing/contact-mobile-lighthouse.png)
 
  **Utensils Page**
     - DESKTOP
+    ![utensils-desktop-lighthouse](wireframes/testing/utensils-desktop-lighthouse.png)
     - MOBILE
+    ![utensils-mobile-lighthouse](wireframes/testing/utensils-mobile-lighthouse.png)
 
  **Add Category Page** 
     - DESKTOP
+    ![add-category-desktop-lighthouse](wireframes/testing/add-category-desktop-lighthouse.png)
     - MOBILE
+    ![add-category-mobile-lighthouse](wireframes/testing/add-category-mobile-lighthouse.png)
 
 **Edit Category Page** 
     - DESKTOP
+    ![edit-category-desktop-lighthouse](wireframes/testing/edit-category-desktop-lighthouse.png)
     - MOBILE
+    ![edit-category-mobile-lighthouse](wireframes/testing/edit-category-mobile-lighthouse.png)
 
-
-
+## Testing Accessibility
+----
+The website's accessibility was also tested using Lighthouse. The test result as above was satysfying.
 
 ## Further Testing
 
 
 ### Overflow
+- The website was tested for overflow using [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) chrome extension. 
+- Spelling was checked thoroughly using [Grammarly](https://app.grammarly.com/) extension and [online-spellcheck](https://www.online-spellcheck.com/)
 
-
-- The image is not required and default image is loaded but user can choose

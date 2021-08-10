@@ -46,7 +46,8 @@ h1 {
     font-size:2.2rem;
 }
 h2 {
-    font-size:2rem;
+    font-size:1.6rem;
+    font-weight: 600;
 }
 h3 {
     font-size:1.4rem;
@@ -58,16 +59,17 @@ h4 {
 }
 /*---------------- BUTTONS ------------------*/
 .green-btn {
-    background-color:#008f2b ;
+    background-color:#008026 ;  
 }
 .green-btn:hover {
-    background-color:#00b837;
+    background-color:#00b837;    
 }
 .green-btn:visited {
-    background-color:#008f2b;
+    background-color:#008f2b;  
 }
 .red-btn {
     background-color:#c41c1c;
+    
 }
 .red-btn:hover {
     background-color:#e33b3b;
@@ -80,6 +82,9 @@ h4 {
     font-size:0.75rem;
     line-height: 14.4px;
     padding: 7px;
+}
+.card .card-action {
+    padding: 16px 5px;
 }
 /*---------------- FLASH MESSAGES ------------------*/
 h4.center-align {

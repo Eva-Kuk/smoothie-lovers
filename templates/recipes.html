@@ -59,20 +59,20 @@
           <div class="card hoverable">
             <div class="card-image">
               {% if recipe.image_url %}
-              <img class="single-recipe-image" src="{{ recipe.image_url }}" alt="{{ recipe.name }}" />
+              <img class="single-recipe-image" src="{{ recipe.image_url }}" alt="{{ recipe.name }}"/>
               {% else %}
               <img class="single-recipe-image" src="{{ url_for('static', filename='images/image-replacement.jpg') }}"
-                alt="Replacement image" />
+                alt="Replacement image"/>
               {% endif %}
               <a href="{{ url_for('recipe', recipe_id=recipe._id) }}"
-                class="btn-floating tooltipped red-btn pulse halfway-fab see-recipe-font" data-position="top"
+                class="btn-floating tooltipped red-btn pulse halfway-fab see-recipe-font" aria-label="See the Recipe" data-position="top"
                 data-tooltip="See The Recipe">
                 <i class="fas fa-eye"></i>
               </a>
             </div>
             <div class="card-content">
               <div class="card-title center-align title-font">
-                <h3>{{ recipe.name }}</h3>
+                <h2>{{ recipe.name }}</h2>
               </div>
               <!-- Recipe Serves, Calories Per Serving, Category, Added By -->
               <p class="center-align">
