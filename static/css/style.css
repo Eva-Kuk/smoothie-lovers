@@ -1,3 +1,4 @@
+
 /*
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.3.6,
@@ -15,8 +16,13 @@
 }
 html, body {
     min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     scroll-behavior: smooth;
     margin: 0;
 }
@@ -26,7 +32,9 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 main {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 h1,
 h2,
@@ -265,11 +273,14 @@ nav ul a,
 }
 .no-recipe-found {
     font-size: 1.3rem;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
 }
 .no-ingredient-found {
     font-size: 2.3rem;
     color:#f72626;
     font-weight: 600;
+    text-align: center;
 }
 .color-text {
     color:#f72626;
@@ -344,20 +355,10 @@ nav ul a,
 }
 .warning-text {
     color: #e33b3b;
-}/*
-.card-height-categories {
-    height: 26rem;
-}*/
+}
 .padding-desc {
     padding: 0.5rem;
-}/*
-.card-position-categories {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-flow:wrap;
-        flex-flow:wrap;
-}*/
+}
 .card-flex-categories {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -373,7 +374,7 @@ nav ul a,
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
-}*/
+}
 .card .card-action:last-child {
     background-color: transparent;
 }
@@ -454,17 +455,18 @@ nav ul a,
     margin-top: 1.25rem;
     font-weight:600;
 }
-/*.register-form-margin {
-    margin-top: 7rem;
-}*/
 .input-margin {
     margin-top: 0;
     margin-bottom: 0;
 }
 .display-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     min-height: 100vh;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
 }
 .display-row {
@@ -512,6 +514,9 @@ nav ul a,
     margin-top: 10px;
     margin-bottom: 20px;
 }
+.errors-top-margin {
+    margin-top: 12rem;
+}
 /*---------------- DELETE MODALS ------------------*/
 .modal .modal-content h4 {
     font-size: 1.6rem;
@@ -532,22 +537,19 @@ nav ul a,
                 rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
                 rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-
 /*--------------------- FOOTER -----------------------*/
 .footer {
     background-color: #fffcfc94;
-   /* position: absolute;*/
-   position: relative;
+    position: relative;
     font-size: 1.2rem;
     padding-bottom: 0.6rem;
-  /*  bottom: 0;*/
- z-index: 1;
+    z-index: 1;
     padding-top: 0.6rem;
 }
 
 .social-links-item {
     color: #140101;
-    font-size: 1.6rem;
+    font-size: 2rem;
     padding-left: 8px;
 }
 .social-links ul {
@@ -586,8 +588,11 @@ nav ul a,
 .copyright p {
     color:#140101;
     text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-self: start;
+    -ms-grid-column-align: start;
+        justify-self: start;
 }
 /*---------------- MEDIA FOR SMALL DEVICES ------------------*/
 @media screen and (max-width:600px) {
@@ -607,12 +612,6 @@ nav ul a,
         padding: 0 6px;
     }  
 }
-    /*
-    .card-height-categories {
-        height: 24rem;
-    }
-}*/
-
 @media screen and (min-width:510px) {
     .card-width-categories {
         height: 192px;
@@ -648,7 +647,6 @@ nav ul a,
         height: 220px;
     }
 }
-
 /*---------Media for landscape orientation----------*/
 @media (max-width: 768px) and (orientation: landscape){
     .padding-landscape {
