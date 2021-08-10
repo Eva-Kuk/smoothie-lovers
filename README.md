@@ -169,7 +169,28 @@ Chart of the website to show core relations between available pages.
 
 
 ## **4. Skeleton Plane**
-## Wireframe mockups:
+## Wireframe mockups initial:
+- [home page (recipes.html)](wireframes/home-page.png)
+
+- [collections page](wireframes/collections-pages.png)
+
+- [utensils page](wireframes/utensils-page.png)
+
+- [single recipe page](wireframes/single-recipe-page.png)
+
+- [profile](wireframes/profile-page-new.png)
+
+- [add-edit-delete-recipe page](wireframes/add-edit-recipe-page-new.png)
+
+- [manage categories page](wireframes/manage-categories-page.png)
+
+- [register page](wireframes/register-page.png)
+
+- [login page](wireframes/login-page.png)
+
+- [contact page](wireframes/contact-page.png)
+
+### Wireframe mockups Final Results:
 
 **HOME/RECIPE PAGE**
 ![homepage](wireframes/home-recipes-page-new.png)
@@ -179,28 +200,32 @@ Chart of the website to show core relations between available pages.
 ![collections](wireframes/collections-pages-new.png)
 
 **UTENSILS PAGE**
+Initially, the Utensils page was planned using a carousel for display utensils, however I have decided to use the cards instead. That seemed to be a better UX solution to present the utensils in a simple form that could be seen immediately after entering the visitor the website without having to scroll items like in the case of the carousel.
 ![utensils](wireframes/utensils-page-new.png)
 
 **SINGLE RECIPE PAGE**
+The size of the photo has been slightly changed for a visual appearance, as well as the Delete and Edit buttons have been added for users in session, making it easier for users to manage their recipes from any place on the website.
 ![singlerecipe](wireframes/single-recipe-page-new.png)
 
 **PROFILE PAGE**
+Profiles has been gently changed. The `Manage Categories` link on the admin page has been changed to the button and moved from the navigation bar to the page. The reason for the transfer was too many links on the navigation bar, which in smaller screeens caused them to overlap the `Smoothie Lovers` logo. Taking into account the advices of my friends and family who tested my website, a New Recipe button was also added on the website, which makes it easier to navigate on mobile devices.
 ![profile](wireframes/profile-page-new.png)
 
 **ADD/EDIT/DELETE EXISTING RECIPE PAGE**
-![addeditdeleterecipe](wireframes/add-edit-recipe-page-new.png)
+To Add / Edit / Delete Recipe I have added two additional fields: calories per serving and people serves
+![add edit delete recipe](wireframes/add-edit-recipe-page-new.png)
 
 **MANAGE CATEGORIES PAGE**
-![managecategories](wireframes/manage-categories-page-new.png)
+![manage categories page](wireframes/manage-categories-page-new.png)
 
 **REGISTER PAGE**
-![register](wireframes/register-page-new.png)
+![register page](wireframes/register-page-new.png)
 
 **LOGIN PAGE**
-![singlerecipe](wireframes/login-page-new.png)
+![login page](wireframes/login-page-new.png)
 
 **CONTACT PAGE**
-![contactpage](wireframes/contact-page-new.png)
+![contact page](wireframes/contact-page-new.png)
 
 ## **5. Surface Plane**
 
@@ -229,43 +254,102 @@ article is optimized for print, web, and mobile interfaces and is one of the bes
 [pixabay free resource]( https://pixabay.com/photos/smoothies-juice-fruit-colorful-3809517/) and it will allude to the theme of the page.
 Most of the recipe images are added by the user.
 
-If the user doesn't upload an image, the default image is taken from [here]()
+If the user doesn't upload an image, the default image is uploaded ![image replacement](./static/images/image-replacement.jpg)
 
 ## Features
 ---
 **Existing Features**
+- The site allows users to upload new recipes and edit their existing ones. Users can search for recipes based on ingredients
+- It is a fully responsive front and back website that allows the user to use it on any device.
+- It consists of 1 base.html file, 12 other html files 3 error handling customer pages
+- After loading, the user is presented with all uploaded recipes, which are displayed 8 per page using pagination
+- There is a search box feature which performs text search based on the ingredient
+- New users can register on the site from the register page
+- Registered users can log in to the site from the log on page
+- The site allows theregistered user to:
+    - Share their own recipes.
+    - View all recipes shared by other members.
+    - Edit their own recipes.
+    - Del}ete their own recipes.
+- The site also allows the admin/owner of the website to:
+    - Share their own recipes.
+    - Edit their own recipes.
+    - Delete their own recipes.
+    - Add a new category.
+    - Edit an existing category.
+    - Delete an existing category.
+ - The site provides multiple feedback mechanisms:
+    - Modal for confirmation for "Delete" function.
+    - Flash messages provides information, warning and error messages appeared.
+    - Forms indicate required fields with warning messages on submit.
+    - Forms provide validation warnings through colour cues green/red and messages on the form field.
 
 ### Navigation bar:
+Navbar's features for new, not registered or logged out user
+![navbar new logged out user](wireframes/testing/navbar1.png) 
+Navbar's features for registered, logged in user
+![navbar user logged in](wireframes/testing/navbar2.png) 
+Navbar's features for admin/owner
+![navbar admin](wireframes/testing/navbar3.png) 
 
 ### Footer:
+![footer](wireframes/testing/footer.png) 
 
-### HOME/RECIPE PAGE:
+### HOME/RECIPES PAGE:
+![recipes](wireframes/testing/recipes1.png) 
+Initially, the recipe was scheduled to open, a link `See recipe` on the bottom of the recipe card , which was changed during development to a red pulsating button with the` see-eye` icon because it seemed the card was too crowded during the user's session, as two more `delete` and` edit`appeared
+
+![card tooltip see recipe](wireframes/testing/card1.png)
+![card tooltip serves](wireframes/testing/card2.png) 
+![card tooltip kal](wireframes/testing/card3.png) 
 
 ### COLLECTIONS PAGES: Stay Healthy / Stay Young / Stay Fit / Stay Happy:
+![stay happy category](wireframes/testing/stay-happy-category.png) 
+![caregories](wireframes/testing/categories1.png) 
 
 ### UTENSILS PAGE:
+![utensils](wireframes/testing/utensils.png) 
 
 ### SINGLE RECIPE PAGE
+![recipe](wireframes/testing/recipe.png) 
 
 ### ADD/EDIT/DELETE EXISTING RECIPE PAGE
+![add recipe](wireframes/testing/add-recipe.png) 
+![edit recipe](wireframes/testing/edit-recipe.png) 
+![delete recipe](wireframes/testing/delete-recipe.png) 
+![delete confirmation message](wireframes/testing/delete-confirmation-message.png) 
 
 ### PROFILE PAGE
+![profile](wireframes/testing/profile.png) 
 
-### MANAGE CATEGORIES PAGE
+### MANAGE CATEGORIES PAG
+![manage category](wireframes/testing/manage-categories.png) 
+![add category](wireframes/testing/add-category.png) 
+![edit category](wireframes/testing/edit-category.png) 
+![delete category modal](wireframes/testing/delete-category.png) 
 
 ### REGISTER PAGE
+![register](wireframes/testing/register.png) 
 
 ### LOGIN PAGE
+![login](wireframes/testing/login.png) 
 
 ### CONTACT PAGE
+![contact](wireframes/testing/contact.png) 
+
+### ERROR HANDLING
+Additional custom pages were created to handle 403, 404 and 500 errors on the website. Both pages will redirect users back to the homepage. These pages allow the website to handle errors gracefully.
+![403](wireframes/testing/403.png) 
+![404](wireframes/testing/404.png) 
+![500](wireframes/testing/500.png) 
 
 **Features Left to Implement when skills develop**
-
 *	Rate and comment recipes. Users will be able to rate and comment recipes of other users which may improve the recipes.
 *	Print and download recipes that might be useful for users who prefer or would like to keep their recipes in a more traditional paper format or to make a book for friends and family.
 *	Forgot Password: The primary design goals were to make the website easy-to-use and intuitive for users. An e-mail address will be required when creating an account for this feature to be implemented. It could be considered in future development.
-*	Uploading Images: The application is currently using full image URLs to display pictures of recipes. This is because databases store image locations as a URL and the file itself is located elsewhere. Uploading images directly could be considered in future development.
 * Image File Upload Ability to upload images from users personal image library as opposed to only using URL's. This would be useful as it's a social media norm rather than using URL's.
+* The ability to manage user accounts by the admin/owner.
+* Possibility of a more complex and intuitive search for recipes in searchbox.
 
 ## Technologies Used
 **1. Languages**
@@ -294,7 +378,7 @@ If the user doesn't upload an image, the default image is taken from [here]()
 - ![heroku](wireframes/readme/heroku.png) - Heroku was used in order to deploy the website.
 
 **5. Editors**
--	[Typora]( https://typora.io/) - Typora was used to simplify creation of the README.md file.
+-	[Typora]( https://typora.io/) - Typora was used to simplify creation of the Testing table file.
 -	[dbdiagram]( https://dbdiagram.io/home) - Used to create Entity Relationship Diagrams of the database.
 -	[balsamiq]( https://balsamiq.com/) - Wireframing design tool to create wireframes.
 
@@ -306,7 +390,7 @@ If the user doesn't upload an image, the default image is taken from [here]()
 - FontAwesome Auto-complete
 
 **7. Other**
-
+- [Photoshop](https://www.photoshop.com/en) - for photo editing.
 ---
 
 ## Resources
@@ -326,6 +410,8 @@ If the user doesn't upload an image, the default image is taken from [here]()
 - [Grammarly](https://www.grammarly.com/) - Used to help with grammar check.
 - [youtube](https://www.youtube.com/) - Used for general resources.
 - [codepen](https://codepen.io/j_holtslander/pen/qBOPJYP) - Used to look for a solution to find the correct card size
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/) - Flask Custom Error Pages
+
 ---
 ## Testing
 - Click [here](TESTING.md) for the full testing process.
@@ -349,7 +435,7 @@ Overview
 - Lighthouse in Google dev tool for testing the performance of the website
 
 ## Version Control
-[Git](https://git-scm.com/) as a local repository and [GitHub(https://github.com/)] as a remote repository are used for the project, and below is how I use them as the version control for the project.
+[Git](https://git-scm.com/) as a local repository and [GitHub](https://github.com/) as a remote repository are used for the project, and below is how I use them as the version control for the project.
 
 **- - Setting Up New Repository - -**
 1. Create a remote repository in GitHub by clicking "New Repository" on the main page.
@@ -410,7 +496,10 @@ Change the current working directory to the location where you want the cloned d
 
 6. Press Enter and you local clone will be created.
 
+
 ## Deployment
+
+### Deployment Platform
 The application project requires back-end technologies such as server, application, and database to be deployed using [Heroku](https://dashboard.heroku.com/apps), which is a cloud platforn with a service supporting several programming languages including Python. GitHub can only host a static website. There are two ways to deploy a website in Heroku. One is to use Heroku Command Line Interface (CLI) and another one is to connect to GitHub repository by Heroku. This is deployed by Connecting to GitHub repository. 
 
 Before deploying the website to Heroku, please follow this very important step to make the app work correctly in Heroku.
@@ -442,7 +531,9 @@ Once those steps are done, the website can be deployed and below are the steps o
 
 ### Database Deployment
 
-### Deployment Platform
+The site uses a Mongodb database for data storage and retrieval.
+
+Connecting to Mongodb
 
 ---
 
@@ -481,13 +572,19 @@ Images and content for database recipes in MongoDB were taken from sources below
 - [chocolate peanut smoothie]( https://wholefully.com/chocolate-peanut-butter-smoothie-recipe/)
 
 
-
-
-
 **Code Snippets**
 
+- [seanyoung247](https://github.com/seanyoung247/Plum) - for dynamic adding/removing ingredients to recipes from in java script 
+- [materializecss](https://materializecss.com/navbar.html) - Navbar materialize
+- [materializecss](https://materializecss.com/modals.html) - Modal for delete buttons
+- [materializecss](https://materializecss.com/cards.html) - Cards for recipe cards
+- [Edb83](https://github.com/Edb83/self-isolution/blob/master/app.py) - for pagination on the pages
+- Code Istitute Mini Project Task Manager
+
+
 ## Acknowledgments
-I would like to thank:
-- My mentor Aaron Sinnott for his helpful and valuable feedback and guidance.
-- Tutor support at Code Institute, for funtastic support and help with my technical questions.
-- Slack community for their suggestions and support.
+I would like to thank to:
+- My super mentor Aaron Sinnott for his helpful and valuable feedback and guidance, Thank you.
+- To my wonderful tutor Kasia for sharing her knowledge with me, always helpful and supportive. I am very grateful, Thank you 
+- I would like to thank to the whole funtastic Code Institute Tutor Support team for your help, all tips, explanations, time spent on solving my mysterious problems;) I am grateful for every minute, you are amazing guys with astonish knowledge. Thank you for sharing, I have learned a lot from you. I would not be myself if I did not thank you to: John, Sean, Miklos, Johann, Jo, Igor, Sharyl, Alan, Michael, Stephen I hope I didn't missed anyone, Thank you
+- Slack community for great posts.
