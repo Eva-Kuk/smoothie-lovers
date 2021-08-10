@@ -86,25 +86,28 @@ for landscape `min-height: 175vh;` and `height: 175vh;`
 Because the code is made up of Jinja templates, had to check on the site by right clicking each page, selecting View Page Source and running that generated code through the validator.
 
     **Recipes Page** (`recipes.html`) - home page
-    - ERROR 1: Element `<h3>` not allowed as child of element span in this contest for all recipes
+    - **ERROR 1:** Element `<h3>` not allowed as child of element span in this contest for all recipes
         - FIXED - class="title-font" removed from `<h3>` and moved to `<span>`
     ![recipes html validator error 1](wireframes/testing/recipes-html-validator-error-1.png)
      
 
-    - ERROR 2: Attribute `minlenght` not allowed on element input at this point
+    - **ERROR 2:** Attribute `minlenght` not allowed on element input at this point
         - FIXED - Attribute `minlenght` removed
         ![recipes html validator error 2](wireframes/testing/recipes-html-validator-error-2.png)
     
 
-    - ERROR 3: Element `<h3>` not allowed as child of span in this context
+    - **ERROR 3:** Element `<h3>` not allowed as child of span in this context
         - FIXED - the solution found on 
         [stack overflow](https://stackoverflow.com/questions/18960581/element-h5-not-allowed-as-child-of-element-span-in-this-context) `<span>` replaced by `<div>`
       ![recipes html validator error 3](wireframes/testing/recipes-html-validator-error-3.png)
     
 
-    - ERROR 4: End tag `<section>` seen, but there were open elements and an unclosed element `<div>`
+    - **ERROR 4:** End tag `<section>` seen, but there were open elements and an unclosed element `<div>`
         - FIXED - Move `</div>` just before `</section>`
+
+
     ![recipes html validator error 4](wireframes/testing/recipes-html-validator-error-4.png)
+
     ![recipes html validator error 4 solution](wireframes/testing/recipes-html-validator-error-4-solution.jpg)
 
 
@@ -114,30 +117,36 @@ Because the code is made up of Jinja templates, had to check on the site by righ
       ![recipe html validator warning](wireframes/testing/recipe-html-validator-warning.png)
    
     **Register Page** (`register.html`)
-    - WARNING: Section lacks heading
+    - **WARNING:** Section lacks heading
         - FIXED - `<span>` for flash messages in base.html replaced by `<div>`
 
 
     **Add Recipe Page** (`add_recipe.html`) and **Edit Recipe** (`edit_recipe.html`), where the same errors and warnings appeared
 
     - ![add recipe html validator errors](wireframes/testing/add-recipe-html-validator-errors.png)
+
         - FIX ERRORS 1,2,3 move `<label>` element outside the `<select>` element 
+
      ![add recipe html validator errors1 2 3](wireframes/testing/add-recipe-html-validator-errors-1-2-3.jpg)
+
         - FIX ERRORS 4 and 5 using Duplicate ID and the first occurence of ID for two of the same `name` id's for categories and recipes collection, changed it to `category_name`
+
     ![add recipe html validator errors-4-5](wireframes/testing/add-recipe-html-validator-errors-4-5.jpg)
 
     **Edit Recipe Page** (`edit_recipe.html`)  additional error
-    - ERROR option element must have either an empty value attribute or no text content
+    - **ERROR** option element must have either an empty value attribute or no text content
     - FIXED by adding to `<select>` element attribute `size="6"`
+
      ![edit recipe html validator error](wireframes/testing/edit-recipe-html-validator-error.png)
 
     **Profile Page** (`profile.html`)
 
-    - ERRORS: Element `<h3>` not allowed as child of element `<span>` in this context
+    - **ERRORS:** Element `<h3>` not allowed as child of element `<span>` in this context
         - FIXED - `<class="title-font>` removed from heading
 
       ![profile html validator error 1](wireframes/testing/profile-html-validator-error-1.png)
-    - WARNINGS: Element `<h3>` not allowed as child of element `<span>` in this context
+
+    -** WARNINGS:** Element `<h3>` not allowed as child of element `<span>` in this context
      - FIXED - '<span>` replaced by '<div>`
      ![profile html validator error 2](wireframes/testing/profile-html-validator-error-2.png)
 
@@ -166,7 +175,7 @@ Because the code is made up of Jinja templates, had to check on the site by righ
     - **WARNINGS** 53 warnings related to unknown vendor extension, which I found is also a non-issue after reading about it on different sources [Stack Overflow](https://stackoverflow.com/questions/52490004/what-are-all-of-these-w3c-css-validation-warnings-about)
 
 
- ![css validator](wireframes/testing/css-validator.png)
+    ![css validator](wireframes/testing/css-validator.png)
 
     - CSS code was passed through Auto Prefixer to add vendor prefixes [Auto Prefixer](https://autoprefixer.github.io/)
 
@@ -177,15 +186,18 @@ In the file script.js static analysis tool: jshint did not show any errors excep
 - 2 undefined variables: "$" and "M" in line 13 and 
 - one unused variable `goBack`
 
-        - **WARNINGS** >> let is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz). 
-        - **SOLUTION** >> I found the solution on [stackoverflow](https://stackoverflow.com/questions/27441803/why-does-jshint-throw-a-warning-if-i-am-using-const)
-        that a comment `/*jshint esversion: 6 */` should be added at the beginning of each java script file which worked.
+    - **WARNINGS** >> let is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz). 
+    - **SOLUTION** >> I found the solution on 
+    
+    [stackoverflow](https://stackoverflow.com/questions/27441803/why-does-jshint-throw-a-warning-if-i-am-using-const)
+    that a comment `/*jshint esversion: 6 */` should be added at the beginning of each java script file which worked.
 
     ![jshint test](wireframes/testing/jshint-test.png)
 
 ### Python PEP8
 4. used online [PEP8](http://pep8online.com/).
 The entire code was placed in the PEP8 tool and passed the test successfully.
+
 ![pep8](wireframes/testing/pep8.png)
 
 ## Testing User stories
@@ -214,45 +226,59 @@ The entire code was placed in the PEP8 tool and passed the test successfully.
 5. As a new visitor, I want to browse other users recipes on the website without register, so that I can decide if I want to have an account on that website.
     - When the user lands on the website without being logged in, they are able to browse through all the recipe cards available on the website, choose interesting ones and by using a red pulse eye button is able to view the full recipe description. The recipe description contains a `GO BACK ` button which loads to the previous URL opened in history list.
     ![recipe access user stories](wireframes/testing/recipe-access-user-stories.png)
+
     ![single recipe page view](wireframes/testing/single-recipe-page-view.png)
 
 6. As a new visitor, I want to have Register/Log In functions, so that I can have my own profile where I can keep track of my own recipes.
     - From the navigation bar a new user can go to the Register page where the user can register using a username and password. A confirm password field is set to make sure that the user has choosen their password correctly. If passwords don't match there will be a message displaying `Password doesn't match, try again`.
     There is a message displaying what type of characters and length is required for username and password.
+
     ![register form password](wireframes/testing/register-form-password.png)
+
     - If the chosen username has been already taken, after the form is submitted the information message will display 'Username already exists, please choose another', and they will be able to choose another name.
+
     ![register form username](wireframes/testing/register-form-username.png)
     
     - After registering, the user will be redirected to their own profile page and have the ability to add, edit and delete their own recipes.
+
     ![user profile](wireframes/testing/user-profile.png)
-    - As the user completes the registration process, they are able to Log In to their profile using the Log In form from the navigation bar to access their profile. When the user will log out, a message will display "You have been logged out".
+
+    - As the user completes the registration process, they are able to Log In to their profile using the Log In form from the navigation bar to access their profile. When the user will log out, a message will display "You have been logged out". If the user puts the wrong username or password, they will be informed and can try again.
+
     ![login form](wireframes/testing/login-form.png)
-    If the user puts the wrong username or password, they will be informed and can try again.
-    ![login form password](wireframes/testing/login-form-password.png)
+
 7. As a new visitor, I want to be able to filter recipes by ingredient, so that I can find recipes using ingredients I like.
     - on the top of the website on the hero image there is a search box, where the user is able to search recipes by ingredients. 
+
     ![search box ingredient](wireframes/testing/search-box-ingredient.png)
+
     ![search box ingredient found](wireframes/testing/search-box-ingredient-found.png)
+
     - if there is no recipe with chosen ingredient the message "No Result Found" will pop up and links to `REGISTER` or `LOGIN` will appear on the site.
+
     ![searchbox no recipe found](wireframes/testing/search-box-no-recipe-found.png)
 
 8. As a new / existing user, I want to be able to search recipes by category, so that I can find a recipe according to the category they belong to.
     - on the navigation bar there is a dropdown `Collection` link with initialy 4 different categories `Stay Healty`, `Stay Fit`, `Stay Happy` and `Stay Young` with a little description attached, describing what kind of smoothies users can expect to find there.
+
     ![category search](wireframes/testing/category-search.png)
 
 9. As a new visitor, I want to see if there is any good kitchen tools recommendations, so that I can get some ideas which I might need to make smoothies.
 - on the navigation bar there is a `Utensils` link where user can find some owner recommendations of kitchen tools. User is able to see the image of the tool, read a little description by clicking on the eye icon. When hovering the eye icon the tooltip message `About item` will appear. There is a link to the Amazon icon when hovering, the tooltip message `Buy in here` will appear which will redirect the user to the shop website open in the new window where the user can purchase the tool.
+
 ![utensils](wireframes/testing/utensils.png)
 
 10. As a user, I want to easily understand the purpose of this site.
 - When the user lands on the website the welcome sign describes the purpose of the website.
 - The hero image, placed on the home page gives a first glimpse on the website content and purpose.
 - The logo and name of the website indicates what is the website's purpose. 
+
 ![home-page](wireframes/testing/home-page.png)
 
 ## Registered User Stories
 11. As a registered user, I want to add my own recipes for safe keeping, which I can easily find and share it with others users from the website.
 - Once the user is registered, they need to Log In to their profile to be able to add new recipes using link `New Recipe` on the navbar or a button under user's profile sign. Following the instructions, the user is able to fill in the form.
+
  ![add recipe](wireframes/testing/add-recipe.png)
 
 12. As a registered user, I want to edit my recipes, so that I can change them as I would like.
@@ -262,10 +288,12 @@ The entire code was placed in the PEP8 tool and passed the test successfully.
 
 13. As a registered user, I want to be able to remove my own recipes, so that I can update which recipes I have in my profile.
 - Once the user is Registered and Logged In, they have access to all of their recipes from their profile or home page where users will be able to remove their recipe. On each recipe beside the edit button there is a red delete button.
- ![add delete recipe](wireframes/testing/add-delete-buttons.png)
+
+![add delete recipe](wireframes/testing/add-delete-buttons.png)
 
 14. As a registered user, I want to get a confirmation message before deleting the recipe, so I won't delete a recipe by mistake.
 - There is a confirmation message presented with the modal confirm or cancel buttons informing the user before deleting a recipe.
+
 ![delete-confirmation-message](wireframes/testing/delete-confirmation-message.png)
 
 
@@ -274,23 +302,33 @@ The entire code was placed in the PEP8 tool and passed the test successfully.
     - The Admin is able to Log In to their account and add/edit/delete recipes like every other user does.
     - Only Admin is able to add/edit/delete categories. 
     - The Manage Categories button is placed on the the admin's Profile site and an Admin can have access after Logging In
+
     ![admin manage categories button](wireframes/testing/admin-manage-categories-button.png)
+
     - On the Manage Categories page Admin has access to all existing categories. There is an `Add Category` Button where an Admin can add a new category.
+
     ![admin manage categories page](wireframes/testing/admin-manage-categories-page.png)
+    
     - Once `Add Category `button was chosen an Admin is able to add a category following the instructions on the form
     and press the `Add Category` button. There will be a message informing an Admin about the "New Category Added".
+
     ![add-category-page](wireframes/testing/add-category-page.png)
+
     - Admins can Edit existing Categories by choosing the `Edit` Button and then confirm by using `Edit Category` or if they don't want to make any changes choose the `Cancel` button. Once the page is uploaded the user will be redirected to the Categories Page. Both buttons redirect an Admin to Manage Categories page. 
     - Admins can remove existing categories by choosing the `Delete` button placed beside the `Edit` button.
     - There is a confirmation message presented with the modal confirm or cancel buttons informing the admin before deleting a category.
+
     ![delete-catagories-message](wireframes/testing/delete-categories-message.png)
+
     - Once a recipe is deleted a message will appear "Category Deleted Successfully".
+
     ![catagory-deleted-message](wireframes/testing/category-deleted-message.png)
 
 ## Site Owner Stories
 16. As a site owner, I want to be able to promote kitchen tools, so that the users can choose for themselves the best option on the market.
     - There is a link placed on the navbar which leads to the `Utensils` page where users can find and buy kitchen tools recommended by the owner.
     - Page contains 
+
     ![utensils owner](wireframes/testing/utensils-owner.png)
 
 
@@ -348,6 +386,7 @@ Manually Testing Functionality
 ----
 
 ### recipes.html / Home 
+
 | Element                              | Action     | Expected Result                          | PASS/FAIL | PROBLEM | FIX  |
 | ------------------------------------ | ---------- | ---------------------------------------- | :-------: | ------- | ---- |
 | **Recipes/Home Page**                |            |                                          |           |         |      |
@@ -670,8 +709,15 @@ Manually Testing Functionality
 
  **Encountered problems while testing the site on different devices**
  Issue with displaying the Contact, Login and Register forms on Landscape Devices
+
+ **BEFORE**
+
 ![landscape issue](wireframes/testing/landscape-issue.jpg)
+
+**BEFORE**
+
 ![landscape issue fix](wireframes/testing/landscape-issue-fix.png)
+
 ![landscape issue fix style](wireframes/testing/landscape-issue-fix-style.png)
 ## Testing Compatibility Fix
 ---
@@ -682,13 +728,16 @@ The website was tested on the following browsers and operating systems:
 - Firefox (Windows 10, Linux).
 - Opera (Windows 10, Linux).
 
-    - Test for Opera browser
+    `- Test for Opera browser`
+
     ![altopera](wireframes/testing/opera.png)
 
-    - Test for Firefox browser
+    `- Test for Firefox browser`
+
     ![altfirefox](wireframes/testing/firefox.png)
 
-    - Test for Microsoft Edge browser
+    `- Test for Microsoft Edge browser`
+
     ![altedge](wireframes/testing/edge.png)
 ---
 ## Testing Performance
@@ -709,80 +758,180 @@ Performance has been tested using Lighthouse tool of Google Chrome. The results 
         Solved by changing headings in recipe names from `<h3>` to `<h2>`
 
 **Recipes Page** (`recipes.html`) - HOME PAGE
-    - DESKTOP
-     ![recipes-desktop-lighthouse](wireframes/testing/recipes-desktop-lighthouse.png)
-    - MOBILE
-    ![recipes-mobile-lighthouse](wireframes/testing/recipes-mobile-lighthouse.png)
 
-**Recipes Page** (`recipe.html`)
     - DESKTOP
-    ![recipe-desktop-lighthouse](wireframes/testing/recipe-desktop-lighthouse.png)
+
+![recipes-desktop-lighthouse](wireframes/testing/recipes-desktop-lighthouse.png)
+
     - MOBILE
-    ![recipe-recipe-mobile-lighthouse](wireframes/testing/recipe-mobile-lighthouse.png)
+
+![recipes-mobile-lighthouse](wireframes/testing/recipes-mobile-lighthouse.png)
+
+**Single Recipe Page** (`recipe.html`)
+
+    - DESKTOP
+
+![recipe-desktop-lighthouse](wireframes/testing/recipe-desktop-lighthouse.png)
+
+    - MOBILE
+
+![recipe-recipe-mobile-lighthouse](wireframes/testing/recipe-mobile-lighthouse.png)
 
 **Register Page** (`register.html`)
+
     - DESKTOP
-    ![register-desktop-lighthouse](wireframes/testing/register-desktop-lighthouse.png)
+
+![register-desktop-lighthouse](wireframes/testing/register-desktop-lighthouse.png)
+
     - MOBILE
-    ![register-mobile-lighthouse](wireframes/testing/register-mobile-lighthouse.png)
+
+![register-mobile-lighthouse](wireframes/testing/register-mobile-lighthouse.png)
 
 **Add Recipe Page** (`add_recipe.html`)
+
     - DESKTOP
-    ![add-recipe-desktop-lighthouse](wireframes/testing/add-recipe-desktop-lighthouse.png)
+
+![add-recipe-desktop-lighthouse](wireframes/testing/add-recipe-desktop-lighthouse.png)
+
     - MOBILE
-    ![add-recipe-mobile-lighthouse](wireframes/testing/add-recipe-mobile-lighthouse.png)
+
+![add-recipe-mobile-lighthouse](wireframes/testing/add-recipe-mobile-lighthouse.png)
 
 **Edit Recipe** (`edit_recipe.html`)
+
     - DESKTOP
-    ![edit-recipe-desktop-lighthouse](wireframes/testing/edit-recipe-desktop-lighthouse.png)
+
+![edit-recipe-desktop-lighthouse](wireframes/testing/edit-recipe-desktop-lighthouse.png)
+    
     - MOBILE
-    ![edit-recipe-mobile-lighthouse](wireframes/testing/edit-recipe-mobile-lighthouse.png)
+
+![edit-recipe-mobile-lighthouse](wireframes/testing/edit-recipe-mobile-lighthouse.png)
 
 **Profile Page** (`profile.html`)
+
     - DESKTOP
-     ![profile-desktop-lighthouse](wireframes/testing/profile-desktop-lighthouse.png)
+
+![profile-desktop-lighthouse](wireframes/testing/profile-desktop-lighthouse.png)
+
     - MOBILE
-    ![profile-mobile-lighthouse](wireframes/testing/profile-mobile-lighthouse.png)
+
+![profile-mobile-lighthouse](wireframes/testing/profile-mobile-lighthouse.png)
 
 **Login Page** (`login.html`)
+
     - DESKTOP
-     ![login-desktop-lighthouse](wireframes/testing/login-desktop-lighthouse.png)
+
+![login-desktop-lighthouse](wireframes/testing/login-desktop-lighthouse.png)
+
     - MOBILE
-    ![login-mobile-lighthouse](wireframes/testing/login-mobile-lighthouse.png)
+
+![login-mobile-lighthouse](wireframes/testing/login-mobile-lighthouse.png)
 
 **Page Manage Categories** (`categories.html`)
+
     - DESKTOP
-    ![manage-categories-desktop-lighthouse](wireframes/testing/login-desktop-lighthouse.png)
+
+![manage-categories-desktop-lighthouse](wireframes/testing/manage-categories-desktop-lighthouse.png)
+    
     - MOBILE
-    ![manage-categories-mobile-lighthouse](wireframes/testing/login-mobile-lighthouse.png)
+
+![manage-categories-mobile-lighthouse](wireframes/testing/manage-categories-mobile-lighthouse.png)
 
 **Contact Page**
+
     - DESKTOP
-     ![contact-desktop-lighthouse](wireframes/testing/contact-desktop-lighthouse.png)
+
+![contact-desktop-lighthouse](wireframes/testing/contact-desktop-lighthouse.png)
+    
     - MOBILE 
-     ![contact-mobile-lighthouse](wireframes/testing/contact-mobile-lighthouse.png)
+
+![contact-mobile-lighthouse](wireframes/testing/contact-mobile-lighthouse.png)
 
  **Utensils Page**
+
     - DESKTOP
-    ![utensils-desktop-lighthouse](wireframes/testing/utensils-desktop-lighthouse.png)
+
+![utensils-desktop-lighthouse](wireframes/testing/utensils-desktop-lighthouse.png)
+    
     - MOBILE
-    ![utensils-mobile-lighthouse](wireframes/testing/utensils-mobile-lighthouse.png)
+
+![utensils-mobile-lighthouse](wireframes/testing/utensils-mobile-lighthouse.png)
 
  **Add Category Page** 
+
     - DESKTOP
-    ![add-category-desktop-lighthouse](wireframes/testing/add-category-desktop-lighthouse.png)
+
+![add-category-desktop-lighthouse](wireframes/testing/add-category-desktop-lighthouse.png)
     - MOBILE
-    ![add-category-mobile-lighthouse](wireframes/testing/add-category-mobile-lighthouse.png)
+
+![add-category-mobile-lighthouse](wireframes/testing/add-category-mobile-lighthouse.png)
 
 **Edit Category Page** 
+
     - DESKTOP
-    ![edit-category-desktop-lighthouse](wireframes/testing/edit-category-desktop-lighthouse.png)
+    
+![edit-category-desktop-lighthouse](wireframes/testing/edit-category-desktop-lighthouse.png)
     - MOBILE
-    ![edit-category-mobile-lighthouse](wireframes/testing/edit-category-mobile-lighthouse.png)
+
+![edit-category-mobile-lighthouse](wireframes/testing/edit-category-mobile-lighthouse.png)
 
 ## Testing Accessibility
 ----
-The website's accessibility was also tested using Lighthouse. The test result as above was satysfying.
+The website's accessibility was also tested using Lighthouse this time on the heroku. The test result was satysfying.
+
+**Recipes Page** (`recipes.html`) - HOME PAGE
+
+![recipes-desktop-lighthouse-heroku](wireframes/testing/recipes-lighthouse-heroku.png)
+
+**Single Recipe Page** (`recipe.html`)
+
+![recipe-desktop-lighthouse-heroku](wireframes/testing/recipe-desktop-lighthouse-heroku.png)
+
+
+**Register Page** (`register.html`)
+
+![register-desktop-lighthouse-heroku](wireframes/testing/register-desktop-lighthouse-heroku.png)
+
+
+**Add Recipe Page** (`add_recipe.html`)
+
+![add-recipe-desktop-lighthouse-heroku](wireframes/testing/add-recipe-desktop-lighthouse-heroku.png)
+)
+
+**Edit Recipe** (`edit_recipe.html`)
+
+![edit-recipe-desktop-lighthouse-heroku](wireframes/testing/edit-recipe-desktop-lighthouse-heroku.png)
+
+**Profile Page** (`profile.html`)
+
+![profile-desktop-lighthouse-heroku](wireframes/testing/profile-desktop-lighthouse-heroku.png)
+
+**Login Page** (`login.html`)
+
+![login-desktop-lighthouse-heroku](wireframes/testing/login-desktop-lighthouse-heroku.png)
+
+**Page Manage Categories** (`categories.html`)
+
+![manage-categories-desktop-lighthouse-heroku](wireframes/testing/manage-categories-desktop-lighthouse-heroku.png)
+
+**Contact Page**
+
+![contact-desktop-lighthouse-heroku](wireframes/testing/contact-desktop-lighthouse-heroku.png)
+ 
+ **Utensils Page**
+
+![utensils-desktop-lighthouse-heroku](wireframes/testing/utensils-desktop-lighthouse-heroku.png)
+
+
+ **Add Category Page** 
+
+![add-category-desktop-lighthouse-heroku](wireframes/testing/add-category-desktop-lighthouse-heroku.png)
+
+
+**Edit Category Page** 
+    
+![edit-category-desktop-lighthouse-heroku](wireframes/testing/edit-category-desktop-lighthouse-heroku.png)
+  
 
 ## Further Testing
 
