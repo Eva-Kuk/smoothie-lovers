@@ -1,138 +1,132 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-<h1 class="center-align">Edit Recipe</h1>
-<!-- Go Back button-->
-<div class="row">
-    <div class="col s12 m8 offset-m2 center-align">
-       <button class="btn-small  recipe-home-btn green-btn"  onclick="goBack()"><i class="fas fa-angle-double-left"></i> Go Back</button>
-    </div>
-</div>
-<!--CREDIT: Form select, Text inputs code from materializecss customized-->
-<div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-        <!-- Recipe Name -->
-        <div class="row card-panel z-depth-2 card-style box-style">
-            <div class="input-field col s12" >
-                <input id="name" name="name" minlength="1" 
-                maxlength="45" value="{{ recipe.name }}" type="text" class="validate" required>
-                <label for="name">Recipe Name</label>
-            </div>
-        </div>
-        <!-- Serves -->
-        <div class="row card-panel z-depth-2 card-style box-style">
-            <div class="input-field col s12">
-                <select id="serves" name="serves" class="validate" size="6" required>
-                    <option value="{{ recipe.serves }}" selected>{{ recipe.serves }}</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="3">4</option>
-                    <option value="3">5</option>
-                </select>
-                <label for="serves">Select Serves</label>
-            </div>
-        </div>
-        <!-- Calories -->
-        <div class="row card-panel z-depth-2 card-style box-style">
-            <div class="input-field col s12">
-                <input id="calories" name="calories" value="{{ recipe.calories }}" type="text" 
-                class="validate" placeholder="250" required>
-                <label for="calories">Calories per serving</label>
-            </div>
-        </div>
-        <!-- Image URL -->
-        <div class="row card-panel box-style">
-            <div class="input-field col s12">
-                <input id="image_url" name="image_url"
-                value="{{ recipe.image_url }}" type="text" class="validate">
-                <label for="image_url">Image URL</label>
-            </div>
-        </div>
-        <!-- Recipe Description -->
-        <div class="row card-panel z-depth-2 card-style card-style box-style">
-            <div class="input-field col s12">
-                <textarea id="description" name="description" minlength="5" maxlength="250"
-                    class="materialize-textarea validate" required>
-                    {{- recipe.description -}}</textarea>
-                <label for="description">Recipe Description</label>
-            </div>
-        </div>
-        <!-- Category Selection-->
-        <div class="row card-panel z-depth-2 card-style box-style">
-            <div class="input-field col s12">
-                <select id="category_name" name="category_name" class="validate" 
-                 aria-label="Recipe Categories" required>
-                    <option value="" disabled>Choose Category</option>
-                    {% for category in categories %}
-                    {% if category.name == recipe.category_name %}
-                    <option value="{{ category.name }}" selected>{{ category.name }}</option>
-                    {% else %}
-                    <option value="{{ category.name }}">{{ category.name }}</option>
-                    {% endif %}
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-        <!-- Recipe Ingredients -->
-        <div class="row card-panel z-depth-2 card-style box-style">
-            <h4 class="col s12">Ingredients</h4>
-            <div class="col s12">
-                <ul id="ingredients" class="collection">
-                    {% for ingredient in recipe.ingredients %}
-                    <li class="collection-item">
-                        <div class="input-field">
-                            <input name="ingredients" type="text" 
-                            value="{{- ingredient -}}" maxlength="120" class="validate" required>
-                        </div>
-                        <a class="btn-floating btn-small red-btn">
-                            <i class="fas fa-minus"></i></a>
-                    </li>
-                    {% endfor %}
-                    <li class="collection-item">
-                        <a class="btn-floating btn-small green-btn">
-                            <i class="fas fa-plus"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Recipe Methods -->
-        <div class="row card-panel z-depth-2 box-style">
-            <h4 class="col s12">Method</h4>
-            <div class="col s12">
-                <ul id="method" class="collection">
-                    {% for method in recipe.method %}
-                    <li class="collection-item">
-                        <div class="input-field">
-                            <input name="method" type="text" 
-                            value="{{- method -}}" maxlength="120" class="validate" required>
-                        </div>
-                        <a class="btn-floating btn-small red-btn"><i class="fas fa-minus"></i></a>
-                    </li>
-                    {% endfor %}
-                    <li class="collection-item">
-                        <a class="btn-floating btn-small green-btn">
-                            <i class="fas fa-plus"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- Submit Button -->
+<section>
+    <div class="container">
+    <h1 class="center-align">Edit Recipe</h1>
+    <!--CREDIT: Form select, Text inputs code from materializecss customized-->
         <div class="row">
-            <div class="col s12 center-align">
-                <!-- Cancel Button -->
-                <a href="{{ url_for('get_recipes') }}" class="btn-small red-btn">
-                    Cancel <i class="fas fa-times-circle right hide-on-med-and-down"></i>
-                </a>
-                <button type="submit" class="btn-small green-btn">
-                    Edit Recipe <i class="fas fa-edit right hide-on-med-and-down"></i>
-                </button>
-            </div>
+            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+                <!-- Recipe Name -->
+                <div class="row card-panel z-depth-2 card-style box-style">
+                    <div class="input-field col s12" >
+                        <input id="name" name="name" minlength="1" 
+                        maxlength="45" value="{{ recipe.name }}" type="text" class="validate" required>
+                        <label for="name">Recipe Name</label>
+                    </div>
+                </div>
+                <!-- Serves -->
+                <div class="row card-panel z-depth-2 card-style box-style">
+                    <div class="input-field col s12">
+                        <select id="serves" name="serves" class="validate" size="6" required>
+                            <option value="{{ recipe.serves }}" selected>{{ recipe.serves }}</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">5</option>
+                        </select>
+                        <label for="serves">Select Serves</label>
+                    </div>
+                </div>
+                <!-- Calories -->
+                <div class="row card-panel z-depth-2 card-style box-style">
+                    <div class="input-field col s12">
+                        <input id="calories" name="calories" value="{{ recipe.calories }}" type="text" 
+                        class="validate" placeholder="250" required>
+                        <label for="calories">Calories per serving</label>
+                    </div>
+                </div>
+                <!-- Image URL -->
+                <div class="row card-panel box-style">
+                    <div class="input-field col s12">
+                        <input id="image_url" name="image_url"
+                        value="{{ recipe.image_url }}" type="text" class="validate">
+                        <label for="image_url">Image URL</label>
+                    </div>
+                </div>
+                <!-- Recipe Description -->
+                <div class="row card-panel z-depth-2 card-style card-style box-style">
+                    <div class="input-field col s12">
+                        <textarea id="description" name="description" minlength="5" maxlength="250"
+                            class="materialize-textarea validate" required>
+                            {{- recipe.description -}}</textarea>
+                        <label for="description">Recipe Description</label>
+                    </div>
+                </div>
+                <!-- Category Selection-->
+                <div class="row card-panel z-depth-2 card-style box-style">
+                    <div class="input-field col s12">
+                        <select id="category_name" name="category_name" class="validate" 
+                        aria-label="Recipe Categories" required>
+                            <option value="" disabled>Choose Category</option>
+                            {% for category in categories %}
+                            {% if category.name == recipe.category_name %}
+                            <option value="{{ category.name }}" selected>{{ category.name }}</option>
+                            {% else %}
+                            <option value="{{ category.name }}">{{ category.name }}</option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <!-- Recipe Ingredients -->
+                <div class="row card-panel z-depth-2 card-style box-style">
+                    <h4 class="col s12">Ingredients</h4>
+                    <div class="col s12">
+                        <ul id="ingredients" class="collection">
+                            {% for ingredient in recipe.ingredients %}
+                            <li class="collection-item">
+                                <div class="input-field">
+                                    <input name="ingredients" type="text" 
+                                    value="{{- ingredient -}}" maxlength="120" class="validate" required>
+                                </div>
+                                <a class="btn-floating btn-small red-btn">
+                                    <i class="fas fa-minus"></i></a>
+                            </li>
+                            {% endfor %}
+                            <li class="collection-item">
+                                <a class="btn-floating btn-small green-btn">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Recipe Methods -->
+                <div class="row card-panel z-depth-2 box-style">
+                    <h4 class="col s12">Method</h4>
+                    <div class="col s12">
+                        <ul id="method" class="collection">
+                            {% for method in recipe.method %}
+                            <li class="collection-item">
+                                <div class="input-field">
+                                    <input name="method" type="text" 
+                                    value="{{- method -}}" maxlength="120" class="validate" required>
+                                </div>
+                                <a class="btn-floating btn-small red-btn"><i class="fas fa-minus"></i></a>
+                            </li>
+                            {% endfor %}
+                            <li class="collection-item">
+                                <a class="btn-floating btn-small green-btn">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <!-- Cancel/Edit Buttons -->
+                        <a href="{{ url_for('get_recipes') }}" class="btn-small red-btn"> Cancel <i class="fas fa-times-circle right hide-on-med-and-down"></i></a>
+                        <button type="submit" class="btn-small green-btn"> 
+                            Update <i class="fas fa-edit right hide-on-med-and-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
-</div>
-</div>
+    </div>
+</section>
 {% endblock %}

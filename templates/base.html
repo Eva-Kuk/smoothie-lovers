@@ -49,11 +49,9 @@
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="left hide-on-med-and-down">
                         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">
-                                Collections <i class="fas fa-caret-down"></i></a></li>
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"> Collections <i class="fas fa-caret-down"></i></a></li>
                         <li><a href="{{ url_for('utensils') }}">Utensils</a></li>
                     </ul>
-
                     <ul class="right hide-on-med-and-down">
                         {% if session.user %}
                         <li><a href="{{ url_for('contact') }}">Contact</a></li>
@@ -81,8 +79,7 @@
         </ul>
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">
-                    Collections <i class="fas fa-caret-down"></i></a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown2"> Collections <i class="fas fa-caret-down"></i></a></li>
             <li><a href="{{ url_for('utensils') }}">Utensils</a></li>
             {% if session.user|lower == "admin"|lower %}
             <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
