@@ -226,6 +226,7 @@ nav ul a,
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    justify-content: center;
 }
 .cards-row-flex, .card-column-flex {
     display: -webkit-box;
@@ -281,12 +282,18 @@ nav ul a,
     color:#f72626;
     font-weight: 600;
 }
-.recipe-image {
-   height: -webkit-fit-content;
-   height: -moz-fit-content;
-   height: fit-content;
+.recipe-image { 
+   /* height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    object-fit: cover;*/
     width: 100%;
 }
+.cards .card .card-image img {
+    min-height: 450px;
+    max-height: 450px;
+    object-fit: cover;
+    }                                     
 .title-font h3 {
     font-size: 1.7rem;
     margin-top: 1rem;
@@ -642,7 +649,7 @@ nav ul a,
         height: 220px;
     }
 }
-/*---------Media for landscape orientation----------*/
+/*---------Media Queries for landscape orientation----------*/
 @media (max-width: 768px) and (orientation: landscape){
     .padding-landscape {
         padding-top: 0.5rem;
@@ -654,5 +661,153 @@ nav ul a,
     }
     #hero-image-full-screen {
         height: 175vh;
+    }
+    .display-row {
+        margin-top: 2rem;
+    }
+    .card {
+        min-width: 260px;
+        max-width: 260px; 
+    }
+}
+
+/*---------Media Queries for cards ----------*/
+
+@media screen and (max-width:992px) {
+    .card {
+        min-width: 370px;
+        max-width: 370px; 
+    }
+}
+@media screen and (max-width:970px) {
+    .card {
+        min-width: 360px;
+        max-width: 360px; 
+    }
+}
+@media screen and (max-width:940px) {
+    .card {
+        min-width: 350px;
+        max-width: 350px; 
+    }
+}  
+@media screen and (max-width:920px) {
+    .card {
+        min-width: 340px;
+        max-width: 340px; 
+    }
+}  
+@media screen and (max-width:900px) {
+    .card {
+        min-width: 330px;
+        max-width: 330px; 
+    }
+}  
+@media screen and (max-width:880px) {
+.card {
+    min-width: 320px;
+    max-width: 320px; 
+}
+}
+@media screen and (max-width:840px) {
+    .card {
+        min-width: 310px;
+        max-width: 310px; 
+    }
+}
+@media screen and (max-width:820px) {
+    .card {
+        min-width: 305px;
+        max-width: 305px; 
+    }
+}
+@media screen and (max-width:780px) {
+    .card {
+        min-width: 300px;
+        max-width: 300px; 
+    }
+}
+@media screen and (max-width:760px) {
+    .card {
+        min-width: 280px;
+        max-width: 280px; 
+    }
+}
+@media screen and (max-width:740px) {
+    .card {
+        min-width: 270px;
+        max-width: 270px; 
+    }
+}
+@media screen and (max-width:720px) {
+    .card {
+        min-width: 260px;
+        max-width: 260px; 
+    }
+}
+@media screen and (max-width:700px) {
+    .card {
+        min-width: 280px;
+        max-width: 280px; 
+    }
+}
+@media screen and (max-width:680px) {
+    .card {
+        min-width: 270px;
+        max-width: 270px; 
+    }
+}
+@media screen and (max-width:660px) {
+    .card {
+        min-width: 260px;
+        max-width: 260px; 
+    }
+}
+@media screen and (max-width:640px) {
+    .card {
+        min-width: 250px;
+        max-width: 250px; 
+    }
+}
+@media screen and (max-width:620px) {
+    .card {
+        min-width: 240px;
+        max-width: 240px; 
+    }
+}
+@media screen and (max-width:600px) {
+    .card {
+        min-width: 230px;
+        max-width: 230px; 
+    }
+}
+@media screen and (max-width:599px) {
+    .card {
+        min-width: 350px;
+        max-width: 350px; 
+    }
+}
+@media screen and (max-width:599px) {
+    .card {
+        min-width: 300px;
+        max-width: 300px; 
+    }
+}
+@media screen and (max-width:444px) {
+    .card {
+        min-width: 280px;
+        max-width: 280px; 
+    }
+}
+@media screen and (max-width:320px) {
+    .card {
+        min-width: 225px;
+        max-width: 225px; 
+    }
+}
+@media screen and (max-width:270px) {
+    .card {
+        min-width: 200px;
+        max-width: 200px; 
     }
 }
