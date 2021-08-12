@@ -24,7 +24,7 @@ In app.py wrong variable targeted instead of recipes the tasks was targeted.
 ![connectin flask problem](wireframes/testing/connecting-flask-problem.png)
 ![connectin flask problem solved](wireframes/testing/connecting-flask-problem-solved.png)
 
-2. **ISSUE:** While working on adding registration functionality on Register form the` Attribut Error: 'NoneType" object has no attribite 'encode'` was received. 
+2. **ISSUE:** While working on adding registration functionality on Register form the` Attribute Error: 'NoneType" object has no attribute 'encode'` was received. 
 - **SOLUTION:** Two typos were found `with` typo in base.html form line 80 and `password` typo in register.html line 22.
 
 ![attribute none type error](wireframes/testing/attribute-none-type-error.png)
@@ -47,7 +47,7 @@ The data did not want to display at all.
 - **SOLUTION:** The problem was accidentally changing the url_for address from `register` to `login`, which was restored to the correct one.
 ![register wrong value](wireframes/testing/register-wrong-value.jpg)
  6. **ISSUE:** Problem with the same height display of cards with different contents, cards break in the row and move to another making uneven amounts in deferent rows.
-- **SOLUTION:** It took a good while to find the solution and try to find different options, finally with big help from tutor support it has been set using flexbox and some other style in the styles.css. The classes names were oryginally set polish before commits were changed to english.
+- **SOLUTION:** It took a good while to find the solution and try to find different options, finally with big help from tutor support it has been set using flexbox and some other style in the styles.css. The class names were originally set to polish before commits were changed to english.
 
 ![equal card issue css before](wireframes/testing/equal-card-issue-css-before.png)
 
@@ -78,9 +78,19 @@ the recipes were iterating through the recipes, not the paginated recipes.
 for landscape `min-height: 175vh;` and `height: 175vh;`
 ![display footer issue](wireframes/testing/display-footer-issue-landscape.jpg)
 ![display footer issue landscape](wireframes/testing/display-footer-issue.jpg)
+
+10. **ISSUE** Pylint warning: Possible unbalanced tuple unpacking with sequence
+**SOLUTION** Found on [stackoverflow](https://stackoverflow.com/questions/27980121/pylint-warning-possible-unbalanced-tuple-unpacking-with-sequence) by adding to app.route the code of line
+![unbalanced-tuple-unpacking](wireframes/testing/unbalanced-tuple-unpacking.png)
+11. **ISSUE** Textarea error found in devtool
+**SOLUTION** To fix the error I removed the textarea initializatiom from materializecss to initialize textarea for ingredients and methons fields from script.js, the application work with no changes
+
+![textarea-error](wireframes/testing/textarea-error.png)
+
+![initialization-text-area](wireframes/testing/initialization-text-area.png)
+
 ## Code Validation
 ---
-
 ### HTML Validator
 1. Used [W3C Markup Validation Service HTML](https://validator.w3.org/) to validate my HTML code for all pages.
 Because the code is made up of Jinja templates, had to check on the site by right clicking each page, selecting View Page Source and running that generated code through the validator.
@@ -220,7 +230,7 @@ The entire code was placed in the PEP8 tool and passed the test successfully.
     ![login social media links](wireframes/testing/login-social-links-view.png)
 
 4. As a new visitor, I want to be able to contact the website owner, so that I will be able to share my feedback regarding the website, ask any questions or recommendations that I may have.
-    - Website contain Contact page with Contact form connected using Flask and Gmail account where the user is able to send message to the owner of the website. When the user fills in the fields corectly the flash message will display the success mesage: `Email Sent Successfully` 
+    - Website contain Contact page with Contact form connected using Flask and Gmail account where the user is able to send message to the owner of the website. When the user fills in the fields corectly the flash message will display the success message: `Email Sent Successfully` 
     ![contact form](wireframes/testing/contact-form.png)
 
 5. As a new visitor, I want to browse other users recipes on the website without register, so that I can decide if I want to have an account on that website.
@@ -341,9 +351,9 @@ Manually Testing Functionality
 | **Navbar**                           |        |                                      |           |                                                              |                                                              |
 | Logo "Smoothie Lovers"               | Click  | Redirect to home page (Recipes Page) | **PASS**  |                                                              |                                                              |
 | Recipes Link (Home Page)             | Click  | Redirect to all Recipes              | **PASS**  |                                                              |                                                              |
-| Collections Dropdown link            | Click  | Open Collections dropdown            | **PASS**  | Dropdown list doesnt work on Contact, Login, Register, Utensils pages | add to each app.route  categories = list(mongo.db.categories.find()) categories=categories ![dropdown fail](wireframes/testing/dropdown-fail.png) |
+| Collections Dropdown link            | Click  | Open Collections dropdown            | **PASS**  | Dropdown list doesn't work on Contact, Login, Register, Utensils pages | add to each app.route  categories = list(mongo.db.categories.find()) categories=categories ![dropdown fail](wireframes/testing/dropdown-fail.png) |
 | Collection page link with categories | Click  | Redirect to Categories pages         | **PASS**  |                                                              |                                                              |
-| Utensils Link                        | Click  | Redirect to Utensils page            | **FAIL**  | Dropdown doesnt work on mobile devices                       | add list to categories variable `categories = mongo.db.categories.find()` after`categories = list(mongo.db.categories.find())` |
+| Utensils Link                        | Click  | Redirect to Utensils page            | **FAIL**  | Dropdown doesn't work on mobile devices                       | add list to categories variable `categories = mongo.db.categories.find()` after`categories = list(mongo.db.categories.find())` |
 | Contact  Link                        | Click  | Redirect to Contact page             | **PASS**  |                                                              |                                                              |
 | New Recipe Link                      | Click  | Redirect to Add Recipe page          | **PASS**  |                                                              |                                                              |
 |                                      |        | (Only visible if user in session)    | **PASS**  |                                                              |                                                              |
@@ -685,12 +695,28 @@ Manually Testing Functionality
 ----
 
 # 403.html, 404.html, 500.html
-| Element                                 | Action                     | Expected Result | PASS/FAIL | PROBLEM | FIX  |
-| --------------------------------------- | -------------------------- | --------------- | :-------: | ------- | ---- |
-| **Errors Handlers Pages 404, 403, 500** |                            |                 |           |         |      |
-| **CategoryCard**                        |                            |                 |           |         |      |
-| Go Back Home Button                     | ClickRedirect to home page |                 | **PASS**  |         |      |
-|                                         |                            |                 |           |         |      |
+| Element                                                      | Action                     | Expected Result                                              | PASS/FAIL |                                                   |      |
+| ------------------------------------------------------------ | -------------------------- | ------------------------------------------------------------ | :-------: | ------------------------------------------------- | ---- |
+| **Defensive programing**                                     |                            |                                                              |           |                                                   |      |
+| Go Back Home Button                                          | ClickRedirect to home page |                                                              | **PASS**  |                                                   |      |
+| **Not Logged In/user not in session** user:                  |                            |                                                              |           |                                                   |      |
+| change end of url addres from `get_recipes` to `add_recipes` |                            | Redirect to page `404 Page Not Found`                        | **PASS**  |                                                   |      |
+| change end of url addres from `get_recipes` to `add_recipe`  |                            | Redirect to `Log In` page with the Flash massege `Please log In` | **PASS**  |                                                   |      |
+| change end of url addres from `get_recipes` to `edit_recipe` |                            | Redirect to page `404 Page Not Found`                        | **PASS**  |                                                   |      |
+|                                                              |                            |                                                              |           |                                                   |      |
+| **Logged in / user in session**                              |                            |                                                              |           |                                                   |      |
+| change id of different user recipe in the in the `https://8080-moccasin-dragon-f9bcyfgt.ws-eu14.gitpod.io/edit_recipe/.....` URL |                            | Redirect to `403 Forbidden Page`                             | **PASS**  |                                                   |      |
+|                                                              |                            | "Access denied. You don't have permission!" denying message  | **PASS**  |                                                   |      |
+| change `profile/users` name to `profile/admin` name in url addres |                            | Stays on users profile                                       | **PASS**  |                                                   |      |
+| change end of url addres from `add_recipe to `add_category   |                            | Redirect to `403 Forbidden Page`                             | **PASS**  |                                                   |      |
+|                                                              |                            | "You have to be an Admin to access this page" denying message | **PASS**  |                                                   |      |
+| change end of url addres from `edit_recipe` to `edit_category |                            | Redirect to page `404 Page Not Found`                        | **PASS**  |                                                   |      |
+| change end of url addres from `edit_recipe` to `get_categories` |                            | Redirect to `403 Forbidden Page`                             | **PASS**  |                                                   |      |
+|                                                              |                            | "You have to be an Admin to access this page" denying message | **PASS**  |                                                   |      |
+| **Logged in / admin in session**                             |                            |                                                              |           |                                                   |      |
+| change id of different user recipe in the in the `https://8080-moccasin-dragon-f9bcyfgt.ws-eu14.gitpod.io/edit_recipe/.....` URL |                            | Admin takes over the recipe and became his owner, has access to edit and delete recipe | **PASS**  | Only used in emergency when inappropriate content |      |
+| **in app.py set `debug=False`**                              |                            |                                                              |           |                                                   |      |
+| Set incorect url address for  `https://smoothie-lovers.herokuapp.com/get_recipes` |                            | Redirect to `404 Page Not Found                            | **PASS**  |                                                   |      |
 ----
 ----
 
@@ -698,23 +724,24 @@ Manually Testing Functionality
 ---
 - The website has been tested by using [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) 
   and also on [Am I Responsive](http://ami.responsivedesign.is/) and [Responsinator](http://www.responsinator.com/) 
-  on a number of devices with varying screen dimensions, for both portraits and landscape including iPhone 5/SE,
+  on a number of devices with varying screen dimensions, for both portrait and landscape views, including iPhone 5/SE,
   iPhone 6/7/8, iPhone 6/7/8 plus, iPhone 11, iPad, iPad Pro, Moto G4, Galaxy S5, Surface Duo,
   Galaxy Fold, Widescreen Laptop and Desktop PC, iPad landscape · width: 1024px,  iPhone 6-8 Plump landscape 
 · width: 736px ,iPhone 6-8 landscape · width: 667px, Android (Pixel 2) landscape · width: 684px, iPhone expensive landscape · width: 734px
       
-- The website was also tested on real devices both portrait and landscape. The result on the other browsers was satisfying:
+- The website was also tested on real devices in both portrait and landscape view. The results with other browsers were satisfying:
     - Samung Galaxy S6/S7/S8/S10/S20.
     - Samsung Galaxy Tablet.
 
  **Encountered problems while testing the site on different devices**
+ 
  Issue with displaying the Contact, Login and Register forms on Landscape Devices
 
  **BEFORE**
 
 ![landscape issue](wireframes/testing/landscape-issue.jpg)
 
-**BEFORE**
+**AFTER**
 
 ![landscape issue fix](wireframes/testing/landscape-issue-fix.png)
 
@@ -743,7 +770,7 @@ The website was tested on the following browsers and operating systems:
 ## Testing Performance
 ---
 
-Performance has been tested using Lighthouse tool of Google Chrome. The results were a little different every time due to device performance and value estimation . The results on the end were satisfying for desktop devices bit performance of mobile devices need to be reviewed and tested again. There were some issues which caused the results like:
+Performance has been tested using Lighthouse tool of Google Chrome. The results were a little different every time due to device performance and value estimation . The results at the end were satisfying for desktop devices, but performance of mobile devices need to be reviewed and tested again. There were some issues which caused the results like:
 
     - Links do not have a discernible name
         Solved by adding aria label to "See recipe buttons"
@@ -877,7 +904,7 @@ Performance has been tested using Lighthouse tool of Google Chrome. The results 
 
 ## Testing Accessibility
 ----
-The website's accessibility was also tested using Lighthouse this time on the heroku. The test result were satysfying.
+The website's accessibility was also tested using Lighthouse, but this time on Heroku. The test results were satisfying.
 
 **Recipes Page** (`recipes.html`) - HOME PAGE
 
@@ -934,7 +961,11 @@ The website's accessibility was also tested using Lighthouse this time on the he
   
 
 ## Further Testing
+The errorhandlers pages have also been checked. This includes errors which depict typing a wrong or incomplete URL for error pages 404 and 500 and excluding debug = FALSE in app.route. error 403 when typing another user's recipe IP address in a browser window.
 
+
+- Checking **Utensils Page** on the lghthouse after replacing the amazon ling with standard www.amazom.com
+![utensils-desktop-lighthouse-new](wireframes/testing/utensils-desktop-lighthouse-new.png)
 
 ### Overflow
 - The website was tested for overflow using [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) chrome extension. 

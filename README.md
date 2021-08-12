@@ -14,6 +14,7 @@
 - [Features](#features)
 - [Technologies used](#technologies-used)
 - [Resources](#resources)
+- [Defensive Design](#defensive-design)
 - [Testing](#testing)
 - [Code validity](#code-validity)
 - [Version Control](#version-control)
@@ -82,7 +83,7 @@ My goal for this project is to create a website with smoothie recipes, where use
 It is intended to be used as a full-stack application with clean and user - friendly site design.
 
 ### Project Purpose:
-- To create an easy-to-use online cocktail recipe book, providing a user-friendly interface with full functionality.
+- To create an easy-to-use online smoothie recipe book, providing a user-friendly interface with full functionality.
 - Promoting a healthy lifestyle by introducing smoothies into our daily diet.
 
 ### Site Owner Goals:
@@ -97,21 +98,23 @@ It is intended to be used as a full-stack application with clean and user - frie
 - Easy to find contact form for possible enquiries regarding the personal profile or recipes.
 
 
-## **2. Scope plane**
+## **2. Scope Plane**
 To achieve user and owner’s goals, below are the minimum features to be included in this project. Also, CRUD functionality (Create, Read, Update, and Delete) is required for this project so these are implemented as a part of the essential features.
 
-CREATE — A function we can call when a new recipe is being added to the database. The user can supply the values for `category_name`, `name`, `ingredients_list`, `description `, `method` and `image_url`. The website admin has the capability to create new recipe categories for selection.
+CREATE — A function we can call when a new recipe is being added to the database. The user can supply the values for `category_name`, `name`, `ingredients_list`, `description `, `method`, `serves`, `calories` and `image_url`. The website admin has the capability to create new recipe categories for selection and suply the category values for `name` and `description`.
 
 READ — A function we call to retrieve information from the database and display the results of all the recipes currently available to read in our database. All visitors to the website can browse all recipes without having to create an account.
 
-UPDATE — A function we can call when information about a particular recipe needs to be changed. The user can edit the values for `name`, `ingredients_list`, `description `, `method` and `image_url`. After the function is called, the corresponding entry in the recipes database will contain the new fields provided. This option is only available to the creator of each recipe.The admin only can edit the values for `category_name`.
+UPDATE — A function we can call when information about a particular recipe needs to be changed. The user can edit the values for `category_name`, `name`, `ingredients_list`, `description `, `method`, `serves`, `calories` and `image_url`. After the function is called, the corresponding entry in the recipes database will contain the new fields provided. This option is only available to the creator of each recipe.The admin only can edit the category values for `name` and `description`.
 
-DELETE — A function we can call to remove a particular recipe from the catalog. This option is only available to the creator of the recipe. The admin only can remove the values for `category_name`.
+DELETE — A function we can call to remove a particular recipe from the catalog. This option is only available to the creator of the recipe. The admin only can remove the  category values for `name` and `description`.
 
 ### Functional Requirements
 - Mobile-first website that is responsive on all devices.
 - Search by a keyword(s) function that users can search for specific recipes by `ingredients`.
 - 404 page that appears for invalid URL and takes users back to 'Home Page' of the website safely.
+- 403 Forbiden page appears for denied access.
+- 500 Internal Server Error appears server error response code indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.
 - Register page where users can create an account to add and edit recipes.
 - Create Recipe page where users can create and post their recipes.
 - Edit Recipe page where users can edit their recipes.
@@ -135,7 +138,7 @@ DELETE — A function we can call to remove a particular recipe from the catalog
 Chart of the website to show core relations between the pages.
 ![website-chart](wireframes/readme/website-chart.png)
 
-- **HOME/RECIPE PAGE** (index.html) - The Home/Recipe Page of the website will clearly outline the purpose of the website and contain all available recipe cards for the user to view. There is a sticky navigation at the top which is placed on all pages and contain logo and recipe links, which lead to the Home Page and a drop down Collection List with all Categories, Utensils Page, Contact Page, Register Page and Login Page. At the bottom of the page there is a footer that is also placed on all other pages, which contains social media links.
+- **HOME/RECIPE PAGE** (recipes.html) - The Home/Recipe Page of the website will clearly outline the purpose of the website and contain all available recipe cards for the user to view. There is a sticky navigation at the top which is placed on all pages and contain logo and recipe links, which lead to the Home Page and a drop down Collection List with all Categories, Utensils Page, Contact Page, Register Page and Login Page. At the bottom of the page there is a footer that is also placed on all other pages, which contains social media links.
 
 - **COLLECTIONS PAGES:** - (categories<category_name>.html) - These are the pages, where the user can view recipes selected from among all recipes displayed on the home page according to the category selected by them: Stay Healthy, Stay Young, Stay Fit, Stay Happy.
 
@@ -143,26 +146,26 @@ Chart of the website to show core relations between the pages.
 
 - **UTENSILS PAGE** (utensils.html) - The Utensils Page will contain a carousel with images and suggestions of tools and kitchen appliances that are needed in the preparation of smoothies and will have links to pages where user can purchase the product.
 
-- **LOG IN PAGE** (login.html) - The Log In Page allows users who already have an account to log in to their profile. Username must be between 5 and 20 characters, password must contain at least 8 characters, include upper and lower case letters and numbers. When the user logs in successfully, they are redirected to their unique profile page where they can view, edit and delete their recipes. An additional tab 'Log Out' is visible and a Register Tab is hidden after logging in.
+- **LOG IN PAGE** (login.html) - The Log In Page allows users who already have an account to log in to their profile. Username must be between 5 and 20 characters, password must be between 5 and 20 characters,and can include upper and lower case letters and numbers. When the user logs in successfully, they are redirected to their unique profile page where they can view, edit and delete their recipes. An additional tab 'Log Out' is visible and a Register Tab is hidden after logging in.
 
-- **REGISTER PAGE** (register.html) - The Register Page allows users to create an account by entering a distinct username and password. Username must be between 5 and 20 characters, password must contain at least 8 characters, include upper and lower case letters and numbers. When the user registers successfully, they are redirected to their Profile Page where they can add, edit, delete and view existing recipes.
+- **REGISTER PAGE** (register.html) - The Register Page allows users to create an account by entering a distinct username and password. Username must be between 5 and 20 characters, password must be between 5 and 20 characters, include upper and lower case letters and numbers. When the user registers successfully, they are redirected to their Profile Page where they can add, edit, delete and view existing recipes.
 
-- **PROFILE PAGE** (profile/<username>.html) - The Profile Page is unique to each user and is available after the user registers successfully where they can add, edit, delete and view their existing recipes. There is an option to create a new recipe from this page by clicking an "Add Recipe" button and that leads to the Create Recipe page.
+- **PROFILE PAGE** (profile.html) - The Profile Page is unique to each user and is available after the user registers successfully where they can add, edit, delete and view their existing recipes. There is an option to create a new recipe from this page by clicking an "Add Recipe" button and that leads to the Create Recipe page.
 
-- **CREATE RECIPE PAGE** (add_recipe.html) - The Create Recipe Page allows users to add a new recipe by submitting a form. The user needs to enter the required fields for `name`, `category_name`, `description`, `image_url`, `ingredients_list`, `method`. The new recipe is displayed on the Home Page and the Profile Page.
+- **CREATE RECIPE PAGE** (add_recipe.html) - The Create Recipe Page allows users to add a new recipe by submitting a form. The user needs to enter the required fields for `name`, `category_name`,`serves`, `calories`, `description`, `image_url`, `ingredients_list`, `method`. The new recipe is displayed on the Home Page and the Profile Page.
 
-- **EDIT RECIPE PAGE** (edit_recipe.html) - The Edit Recipe Page allows users to edit existing recipes by clicking the Edit/Delete Recipe button and to change recipes submitted in the past using the form in the Profile Page.
+- **EDIT RECIPE PAGE** (edit_recipe.html) - The Edit Recipe Page allows users to edit existing recipes by clicking the Edit Recipe button beside Delete recipe button and to change recipes submitted in the past using the form in the Profile Page.
 
 - **MANAGE CATEGORIES PAGE** (manage_categories.html) - The Manage Categories Page allows the website administrator to add, edit and delete existing category. Only admin users can have access to this page by a navigation link that appears on the admin's Profile Page.
 
-- **CREATE CATEGORIES PAGE** (add_categories.html) - The Create Categories Page allows the website administrator to add a category. Only admin users can have an access to this page by a navigation link that appears on the admin's Profile Page.
+- **CREATE CATEGORIES PAGE** (add_category.html) - The Add Category Page allows the website administrator to add a category. Only admin user can have an access to this page by a navigation link or button that appears on the admin's Profile Page.
 
-- **EDIT CATEGORIES PAGE** (edit_categories.html) - The Edit Categories Page allows the website administrator to edit existing categories. Only admin users can have access to this page by a navigation link that appears on the admin's Profile Page.
+- **EDIT CATEGORIES PAGE** (edit_category.html) - The Edit Category Page allows the website administrator to edit existing categories. Only admin users can have access to this page by a navigation link that appears on the admin's Profile Page.
 
-- **CONTACT PAGE** (contact.html) - The Contact Page allows users to fill a form request, which contains: the name, email and message fields that are required to be filled in by the user and on submission will be sent to the owner.
+- **CONTACT PAGE** (contact.html) - The Contact Page allows users to fill a form request, which contains: the email and message fields that are required to be filled in by the user and on submission will be sent to the owner.
 
 ### BACK END
-To create a recipe the user must register on the website. Upon registration, an account will be assigned to the user. All user's details like **username**, **password** and unique identification **id** key will be stored in a user collection database. As soon as a user creates a new recipe, the **username** in **users collection** which is linked with **username** in **recipes collection** will display  **created by: `username`** on the recipe. The `category_name` in **categories collection** is linked with `category_name` in **recipes collection** which will be used to retrieve data by `category_name` when user chooses one of the four categories. Categories in the collection of categories can be edited by the admin, in order to create it as an independent collection. The data in all the collections are retrievable and can be identified by the key or unique id of the object.
+To create a recipe the user must register on the website. Upon registration, an account will be assigned to the user. All user's details like **username**, **password** and unique identification **id** key will be stored in a user collection database. As soon as a user creates a new recipe, the **username** in **users collection** which is linked with **username** in **recipes collection** will display  **created by: `username`** on the recipe. The `name` in **categories collection** is linked with `category_name` in **recipes collection** which will be used to retrieve data by `category_name` when user chooses one of the four categories. Categories in the collection of categories can be edited by the admin, in order to create it as an independent collection. The data in all the collections are retrievable and can be identified by the key or unique id of the object.
 
 Chart of the website to show core relations between available pages.
 ![website-database](wireframes/readme/website-database.png)
@@ -190,7 +193,7 @@ Chart of the website to show core relations between available pages.
 
 - [contact page](wireframes/contact-page.png)
 
-### Wireframe mockups Final Results:
+### Wireframe mockups Final:
 
 **HOME/RECIPE PAGE**
 ![homepage](wireframes/home-recipes-page-new.png)
@@ -208,7 +211,7 @@ The size of the photo has been slightly changed for a visual appearance, as well
 ![singlerecipe](wireframes/single-recipe-page-new.png)
 
 **PROFILE PAGE**
-Profiles has been gently changed. The `Manage Categories` link on the admin page has been changed to the button and moved from the navigation bar to the page. The reason for the transfer was too many links on the navigation bar, which in smaller screeens caused them to overlap the `Smoothie Lovers` logo. Taking into account the advices of my friends and family who tested my website, a New Recipe button was also added on the website, which makes it easier to navigate on mobile devices.
+Profiles have been gently changed. The `Manage Categories` link on the admin page has been changed to the button and moved from the navigation bar to the page. The reason for the transfer was too many links on the navigation bar, which in smaller screens caused them to overlap the `Smoothie Lovers` logo. Taking into account the advice I received from my friends and family who tested my website, a New Recipe button was also added on the website, which makes it easier to navigate on mobile devices.
 ![profile](wireframes/profile-page-new.png)
 
 **ADD/EDIT/DELETE EXISTING RECIPE PAGE**
@@ -230,7 +233,7 @@ To Add / Edit / Delete Recipe I have added two additional fields: calories per s
 ## **5. Surface Plane**
 
 **Colors**
-- As a first color I have choosen a **Red Pigment (# F72626)** color, which I used to design a logo brand, for a red strawberry, which not only symbolizes love and resembles a heart in shape, but also is one of the most frequently chosen fruits in the production of smoothies and I thought it will nicely complement the brand name.
+- As a first color I have chosen a **Red Pigment (# F72626)** color, which I used to design a logo brand, for a red strawberry, which not only symbolizes love and resembles a heart in shape, but also is one of the most frequently chosen fruits in the production of smoothies and I thought it will nicely complement the brand name.
 - As a complementary color for buttons I have chosen **Forrest Green Web (#008F2B)** which symbolizes health, nature and freshness and a different shade of red called **Venetian Red(#C41C1C)**.
 - As a background color I have chosen the color which is a shade of the Forest Green Web called **HoneyDew (#EBFFF1)** because it is very close to white and which will provide a high contrast for darker text.
 - As a text color I have chosen **Xicetic (#140101)** which is the darkest option of the Red Pigment color.
@@ -266,11 +269,11 @@ If the user doesn't upload an image, the default image is uploaded ![image repla
 - There is a search box feature which performs text search based on the ingredient
 - New users can register on the site from the register page
 - Registered users can log in to the site from the log on page
-- The site allows theregistered user to:
+- The site allows the registered user to:
     - Share their own recipes.
     - View all recipes shared by other members.
     - Edit their own recipes.
-    - Del}ete their own recipes.
+    - Delete their own recipes.
 - The site also allows the admin/owner of the website to:
     - Share their own recipes.
     - Edit their own recipes.
@@ -296,8 +299,9 @@ Navbar's features for admin/owner
 ![footer](wireframes/testing/footer.png) 
 
 ### HOME/RECIPES PAGE:
+
 ![recipes](wireframes/testing/recipes1.png) 
-Initially, the recipe was scheduled to open, a link `See recipe` on the bottom of the recipe card , which was changed during development to a red pulsating button with the` see-eye` icon because it seemed the card was too crowded during the user's session, as two more `delete` and` edit`appeared
+Initially, the recipe was scheduled to open, a link `See recipe` on the bottom of the recipe card , which was changed during development to a red pulsating button with the` see-eye` icon because it seemed the card was too crowded during the user's session, as two more `delete` and` edit` appeared.
 
 ![card tooltip see recipe](wireframes/testing/card1.png)
 ![card tooltip serves](wireframes/testing/card2.png) 
@@ -343,7 +347,9 @@ Additional custom pages were created to handle 403, 404 and 500 errors on the we
 ![404](wireframes/testing/404.png) 
 ![500](wireframes/testing/500.png) 
 
-**Features Left to Implement when skills develop**
+After talking to my mentor, I corrected the text on the pages for a better UX.
+
+**Features left to implement when skills develop**
 *	Rate and comment recipes. Users will be able to rate and comment recipes of other users which may improve the recipes.
 *	Print and download recipes that might be useful for users who prefer or would like to keep their recipes in a more traditional paper format or to make a book for friends and family.
 *	Forgot Password: The primary design goals were to make the website easy-to-use and intuitive for users. An e-mail address will be required when creating an account for this feature to be implemented. It could be considered in future development.
@@ -409,8 +415,23 @@ Additional custom pages were created to handle 403, 404 and 500 errors on the we
 - [RedKetchup](https://redketchup.io/) -  Used to convert an image into a favicon and edit icons for used technologies.
 - [Grammarly](https://www.grammarly.com/) - Used to help with grammar check.
 - [youtube](https://www.youtube.com/) - Used for general resources.
-- [codepen](https://codepen.io/j_holtslander/pen/qBOPJYP) - Used to look for a solution to find the correct card size
+- [codepen](https://codepen.io/j_holtslander/pen/qBOPJYP) - Used to look for a solution to find the correct card size.
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/) - Flask Custom Error Pages
+- [Flask](https://flask-paginate.readthedocs.io/en/master/) - Flask paginate
+- [stackoverflow](https://stackoverflow.com/questions/27980121/pylint-warning-possible-unbalanced-tuple-unpacking-with-sequence) - solution for pylint warning: Possible unbalanced tuple unpacking with sequence
+---
+## Defensive Design
+- Users cannot force into websites that they cannot access, e.g. a user who is not logged in cannot acce`ss `add_recipe` by being on the home website and change the url from `get_recipe` to add_recipe` in the url. They will be redirected to login page and receive a message `Please log in` or a user who is not logged in cannot access edit_recipe by being on the main website and change the url from `get_recipe` to `edit_recipe` in the url, they will be redirected to `404 page`. 
+- Users cannot force into websites that they cannot access, e.g. a user who is logged in cannot access to someone recipe bt `edit_recipe` and using `recipes id`, they will be redirected to `Forbidden 403` page. 
+- Logged in users can only edit/delete their own recipes.
+- Only logged in users can access their page.
+- Only admin user can access the admin pages.
+- Only admin usser can add, edit and delete categories.
+- Only Admin has an access to all recipes by using someones recipes id.
+Error Handlers: error handlers provide immediate feedback to the user/reader if there is a serious issue. In most cases, these are triggered through mistakes or malicious intent.
+- 404 Page Not Found error page has being included.
+- 403 Forbidden error page has being included.
+- 500 Internal Server Error error page has being included.
 
 ---
 ## Testing
@@ -432,7 +453,7 @@ Overview
 - CSS - [Jigsaw  Validation W3C Service](https://jigsaw.w3.org/css-validator/)
 - JSHint - [JSHint for detecting errors in JavaScript code](https://jshint.com/)
 - Link checker - [Check links and anchors in Web pages or full Web sites](https://validator.w3.org/checklink)
-- Lighthouse in Google dev tool for testing the performance of the website
+- Lighthouse in Google dev tool for testing the performance of the website.
 
 ## Version Control
 [Git](https://git-scm.com/) as a local repository and [GitHub](https://github.com/) as a remote repository are used for the project, and below is how I use them as the version control for the project.
@@ -451,7 +472,7 @@ Overview
 
 **- - Commitments - -**
 
-When a section or even a group of work is completed, it is committed in git and pushed into GitHub, to make sure to keep the history of the work logged properly and not to lose the work in unexpected situations. Below commands are used for this.
+When a section of work is completed, it is committed in git and pushed into GitHub, to make sure to keep the history of the work logged properly and not to lose the work in unexpected situations. Below commands are used for this.
 
 ` - git status | we use to check the status of new/modified folders, files, and documents`
 
@@ -508,7 +529,7 @@ Before deploying the website to Heroku, please follow this very important step t
 2. Create `Procfile` which contains the name of the application file so that Heroku knows what to run. Procfile may have a blank line when it is created so remove it as it may cause problems.
 3. Push both files to GitHub.
 
-Once those steps are done, the website can be deployed and below are the steps of the deployment process in Heroku.
+Once those steps are completed, the website can be deployed and below are the steps of the deployment process in Heroku.
 
 1. Create an account in Heroku.
 2. Click **New** and choose from dropdown menu **Create new app** to create a new app.
@@ -531,10 +552,25 @@ Once those steps are done, the website can be deployed and below are the steps o
 
 ### Database Deployment
 
-The site uses a Mongodb database for data storage and retrieval.
-
-Connecting to Mongodb
-
+The site uses a `Mongodb document-based` database or NoSQL database for data storage.
+- Navigate to [Mongo DB Atlas](https://www.mongodb.com/) and create account here
+- Create MongoDB database in the cloud where we can cat 512 mb of free data hosted.
+- Click Start Free/Try Free and fill in the form to create our account.
+- Create the free Shared Cluster
+- Select:
+    -  A cloud provider `aws` amazon cloud provider, 
+    - The region the closest to you (eg.Ireland), 
+    - Choose a cluster tier: M0 Sandbox,
+    - Choose the Cluster Name: myFirstCluster (using the camel case naming convention)
+- Choose on Database Access to create our database user credentials `Add new user`
+    - Authentication Method set your Pasword and username (only use the combination of letters or numbers)
+    - Database User Privileges: Read and write to any database
+- Choose Network Access and `Add IP Address` ,allow address from anywhere but it should be the IP address of yout hosts to prevent unauthorized access to your data
+- Go to Clusters then Collection and `Add My Own Data` to create our own database
+    - Give a name to your Database eg. "smootieLovers" and collection eg. "categories"
+    - Create the collection `categories` document click on `Insert Document` using `{key: "value"}` pairs. 
+- Go to Clusters choose connect "Connect" with the mongo shell and  from the `Run your connection string` copy the link paste in workspace replaca the `<dbname>` with our database name eg. "smootieLovers" then press enter and enter your password: and then you will be connected to MongoDB shell.
+- To confirm we are conected use command `show collection`
 ---
 
 ## Credits
@@ -569,11 +605,12 @@ Images and content for database recipes in MongoDB were taken from sources below
 - [strawberry ginger smoothie]( https://www.natalieshealth.com/strawberry-ginger-smoothie/)
 - [hangover cure smoothie]( https://www.self.com/story/pharmacist-approved-hangover-cure)
 - [dreamy orange smoothie]( https://wholefully.com/orange-smoothie-recipe-creamsicle/)
-- [chocolate peanut smoothie]( https://wholefully.com/chocolate-peanut-butter-smoothie-recipe/)
+- [spicy tropical greens delight](https://www.self.com/gallery/weight-loss-smoothies-nutritionists-swear-by)
+- [dragon fruit smoothie](https://www.yummymummykitchen.com/2018/06/dragon-fruit-smoothie.html)
 
 
 **Code Snippets**
-
+- [stackoverflow](https://stackoverflow.com/questions/27980121/pylint-warning-possible-unbalanced-tuple-unpacking-with-sequence) - solving Pylint warning: Possible unbalanced tuple unpacking with sequence
 - [seanyoung247](https://github.com/seanyoung247/Plum) - for dynamic adding/removing ingredients to recipes from in java script 
 - [materializecss](https://materializecss.com/navbar.html) - Navbar materialize
 - [materializecss](https://materializecss.com/modals.html) - Modal for delete buttons
@@ -581,10 +618,10 @@ Images and content for database recipes in MongoDB were taken from sources below
 - [Edb83](https://github.com/Edb83/self-isolution/blob/master/app.py) - for pagination on the pages
 - Code Istitute Mini Project Task Manager
 
-
 ## Acknowledgments
 I would like to thank to:
-- My super mentor Aaron Sinnott for his helpful and valuable feedback and guidance, Thank you.
-- To my wonderful tutor Kasia for sharing her knowledge with me, always helpful and supportive. I am very grateful, Thank you 
-- I would like to thank to the whole funtastic Code Institute Tutor Support team for your help, all tips, explanations, time spent on solving my mysterious problems;) I am grateful for every minute, you are amazing guys with astonish knowledge. Thank you for sharing, I have learned a lot from you. I would not be myself if I did not thank you to: John, Sean, Miklos, Johann, Jo, Igor, Sharyl, Alan, Michael, Stephen I hope I didn't missed anyone, Thank you
+- My super mentor Aaron Sinnott for his helpful and valuable feedback and guidance, advice testing defending design and error handlers, Thank you:)
+- To my wonderful tutor Kasia for sharing her knowledge with me, always helpful and supportive. I am very grateful, Thank you :)
+- I would like to thank the whole fantastic Code Institute Tutor Support team for your help, all tips, explanations, time spent on solving my mysterious problems;) I am grateful for every minute, you are amazing guys with astonishing knowledge. Thank you for sharing, I have learned a lot from you. I would not be myself if I did not thank: John, Sean, Miklos, Johann, Jo, Igor, Sharyl, Alan, Michael, Stephen I hope I didn't missed anyone, Thank you :)
+- My wonderful friend Anna who helped me test and give advice and ideas for better UX improving the texts for the site, my son Adrian for the time devoted to reading and correcting my documentation, and the whole family and friends, Thank you guys:)
 - Slack community for great posts.
