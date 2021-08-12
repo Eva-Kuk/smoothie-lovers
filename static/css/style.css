@@ -63,18 +63,11 @@ h4 {
 .green-btn:hover {
     background-color:#00b837;    
 }
-.green-btn:visited {
-    background-color:#008f2b;  
-}
 .red-btn {
     background-color:#c41c1c;
-    
 }
 .red-btn:hover {
     background-color:#e33b3b;
-}
-.red-btn:visited {
-    background-color:#c41c1c;
 }
 .categories-btn {
     height:30.4px;
@@ -82,7 +75,6 @@ h4 {
     line-height: 14.4px;
     padding: 7px;
 }
-
 .btn-small {
     font-size: 11px;
 }
@@ -304,9 +296,6 @@ nav ul a,
     margin-top: 0.7rem;
     margin-bottom: 0.5rem;
 }
-.card .card-content {
-    padding: 0.9rem;
-}
 .list-style {
     list-style: square;
 }
@@ -320,6 +309,10 @@ nav ul a,
 }
 .card .card-content {
     padding: 0.6rem;
+}
+.row .col {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
 }
 /*---------------- ADD/EDIT RECIPE PAGE ------------------*/
 .collection .collection-item {

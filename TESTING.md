@@ -962,12 +962,20 @@ The website's accessibility was also tested using Lighthouse, but this time on H
 
 ## Further Testing
 The errorhandlers pages have also been checked. This includes errors which depict typing a wrong or incomplete URL for error pages 404 and 500 and excluding debug = FALSE in app.route. error 403 when typing another user's recipe IP address in a browser window.
+Te
 
-
-- Checking **Utensils Page** on the lghthouse after replacing the amazon ling with standard www.amazom.com
+- Checking **Utensils Page** on the lighthouse after replacing the amazon link with standard www.amazom.com
 ![utensils-desktop-lighthouse-new](wireframes/testing/utensils-desktop-lighthouse-new.png)
 
+More testing on validator showed as the  `aria-label=”Open the menu”` was added previously after testing in lighthouse finally was removed. The HTML validator came out clear with no errors. 
+All pages went through the HTML validator and came out clear as well.
+![html validator new](wireframes/testing/html-validator-new.png)
+
+Additional lighthouse tests were done as well
+
+![lighthouse new](wireframes/testing/lighthouse-new.png)
 ### Overflow
 - The website was tested for overflow using [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) chrome extension. 
 - Spelling was checked thoroughly using [Grammarly](https://app.grammarly.com/) extension and [online-spellcheck](https://www.online-spellcheck.com/)
+
 
