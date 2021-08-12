@@ -9,7 +9,7 @@
         <h1 class="welcome-text">Share, Find and Store your favourite Smoothies recipes</h1>
       </div>
       <!--Search Box-->
-      <div class="col s12 m8 offset-m2 l6 offset-l3 center-align form-content">
+      <div class="col s10 offset-s1 m8 offset-m2 l6 offset-l3 center-align form-content">
         <form action="{{ url_for('regex') }}" method="post">
           <div class="row search-margin-bottom search-header">
             <div class="col s11 input-field input-margin-top">
@@ -36,7 +36,7 @@
   <div class="row">
     {% for category in categories %}
     {% if category.name == name %}
-    <div class="col s12 m8 offset-m2 box-style">
+    <div class="col s10 offset-s1 m8 offset-m2 box-style">
       <h2 class="center-align category-name">{{ category.name }}</h2>
       <p class="category-description">{{ category.description }}</p>
     </div>
@@ -80,10 +80,10 @@
                 <i class="fas fa-fire tooltipped" data-position="right" data-tooltip="Calories per serve"></i>
                 {{ recipe.calories }}
               </p>
-              <p class="category-font">
-                Category: {{ recipe.category_name }}
-              </p>
-              <p class="right-align added-font">
+              <div class="center-align category-name-font">
+                <h3>{{ recipe.category_name }}</h3>
+              </div>
+              <p class="added-font">
                 <em>Added by: {{ recipe.added_by }}</em>
               </p>
             </div>
