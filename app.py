@@ -13,8 +13,6 @@ if os.path.exists("env.py"):
 # Create instance of Flask
 app = Flask(__name__)
 
-# Create an instance of the Mail class
-mail = Mail(app)
 
 # Configure server parameters
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -23,6 +21,7 @@ app.config['MAIL_USERNAME'] = 'webdeveloperevakukla@gmail.com'
 app.config['MAIL_PASSWORD'] = os.environ.get("MY_EMAIL_PASSWORD")
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
+# Create an instance of the Mail class
 mail = Mail(app)
 
 
@@ -40,6 +39,7 @@ PER_PAGE = 8
 
 
 def paginated(recipes):
+    # pylint: disable=unbalanced-tuple-unpacking
     page, per_page, offset = get_page_args(
         page_parameter='page',
         per_page_parameter='per_page')
@@ -48,6 +48,7 @@ def paginated(recipes):
 
 
 def pagination_args(recipes):
+    # pylint: disable=unbalanced-tuple-unpacking
     page, per_page, offset = get_page_args(
         page_parameter='page',
         per_page_parameter='per_page')
@@ -219,7 +220,7 @@ def contact():
         email = request.form.get("email")
         message = request.form.get("message")
 
-        msg = Message('Hello',
+        msg = Message(email,
                       sender=("Smoothie Lovers", email),
                       recipients=['webdeveloperevakukla@gmail.com'])
 
@@ -446,4 +447,4 @@ def internal_server_error(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
