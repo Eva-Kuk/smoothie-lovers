@@ -89,6 +89,15 @@ for landscape `min-height: 175vh;` and `height: 175vh;`
 
 ![initialization-text-area](wireframes/testing/initialization-text-area.png)
 
+12. **ISSUE** Images in the cards doesn't display evenly. During the project development stage, I found it difficult to correctly arrange the cards and photos in the recipes. The last change I have made it was to keep the images in the cards the same height, no matter what image the user pass in the recipe, which in the earlier version had to be the similar size to be properly displayed on the site. 
+
+![not-equal-height-photo](wireframes/testing/not-equal-height-images.png)
+
+**SOLUTION** In order for the cards to display responsively and correctly on different device sizes, I needed to adjust the width in the media query, which I had to do in a non-standard way. I tested the website in dev tool, online responsinator and responsive designer tool
+![equal-height-images](wireframes/testing/equal-height-images.png)
+
+![equal-height-images-test](wireframes/testing/equal-height-images-test.png)
+
 ## Code Validation
 ---
 ### HTML Validator
