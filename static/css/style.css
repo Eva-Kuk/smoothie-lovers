@@ -283,10 +283,6 @@ nav ul a,
     font-weight: 600;
 }
 .recipe-image { 
-   /* height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    object-fit: cover;*/
     width: 100%;
 }
 .cards .card .card-image img {

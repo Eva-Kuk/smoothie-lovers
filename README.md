@@ -593,7 +593,7 @@ Images and content for database recipes in MongoDB were taken from sources below
 - [anti-inflammatory smoothie and image]( https://simplegreensmoothies.com/recipes/anti-inflammatory-smoothie-recipe)
 - [meal replacement smoothie and image]( https://simplegreensmoothies.com/recipes/meal-replacement-smoothies)
 - [pineapple ginger smoothie and image]( https://simplegreensmoothies.com/recipes/pineapple-ginger-smoothie)
-- [apple celery smoothie and image]( https://simplegreensmoothies.com/recipes/apple-celery-smoothie[best )
+- [apple celery smoothie and image](https://simplegreensmoothies.com/recipes/apple-celery-smoothie)
 - [best green vitamin booster and image](https://simplegreensmoothies.com/recipes/best-green-smoothie)
 - [banana berry smoothie]( https://therealfoodrds.com/anti-aging-banana-berry-smoothie)
 - [anti-aging coconut turmeric smoothie]( https://www.foodmatters.com/recipe/the-anti-aging-coconut-turmeric-smoothie)
