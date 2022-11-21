@@ -30,7 +30,7 @@
 ---
 ![altamiresponsive](wireframes/readme/am-i-responsive.png)
 
-- A live demo can be found >>>[here](https://smoothie-lovers.herokuapp.com/)
+- A live demo can be found >>>[here](https://smoothie-lovers-flask-app.onrender.com)
 - A github repository can be found >>> [here](https://github.com/Eva-Kuk/smoothie-lovers)
 
 
